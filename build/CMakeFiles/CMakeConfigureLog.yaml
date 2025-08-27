@@ -1,0 +1,1368 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      The system is: Darwin - 24.6.0 - arm64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is AppleClang, found in:
+        /Users/shiva/DualTestBeam/build/CMakeFiles/4.0.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:290 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Detecting C compiler apple sysroot: "/usr/bin/cc" "-E" "apple-sdk.c"
+        # 1 "apple-sdk.c"
+        # 1 "<built-in>" 1
+        # 1 "<built-in>" 3
+        # 465 "<built-in>" 3
+        # 1 "<command line>" 1
+        # 1 "<built-in>" 2
+        # 1 "apple-sdk.c" 2
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 1 3 4
+        # 89 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
+        # 90 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h" 1 3 4
+        # 91 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
+        # 207 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+        # 196 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
+        # 197 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
+        # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
+        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 2 3 4
+        # 198 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 1 3 4
+        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
+        # 35 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 2 3 4
+        # 199 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+        # 208 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
+        # 2 "apple-sdk.c" 2
+        
+        
+      Found apple sysroot: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is AppleClang, found in:
+        /Users/shiva/DualTestBeam/build/CMakeFiles/4.0.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:290 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Detecting CXX compiler apple sysroot: "/usr/bin/c++" "-E" "apple-sdk.cpp"
+        # 1 "apple-sdk.cpp"
+        # 1 "<built-in>" 1
+        # 1 "<built-in>" 3
+        # 513 "<built-in>" 3
+        # 1 "<command line>" 1
+        # 1 "<built-in>" 2
+        # 1 "apple-sdk.cpp" 2
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 1 3 4
+        # 89 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
+        # 90 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h" 1 3 4
+        # 91 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
+        # 207 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
+        # 196 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
+        # 197 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
+        # 33 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h" 1 3 4
+        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 2 3 4
+        # 198 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 1 3 4
+        # 34 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 3 4
+        # 1 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h" 1 3 4
+        # 35 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h" 2 3 4
+        # 199 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h" 2 3 4
+        # 208 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h" 2 3 4
+        # 2 "apple-sdk.cpp" 2
+        
+        
+      Found apple sysroot: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_a586d/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_a586d.dir/build.make CMakeFiles/cmTC_a586d.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud'
+        Building C object CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -Wl,-v -MD -MT CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Apple clang version 17.0.0 (clang-1700.0.13.5)
+        Target: arm64-apple-darwin24.6.0
+        Thread model: posix
+        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+        clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 17.0.0 (clang-1700.0.13.5) default target arm64-apple-darwin24.6.0
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks"
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/local/include
+         /Library/Developer/CommandLineTools/usr/lib/clang/17/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+         /Library/Developer/CommandLineTools/usr/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        Linking C executable cmTC_a586d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a586d.dir/link.txt --verbose=1
+        Apple clang version 17.0.0 (clang-1700.0.13.5)
+        Target: arm64-apple-darwin24.6.0
+        Thread model: posix
+        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_a586d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld PROJECT:ld-1167.5
+        BUILD 01:45:05 Apr 30 2025
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+        LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
+        TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.0.3.5)
+        Library search paths:
+        	/usr/local/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
+        Framework search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
+        /usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -o cmTC_a586d
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:122 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Effective list of requested architectures (possibly empty)  : ""
+      Effective list of architectures found in the ABI info binary: "arm64"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/local/include]
+          add: [/Library/Developer/CommandLineTools/usr/lib/clang/17/include]
+          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+          add: [/Library/Developer/CommandLineTools/usr/include]
+        end of search list found
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/17/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/17/include]
+        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+        implicit include dirs: [/usr/local/include;/Library/Developer/CommandLineTools/usr/lib/clang/17/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud']
+        ignore line: []
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_a586d/fast]
+        ignore line: [/opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_a586d.dir/build.make CMakeFiles/cmTC_a586d.dir/build]
+        ignore line: [gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud']
+        ignore line: [Building C object CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -Wl -v -MD -MT CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Apple clang version 17.0.0 (clang-1700.0.13.5)]
+        ignore line: [Target: arm64-apple-darwin24.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+        ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-v5ZRud -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 17.0.0 (clang-1700.0.13.5) default target arm64-apple-darwin24.6.0]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks"]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/17/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_a586d]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a586d.dir/link.txt --verbose=1]
+        ignore line: [Apple clang version 17.0.0 (clang-1700.0.13.5)]
+        ignore line: [Target: arm64-apple-darwin24.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_a586d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+          arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [15.5] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
+          arg [-mllvm] ==> ignore
+          arg [-enable-linkonceodr-outlining] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_a586d] ==> ignore
+          arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_a586d.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lSystem] ==> lib [System]
+          arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        linker tool for 'C': /Library/Developer/CommandLineTools/usr/bin/ld
+        Library search paths: [;/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+        remove lib [System]
+        remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: [/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:270 (cmake_determine_linker_id)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Running the C compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
+      @(#)PROGRAM:ld PROJECT:ld-1167.5
+      BUILD 01:45:05 Apr 30 2025
+      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+      LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
+      TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.0.3.5)
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_ec760/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_ec760.dir/build.make CMakeFiles/cmTC_ec760.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w'
+        Building CXX object CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -Wl,-v -MD -MT CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Apple clang version 17.0.0 (clang-1700.0.13.5)
+        Target: arm64-apple-darwin24.6.0
+        Thread model: posix
+        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+        clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 17.0.0 (clang-1700.0.13.5) default target arm64-apple-darwin24.6.0
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks"
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/local/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
+         /Library/Developer/CommandLineTools/usr/lib/clang/17/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+         /Library/Developer/CommandLineTools/usr/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        Linking CXX executable cmTC_ec760
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec760.dir/link.txt --verbose=1
+        Apple clang version 17.0.0 (clang-1700.0.13.5)
+        Target: arm64-apple-darwin24.6.0
+        Thread model: posix
+        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_ec760 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld PROJECT:ld-1167.5
+        BUILD 01:45:05 Apr 30 2025
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+        LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
+        TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.0.3.5)
+        Library search paths:
+        	/usr/local/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
+        Framework search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
+        /usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ec760
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:122 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Effective list of requested architectures (possibly empty)  : ""
+      Effective list of architectures found in the ABI info binary: "arm64"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/local/include]
+          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
+          add: [/Library/Developer/CommandLineTools/usr/lib/clang/17/include]
+          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+          add: [/Library/Developer/CommandLineTools/usr/include]
+        end of search list found
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
+        collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/17/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/17/include]
+        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+        implicit include dirs: [/usr/local/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1;/Library/Developer/CommandLineTools/usr/lib/clang/17/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w']
+        ignore line: []
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_ec760/fast]
+        ignore line: [/opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_ec760.dir/build.make CMakeFiles/cmTC_ec760.dir/build]
+        ignore line: [gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w']
+        ignore line: [Building CXX object CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -Wl -v -MD -MT CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Apple clang version 17.0.0 (clang-1700.0.13.5)]
+        ignore line: [Target: arm64-apple-darwin24.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+        ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-63P58w -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 17.0.0 (clang-1700.0.13.5) default target arm64-apple-darwin24.6.0]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks"]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
+        ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/17/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_ec760]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec760.dir/link.txt --verbose=1]
+        ignore line: [Apple clang version 17.0.0 (clang-1700.0.13.5)]
+        ignore line: [Target: arm64-apple-darwin24.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_ec760 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+          arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [15.5] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
+          arg [-mllvm] ==> ignore
+          arg [-enable-linkonceodr-outlining] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_ec760] ==> ignore
+          arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_ec760.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lc++] ==> lib [c++]
+          arg [-lSystem] ==> lib [System]
+          arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        linker tool for 'CXX': /Library/Developer/CommandLineTools/usr/bin/ld
+        Library search paths: [;/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+        remove lib [System]
+        remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+        implicit libs: [c++]
+        implicit objs: []
+        implicit dirs: [/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:270 (cmake_determine_linker_id)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Running the CXX compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
+      @(#)PROGRAM:ld PROJECT:ld-1167.5
+      BUILD 01:45:05 Apr 30 2025
+      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+      LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
+      TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.0.3.5)
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:97 (check_c_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/PTL/PTLConfig.cmake:56 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake:301 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepConfig.cmake:57 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Jt0Ukq"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Jt0Ukq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Modules;/Users/shiva/DD4hep/install/cmake;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Jt0Ukq'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_8ad75/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_8ad75.dir/build.make CMakeFiles/cmTC_8ad75.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Jt0Ukq'
+        Building C object CMakeFiles/cmTC_8ad75.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_8ad75.dir/src.c.o -MF CMakeFiles/cmTC_8ad75.dir/src.c.o.d -o CMakeFiles/cmTC_8ad75.dir/src.c.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Jt0Ukq/src.c
+        Linking C executable cmTC_8ad75
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ad75.dir/link.txt --verbose=1
+        /usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_8ad75.dir/src.c.o -o cmTC_8ad75
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Jt0Ukq'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake:112 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindX11.cmake:701 (check_library_exists)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake:361 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepConfig.cmake:57 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    checks:
+      - "Looking for XOpenDisplay in /opt/homebrew/lib/libX11.dylib;/opt/homebrew/lib/libXext.dylib"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-7XybOM"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-7XybOM"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Modules;/Users/shiva/DD4hep/install/cmake;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-7XybOM'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_7b738/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_7b738.dir/build.make CMakeFiles/cmTC_7b738.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-7XybOM'
+        Building C object CMakeFiles/cmTC_7b738.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -MD -MT CMakeFiles/cmTC_7b738.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_7b738.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_7b738.dir/CheckFunctionExists.c.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-7XybOM/CheckFunctionExists.c
+        Linking C executable cmTC_7b738
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b738.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7b738.dir/CheckFunctionExists.c.o -o cmTC_7b738   -L/opt/homebrew/lib  -Wl,-rpath,/opt/homebrew/lib /opt/homebrew/lib/libX11.dylib /opt/homebrew/lib/libXext.dylib
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-7XybOM'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindX11.cmake:716 (check_function_exists)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake:361 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepConfig.cmake:57 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ftuAYS"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ftuAYS"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Modules;/Users/shiva/DD4hep/install/cmake;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ftuAYS'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_c315b/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_c315b.dir/build.make CMakeFiles/cmTC_c315b.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ftuAYS'
+        Building C object CMakeFiles/cmTC_c315b.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -MD -MT CMakeFiles/cmTC_c315b.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_c315b.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_c315b.dir/CheckFunctionExists.c.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ftuAYS/CheckFunctionExists.c
+        Linking C executable cmTC_c315b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c315b.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c315b.dir/CheckFunctionExists.c.o -o cmTC_c315b
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ftuAYS'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindX11.cmake:730 (check_function_exists)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake:361 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepConfig.cmake:57 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-3PnXqw"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-3PnXqw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Modules;/Users/shiva/DD4hep/install/cmake;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-3PnXqw'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_4d448/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_4d448.dir/build.make CMakeFiles/cmTC_4d448.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-3PnXqw'
+        Building C object CMakeFiles/cmTC_4d448.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -MD -MT CMakeFiles/cmTC_4d448.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_4d448.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_4d448.dir/CheckFunctionExists.c.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-3PnXqw/CheckFunctionExists.c
+        Linking C executable cmTC_4d448
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d448.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4d448.dir/CheckFunctionExists.c.o -o cmTC_4d448
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-3PnXqw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindX11.cmake:739 (check_function_exists)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake:361 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepConfig.cmake:57 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Rc8TFA"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Rc8TFA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Modules;/Users/shiva/DD4hep/install/cmake;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Rc8TFA'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_312ad/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_312ad.dir/build.make CMakeFiles/cmTC_312ad.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Rc8TFA'
+        Building C object CMakeFiles/cmTC_312ad.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -MD -MT CMakeFiles/cmTC_312ad.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_312ad.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_312ad.dir/CheckFunctionExists.c.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Rc8TFA/CheckFunctionExists.c
+        Linking C executable cmTC_312ad
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_312ad.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_312ad.dir/CheckFunctionExists.c.o -o cmTC_312ad
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Rc8TFA'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindX11.cmake:748 (check_function_exists)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake:361 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepConfig.cmake:57 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NFgKPV"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NFgKPV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Modules;/Users/shiva/DD4hep/install/cmake;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NFgKPV'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_3847a/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_3847a.dir/build.make CMakeFiles/cmTC_3847a.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NFgKPV'
+        Building C object CMakeFiles/cmTC_3847a.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -MD -MT CMakeFiles/cmTC_3847a.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_3847a.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_3847a.dir/CheckFunctionExists.c.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NFgKPV/CheckFunctionExists.c
+        Linking C executable cmTC_3847a
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3847a.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3847a.dir/CheckFunctionExists.c.o -o cmTC_3847a
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NFgKPV'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake:112 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindX11.cmake:758 (check_library_exists)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake:361 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepConfig.cmake:57 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ApDY4Z"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ApDY4Z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Modules;/Users/shiva/DD4hep/install/cmake;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ApDY4Z'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_1630c/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_1630c.dir/build.make CMakeFiles/cmTC_1630c.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ApDY4Z'
+        Building C object CMakeFiles/cmTC_1630c.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -MD -MT CMakeFiles/cmTC_1630c.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_1630c.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_1630c.dir/CheckFunctionExists.c.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ApDY4Z/CheckFunctionExists.c
+        Linking C executable cmTC_1630c
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1630c.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1630c.dir/CheckFunctionExists.c.o -o cmTC_1630c   -L/opt/homebrew/lib  -Wl,-rpath,/opt/homebrew/lib -lICE
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-ApDY4Z'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
+      - "/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:45 (include)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake:371 (find_dependency)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepConfig.cmake:57 (find_dependency)"
+      - "CMakeLists.txt:27 (find_package)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-6mqxKR"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-6mqxKR"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/geant4-v11.3.2-install/lib/cmake/Geant4/Modules;/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_STDATOMIC"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-6mqxKR'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_862ef/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_862ef.dir/build.make CMakeFiles/cmTC_862ef.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-6mqxKR'
+        Building CXX object CMakeFiles/cmTC_862ef.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_STDATOMIC   -MD -MT CMakeFiles/cmTC_862ef.dir/src.cxx.o -MF CMakeFiles/cmTC_862ef.dir/src.cxx.o.d -o CMakeFiles/cmTC_862ef.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-6mqxKR/src.cxx
+        Linking CXX executable cmTC_862ef
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_862ef.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_862ef.dir/src.cxx.o -o cmTC_862ef
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-6mqxKR'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Wshadow"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-2ID4cU"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-2ID4cU"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Wshadow"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-2ID4cU'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_652af/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_652af.dir/build.make CMakeFiles/cmTC_652af.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-2ID4cU'
+        Building CXX object CMakeFiles/cmTC_652af.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Wshadow  -Wshadow -MD -MT CMakeFiles/cmTC_652af.dir/src.cxx.o -MF CMakeFiles/cmTC_652af.dir/src.cxx.o.d -o CMakeFiles/cmTC_652af.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-2ID4cU/src.cxx
+        Linking CXX executable cmTC_652af
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_652af.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_652af.dir/src.cxx.o -o cmTC_652af
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-2ID4cU'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Wformat_security"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-5Dradu"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-5Dradu"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wshadow  "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Wformat_security"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-5Dradu'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_934ae/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_934ae.dir/build.make CMakeFiles/cmTC_934ae.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-5Dradu'
+        Building CXX object CMakeFiles/cmTC_934ae.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Wformat_security  -Wshadow      -Wformat-security -MD -MT CMakeFiles/cmTC_934ae.dir/src.cxx.o -MF CMakeFiles/cmTC_934ae.dir/src.cxx.o.d -o CMakeFiles/cmTC_934ae.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-5Dradu/src.cxx
+        Linking CXX executable cmTC_934ae
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_934ae.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wshadow    -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_934ae.dir/src.cxx.o -o cmTC_934ae
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-5Dradu'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Wno_long_long"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NYPKHz"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NYPKHz"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wformat-security -Wshadow   "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Wno_long_long"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NYPKHz'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_5866f/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_5866f.dir/build.make CMakeFiles/cmTC_5866f.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NYPKHz'
+        Building CXX object CMakeFiles/cmTC_5866f.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Wno_long_long  -Wformat-security -Wshadow       -Wno-long-long -MD -MT CMakeFiles/cmTC_5866f.dir/src.cxx.o -MF CMakeFiles/cmTC_5866f.dir/src.cxx.o.d -o CMakeFiles/cmTC_5866f.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NYPKHz/src.cxx
+        Linking CXX executable cmTC_5866f
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5866f.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wformat-security -Wshadow     -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5866f.dir/src.cxx.o -o cmTC_5866f
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-NYPKHz'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Wdeprecated"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-a2MfLi"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-a2MfLi"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wno-long-long -Wformat-security -Wshadow    "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Wdeprecated"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-a2MfLi'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_37d9a/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_37d9a.dir/build.make CMakeFiles/cmTC_37d9a.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-a2MfLi'
+        Building CXX object CMakeFiles/cmTC_37d9a.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Wdeprecated  -Wno-long-long -Wformat-security -Wshadow        -Wdeprecated -MD -MT CMakeFiles/cmTC_37d9a.dir/src.cxx.o -MF CMakeFiles/cmTC_37d9a.dir/src.cxx.o.d -o CMakeFiles/cmTC_37d9a.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-a2MfLi/src.cxx
+        Linking CXX executable cmTC_37d9a
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37d9a.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wno-long-long -Wformat-security -Wshadow      -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_37d9a.dir/src.cxx.o -o cmTC_37d9a
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-a2MfLi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__fdiagnostics_color=auto"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-eRsIsm"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-eRsIsm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wdeprecated -Wno-long-long -Wformat-security -Wshadow     "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__fdiagnostics_color=auto"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-eRsIsm'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_88bd2/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_88bd2.dir/build.make CMakeFiles/cmTC_88bd2.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-eRsIsm'
+        Building CXX object CMakeFiles/cmTC_88bd2.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__fdiagnostics_color=auto  -Wdeprecated -Wno-long-long -Wformat-security -Wshadow         -fdiagnostics-color=auto -MD -MT CMakeFiles/cmTC_88bd2.dir/src.cxx.o -MF CMakeFiles/cmTC_88bd2.dir/src.cxx.o.d -o CMakeFiles/cmTC_88bd2.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-eRsIsm/src.cxx
+        Linking CXX executable cmTC_88bd2
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_88bd2.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wdeprecated -Wno-long-long -Wformat-security -Wshadow       -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_88bd2.dir/src.cxx.o -o cmTC_88bd2
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-eRsIsm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Wall"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Oe6XuR"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Oe6XuR"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow      "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Wall"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Oe6XuR'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_de0b3/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_de0b3.dir/build.make CMakeFiles/cmTC_de0b3.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Oe6XuR'
+        Building CXX object CMakeFiles/cmTC_de0b3.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Wall  -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow          -Wall -MD -MT CMakeFiles/cmTC_de0b3.dir/src.cxx.o -MF CMakeFiles/cmTC_de0b3.dir/src.cxx.o.d -o CMakeFiles/cmTC_de0b3.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Oe6XuR/src.cxx
+        Linking CXX executable cmTC_de0b3
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de0b3.dir/link.txt --verbose=1
+        /usr/bin/c++ -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow        -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_de0b3.dir/src.cxx.o -o cmTC_de0b3
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-Oe6XuR'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Wextra"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-fNpDnp"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-fNpDnp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow       "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Wextra"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-fNpDnp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_51d9f/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_51d9f.dir/build.make CMakeFiles/cmTC_51d9f.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-fNpDnp'
+        Building CXX object CMakeFiles/cmTC_51d9f.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Wextra  -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow           -Wextra -MD -MT CMakeFiles/cmTC_51d9f.dir/src.cxx.o -MF CMakeFiles/cmTC_51d9f.dir/src.cxx.o.d -o CMakeFiles/cmTC_51d9f.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-fNpDnp/src.cxx
+        Linking CXX executable cmTC_51d9f
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51d9f.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow         -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_51d9f.dir/src.cxx.o -o cmTC_51d9f
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-fNpDnp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__pedantic"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-XvpdL3"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-XvpdL3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow        "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__pedantic"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-XvpdL3'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_4de69/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_4de69.dir/build.make CMakeFiles/cmTC_4de69.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-XvpdL3'
+        Building CXX object CMakeFiles/cmTC_4de69.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__pedantic  -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow            -pedantic -MD -MT CMakeFiles/cmTC_4de69.dir/src.cxx.o -MF CMakeFiles/cmTC_4de69.dir/src.cxx.o.d -o CMakeFiles/cmTC_4de69.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-XvpdL3/src.cxx
+        Linking CXX executable cmTC_4de69
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4de69.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow          -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4de69.dir/src.cxx.o -o cmTC_4de69
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-XvpdL3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Winconsistent_missing_override"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-hv9lzD"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-hv9lzD"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow         "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Winconsistent_missing_override"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-hv9lzD'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_37de0/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_37de0.dir/build.make CMakeFiles/cmTC_37de0.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-hv9lzD'
+        Building CXX object CMakeFiles/cmTC_37de0.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Winconsistent_missing_override  -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow             -Winconsistent-missing-override -MD -MT CMakeFiles/cmTC_37de0.dir/src.cxx.o -MF CMakeFiles/cmTC_37de0.dir/src.cxx.o.d -o CMakeFiles/cmTC_37de0.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-hv9lzD/src.cxx
+        Linking CXX executable cmTC_37de0
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37de0.dir/link.txt --verbose=1
+        /usr/bin/c++ -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow           -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_37de0.dir/src.cxx.o -o cmTC_37de0
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-hv9lzD'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Wno_cPP1z_extensions"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-zcpHgj"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-zcpHgj"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow          "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Wno_cPP1z_extensions"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-zcpHgj'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_3ac53/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_3ac53.dir/build.make CMakeFiles/cmTC_3ac53.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-zcpHgj'
+        Building CXX object CMakeFiles/cmTC_3ac53.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Wno_cPP1z_extensions  -Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow              -Wno-c++1z-extensions -MD -MT CMakeFiles/cmTC_3ac53.dir/src.cxx.o -MF CMakeFiles/cmTC_3ac53.dir/src.cxx.o.d -o CMakeFiles/cmTC_3ac53.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-zcpHgj/src.cxx
+        Linking CXX executable cmTC_3ac53
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ac53.dir/link.txt --verbose=1
+        /usr/bin/c++ -Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow            -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3ac53.dir/src.cxx.o -o cmTC_3ac53
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-zcpHgj'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__Wheader_hygiene"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-UJIj6X"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-UJIj6X"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wno-c++1z-extensions -Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow           "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__Wheader_hygiene"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-UJIj6X'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_19d2c/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_19d2c.dir/build.make CMakeFiles/cmTC_19d2c.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-UJIj6X'
+        Building CXX object CMakeFiles/cmTC_19d2c.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__Wheader_hygiene  -Wno-c++1z-extensions -Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow               -Wheader-hygiene -MD -MT CMakeFiles/cmTC_19d2c.dir/src.cxx.o -MF CMakeFiles/cmTC_19d2c.dir/src.cxx.o.d -o CMakeFiles/cmTC_19d2c.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-UJIj6X/src.cxx
+        Linking CXX executable cmTC_19d2c
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19d2c.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wno-c++1z-extensions -Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow             -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_19d2c.dir/src.cxx.o -o cmTC_19d2c
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-UJIj6X'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:67 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS_FTLS_global_dynamic"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-jvTDs5"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-jvTDs5"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wheader-hygiene -Wno-c++1z-extensions -Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow            "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS_FTLS_global_dynamic"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-jvTDs5'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_1fa34/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_1fa34.dir/build.make CMakeFiles/cmTC_1fa34.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-jvTDs5'
+        Building CXX object CMakeFiles/cmTC_1fa34.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS_FTLS_global_dynamic  -Wheader-hygiene -Wno-c++1z-extensions -Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow                -ftls-model=global-dynamic -MD -MT CMakeFiles/cmTC_1fa34.dir/src.cxx.o -MF CMakeFiles/cmTC_1fa34.dir/src.cxx.o.d -o CMakeFiles/cmTC_1fa34.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-jvTDs5/src.cxx
+        Linking CXX executable cmTC_1fa34
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fa34.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wheader-hygiene -Wno-c++1z-extensions -Winconsistent-missing-override -pedantic -Wextra -Wall -fdiagnostics-color=auto -Wdeprecated -Wno-long-long -Wformat-security -Wshadow              -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1fa34.dir/src.cxx.o -o cmTC_1fa34
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-jvTDs5'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "/Users/shiva/DD4hep/install/cmake/DD4hepBuild.cmake:58 (CHECK_CXX_COMPILER_FLAG)"
+      - "CMakeLists.txt:33 (dd4hep_set_compiler_flags)"
+    checks:
+      - "Performing Test CXX_FLAG_WORKS__fdiagnostics_color=auto"
+    directories:
+      source: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-M3Aijo"
+      binary: "/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-M3Aijo"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-Wdeprecated -Wno-long-long -Wformat-security -Wshadow     "
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/shiva/DD4hep/install/cmake;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6/3rdparty/kwin;/opt/homebrew/Cellar/root/6.36.00/share/root/cmake/modules;/Users/shiva/DD4hep/install/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CXX_FLAG_WORKS__fdiagnostics_color=auto"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-M3Aijo'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_aeb26/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_aeb26.dir/build.make CMakeFiles/cmTC_aeb26.dir/build
+        gmake[1]: Entering directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-M3Aijo'
+        Building CXX object CMakeFiles/cmTC_aeb26.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_FLAG_WORKS__fdiagnostics_color=auto  -Wdeprecated -Wno-long-long -Wformat-security -Wshadow         -fdiagnostics-color=auto -MD -MT CMakeFiles/cmTC_aeb26.dir/src.cxx.o -MF CMakeFiles/cmTC_aeb26.dir/src.cxx.o.d -o CMakeFiles/cmTC_aeb26.dir/src.cxx.o -c /Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-M3Aijo/src.cxx
+        Linking CXX executable cmTC_aeb26
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aeb26.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wdeprecated -Wno-long-long -Wformat-security -Wshadow       -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_aeb26.dir/src.cxx.o -o cmTC_aeb26
+        gmake[1]: Leaving directory '/Users/shiva/DualTestBeam/build/CMakeFiles/CMakeScratch/TryCompile-M3Aijo'
+        
+      exitCode: 0
+...
