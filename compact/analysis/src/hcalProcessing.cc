@@ -128,14 +128,19 @@ void calibrateSamplingHcal(int gendeth, int islice, int idet, CalVision::DualCry
 
 void calibrateHcalGendeth(int hcaltype, CalVision::DualCrysCalorimeterHit* &ahcalhit, int gendeth, int ievt) {
     switch(hcaltype) {
-        case 0: //fiber Hcal
-            int idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy;
+        int idet, ix, iy, ilayer;
+	case 0: //fiber Hcal
+            int itube,iair,itype,ifiber,iabs,iphdet,ihole;
             DecodeFiber(ahcalhit->cellID,idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy);
             calibrateFiberHcal(gendeth, ifiber, idet, iphdet, ahcalhit);
+	    break;
         case 1: //sampling Hcal
-            int idet,ix,iy,ilayer,ibox2,islice;
-	        DecodeSampling(ahcalhit->cellID,idet,ix,iy,ilayer,ibox2,islice);
+            int ibox2,islice;
+	    DecodeSampling(ahcalhit->cellID,idet,ix,iy,ilayer,ibox2,islice);
             calibrateSamplingHcal(gendeth, islice, idet, ahcalhit, ievt);
+	    break;
+	default: 
+	    std::cout << "Wrong type of HCAL" << std::endl;
     }
 
 }
