@@ -61,13 +61,13 @@ double SPR(double tNow)
         /*
         * This example of SPR corresponds to Calvision TB at FNAL in 2023
         */
-  double tMin_  = 0.0;
-  double tMax_  = 1000.0;
+  //double tMin_  = 0.0;
+  //double tMax_  = 1000.0;
 
   double tRise       = 0.853;
   double tDecay      = 6.538;
   double tUnderShoot = 101.7;
-  double norm        = 0.111051;
+  //double norm        = 0.111051;
 
 
   double a = 1./ tRise;

@@ -74,8 +74,7 @@ void calibrateEcalGendeteSix() {
 	}
 }
 
-void calibrateEcalGendete(int gendete, CalHits* &ecalhits, int ievt, TBranch* &b_ecal, int index) {
-    CalVision::DualCrysCalorimeterHit* aecalhit =ecalhits->at(index);
+void calibrateEcalGendete(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, int ievt, TBranch* &b_ecal) {
 	  long long int ihitchan=aecalhit->cellID;
 	  int idet,ix,iy,islice,ilayer,wc,type;
     DecodeEcal(ihitchan,idet,ix,iy,islice,ilayer,wc,type );
@@ -109,7 +108,8 @@ void calibrateEcal(int ievt, int gendete, CalHits* &ecalhits, TBranch* &b_ecal){
       nbyteecal = b_ecal->GetEntry(ievt);
       if(ievt<SCECOUNT) std::cout<<std::endl<<" number of ecal hits is "<<ecalhits->size()<<std::endl;
       for (int i = 0; i < ecalhits->size(); i++) {
-        calibrateEcalGendete(gendete, ecalhits, ievt, b_ecal, i);
+        CalVision::DualCrysCalorimeterHit* aecalhit = ecalhits->at(i);
+        calibrateEcalGendete(gendete, aecalhit, ievt, b_ecal);
       }
       break;
     case 5: calibrateEcalGendeteFive(); break;

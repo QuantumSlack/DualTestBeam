@@ -31,7 +31,7 @@ void DecodeSampling(long long int ihitchan,int& idet, int& ix, int& iy, int& ila
   return;
 }
 
-void calibrateFiberHcalThreeAndFour(CalHits* &ahcalhit,int idet, int ifiber, int gendeth) {
+void calibrateFiberHcalThreeAndFour(CalVision::DualCrysCalorimeterHit* &ahcalhit, int idet, int ifiber, int gendeth) {
      if(idet==6) {
 	    if(ifiber==1) {
 	      meanscinHcal+=ahcalhit->energyDeposit;
@@ -57,7 +57,7 @@ void calibrateFiberHcalThreeAndFour(CalHits* &ahcalhit,int idet, int ifiber, int
   }
 }
 
-void calibrateFiberHcal(int gendeth, int ifiber, int idet, int iphdet, CalHits* &ahcalhit) {
+void calibrateFiberHcal(int gendeth, int ifiber, int idet, int iphdet, CalVision::DualCrysCalorimeterHit* &ahcalhit) {
     switch(gendeth) {
         case 1:
             if (ifiber == 1) { //scintillating fibers
@@ -81,7 +81,7 @@ void calibrateFiberHcal(int gendeth, int ifiber, int idet, int iphdet, CalHits* 
     }
 }
 
-void calibrateSamplingHcalGendethThreeAndFour(int idet, int islice, int gendeth, int ievt, CalHits* &ahcalhit) {
+void calibrateSamplingHcalGendethThreeAndFour(int idet, int islice, int gendeth, int ievt, CalVision::DualCrysCalorimeterHit* &ahcalhit) {
     Contributions zxzz=ahcalhit->truth;
     if(idet==6) {
 	    if( islice==(*mapsampcalslice.find("PS")).second) { // PS
@@ -105,7 +105,7 @@ void calibrateSamplingHcalGendethThreeAndFour(int idet, int islice, int gendeth,
 	  }
 }
 
-void calibrateSamplingHcal(int gendeth, int islice, int idet, CalHits* &ahcalhit, int ievt) {
+void calibrateSamplingHcal(int gendeth, int islice, int idet, CalVision::DualCrysCalorimeterHit* &ahcalhit, int ievt) {
     switch(gendeth) {
         case 1:
             if(islice==(*mapsampcalslice.find("PS")).second) {
@@ -126,7 +126,7 @@ void calibrateSamplingHcal(int gendeth, int islice, int idet, CalHits* &ahcalhit
     }
 }
 
-void calibrateHcalGendeth(int hcaltype, CalHits* &ahcalhit, int gendeth) {
+void calibrateHcalGendeth(int hcaltype, CalVision::DualCrysCalorimeterHit* &ahcalhit, int gendeth, int ievt) {
     switch(hcaltype) {
         case 0: //fiber Hcal
             int idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy;
@@ -150,7 +150,7 @@ void calibrateHcal(int ievt, int gendeth, CalHits* &hcalhits, TBranch* &b_hcal, 
     size_t hcal_size = hcalhits->size();
     for (size_t index = 0; index < hcal_size; index++) {
          CalVision::DualCrysCalorimeterHit* ahcalhit =hcalhits->at(index);
-         calibrateHcalGendeth(hcaltype, ahcalhit, gendeth);
+         calibrateHcalGendeth(hcaltype, ahcalhit, gendeth, ievt);
     }
 
 }
