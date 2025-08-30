@@ -4,8 +4,8 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 ### Defines the name of the project with version
 project(DualTestBeam VERSION 1.0)
 
-### Set the c++ -std flag to c++20
-set(CMAKE_CXX_STANDARD 20)
+### Set the c++ -std flag to c++17
+set(CMAKE_CXX_STANDARD 17)
 
 ### Find the source and header files
 

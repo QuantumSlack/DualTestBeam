@@ -31,7 +31,7 @@ void DecodeSampling(long long int ihitchan,int& idet, int& ix, int& iy, int& ila
   return;
 }
 
-void calibrateFiberHcalThreeAndFour(CalVision::DualCrysCalorimeterHit* &ahcalhit, int idet, int ifiber, int gendeth) {
+void calibrateFiberHcalGendethThreeAndFour(CalVision::DualCrysCalorimeterHit* &ahcalhit, int idet, int ifiber, int gendeth) {
      if(idet==6) {
 	    if(ifiber==1) {
 	      meanscinHcal+=ahcalhit->energyDeposit;

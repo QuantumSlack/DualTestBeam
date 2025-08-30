@@ -2,13 +2,8 @@
 #define HCALPROCESSING_H
 #include "timeFrames.h"
 #include "calibration.h"
-int nbytehcal;
-
-float meanscinHcal(0.),meancerHcal(0),egHcal(0.);
-float meanehcaltimecut(0),meanerelhcaltimecut(0);
-float meanSHcal(0.),meanCHcal(0.);
-typedef std::vector<CalVision::DualCrysCalorimeterHit*> CalHits;
-
+#include "globals.h"
+static int nbytehcal;
 
 void DecodeFiber (long long int ihitchan, int& idet, int& ilayer, int& itube, int& iair, int&itype, int& ifiber, int& iabs, int& iphdet, int& ihole, int& ix, int& iy);
 
@@ -24,7 +19,7 @@ void calibrateSamplingHcalGendethThreeAndFour(int idet, int islice, int gendeth,
 
 void calibrateHcalGendeth(int hcaltype, CalVision::DualCrysCalorimeterHit* &hcalhits);
 
-void calibrateHcal(int ievt, int gendeth, CalVision::DualCrysCalorimeterHit* &hcalhits, TBranch* &b_hcal, int hcaltype);
+void calibrateHcal(int ievt, int gendeth, CalHits* &hcalhits, TBranch* &b_hcal, int hcaltype);
 
 
 #endif 

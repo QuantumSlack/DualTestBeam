@@ -5,6 +5,7 @@
 #include <iostream>
 #include <algorithm>
 #include "timeFrames.h"
+#include "globals.h"
 
 /*Digis for ECAL */
 double int_charge(TH1F* out, double pre, double window);

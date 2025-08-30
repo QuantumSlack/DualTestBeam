@@ -6,8 +6,7 @@
 #include "timeFrames.h"
 #include "TBranch.h"
 #include "hcalProcessing.h"
-
-std::map<std::string, int> mapsampcalslice;
+#include "globals.h"
 
 void gatherDataEcal(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, int type, int idet);
 

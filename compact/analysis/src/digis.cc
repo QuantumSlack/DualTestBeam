@@ -162,7 +162,7 @@ double RGB_sipm_QE_y[29] = {0.034678173, 0.144499016, 0.271678829,
 
 
 // probability a photon ejects a photoelectron and gets through any wavelength filters
-double AFILTER_ECAL(int ifilter, double wavelength) {
+double AFILTER(int ifilter, double wavelength) {
   double passprob=1.;
   
   switch (ifilter) {
