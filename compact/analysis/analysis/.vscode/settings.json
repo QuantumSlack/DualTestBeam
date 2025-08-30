@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.ipynb": "python",
+        "*.s": "arm",
+        "*.tex": "latex",
+        "Resolution.C": "cpp"
+    }
+}
