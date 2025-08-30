@@ -1,0 +1,6 @@
+Executable = condor-executable-FSCEPonly-10_GeV-pi.sh
+Output = condor-executable-FSCEPonly-10-pi_sce_$(cluster)_$(process).stdout
+Error = condor-executable-FSCEPonly-10-pi_sce_$(cluster)_$(process).stderr
+Log = condor-executable-FSCEPonly-10-pi_sce_$(cluster)_$(process).condor
++JobFlavour = "tomorrow"
+Queue 

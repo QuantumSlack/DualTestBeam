@@ -1,0 +1,6 @@
+Executable = condor-executable-SampOnly2-20_GeV-e.sh
+Output = condor-executable-SampOnly2-20-e_sce_$(cluster)_$(process).stdout
+Error = condor-executable-SampOnly2-20-e_sce_$(cluster)_$(process).stderr
+Log = condor-executable-SampOnly2-20-e_sce_$(cluster)_$(process).condor
++JobFlavour = "tomorrow"
+Queue 
