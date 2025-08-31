@@ -55,4 +55,6 @@ extern TH1F* timeframe_elec_pd1_s[tfnx][tfny][tfndepth];
 extern TH1F* timeframe_elec_pd1_c[tfnx][tfny][tfndepth];
 extern TH1F* timeframe_elec_pd2_s[tfnx][tfny][tfndepth];
 extern TH1F* timeframe_elec_pd2_c[tfnx][tfny][tfndepth];
+extern float kappaEcal;
+extern float kappaHcal;
 #endif

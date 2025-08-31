@@ -23,7 +23,7 @@ void initTrueTimeFrames() {
 }
 
 
-void initElectronTimeFrames() {
+void initElectronicTimeFrames() {
     for (int i=0;i<tfnx;i++ ) {
     for (int j=0;j<tfny;j++ ) {
       for (int k=0;k<tfndepth;k++ ) {

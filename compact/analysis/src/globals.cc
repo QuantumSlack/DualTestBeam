@@ -46,3 +46,4 @@ TH1F* timeframe_elec_pd1_c[tfnx][tfny][tfndepth] = {nullptr};
 TH1F* timeframe_elec_pd2_s[tfnx][tfny][tfndepth] = {nullptr};
 TH1F* timeframe_elec_pd2_c[tfnx][tfny][tfndepth] = {nullptr};
 std::map<std::string, int> mapsampcalslice;
+float kappaEcal(1.),kappaHcal(1.);

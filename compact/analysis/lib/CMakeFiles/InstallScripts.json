@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/shiva/DD4hep/examples/DualTestBeam/compact/analysis/lib/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
