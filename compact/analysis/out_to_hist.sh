@@ -11,6 +11,9 @@ OUT_FILE_DIR="$CWD/output/$geometry"
 LOG_FILE_DIR="$CWD/output/$geometry"
 input_string="Resolution($number_particles,"\""$INPUT_FILE_DIR"/out_"$geometry"_"$energy"GeV_e-.root"\","\""$INPUT_FILE_DIR"/out_"$geometry"_"$energy"GeV_pi-.root"\","\""$INPUT_FILE_DIR"/out_"$geometry"_"$energy"GeV_e-.root"\","\""$INPUT_FILE_DIR"/out_"$geometry"_"$energy"GeV_pi-.root"\","$energy",0,1,$hcaltype,1,0,0,0,3,3,"\""$OUT_FILE_DIR"/hists_"$energy"GeV_"$geometry"_trial.root"\","\""$leaf1""\","\""$leaf2""\",0,0,0,0)"
 #echo $input_string
+if [ -f $(pwd)/runResolution.cpp ]:
+	rm -rf runResolution.cpp
+fi
 echo '
 #include "include/Resolution.h"
 	int main(){

@@ -7,8 +7,8 @@ void DecodeFiber(long long int ihitchan, int& idet, int& ilayer, int& itube, int
   //int iair=0; int itype=0;
   iair = (ihitchan >>32) & 0x7;
   itype = (ihitchan >>35) & 0x7;
-  ifiber=0; iabs=0; iphdet=0;  ihole=0;
-  ix=0; iy=0;
+  //ifiber=0; iabs=0; iphdet=0;  ihole=0;
+  //ix=0; iy=0;
   if((itype==0)&&(iair==0)&&(itube!=0)) iabs=1;
   if(itype==1) ifiber=1; // scint
   if(itype==2) ifiber=2; // quartz
@@ -18,6 +18,7 @@ void DecodeFiber(long long int ihitchan, int& idet, int& ilayer, int& itube, int
   if(itube==0) ihole=1;
   ix=itube;
   iy=ilayer;
+  //std::cout << "ifiber is " << ifiber << std::endl;
   return;
 }
 
@@ -35,10 +36,12 @@ void calibrateFiberHcalGendethThreeAndFour(CalVision::DualCrysCalorimeterHit* &a
      if(idet==6) {
 	    if(ifiber==1) {
 	      meanscinHcal+=ahcalhit->energyDeposit;
+	      //std::cout << "meanscinHcal = " << meanscinHcal << std::endl;
 	    }
 	    if(ifiber==2) {
 	      if(gendeth==3) meancerHcal+=ahcalhit->edeprelativistic;
 	      if(gendeth==4) meancerHcal+=ahcalhit->energyDeposit;
+	      //std::cout << "meancerHcal = " << meancerHcal << std::endl;
 	    }
 	    if((ifiber==1)||(ifiber==2)) {
         Contributions zxzz=ahcalhit->truth;
@@ -55,6 +58,7 @@ void calibrateFiberHcalGendethThreeAndFour(CalVision::DualCrysCalorimeterHit* &a
 	  }
     }
   }
+  
 }
 
 void calibrateFiberHcal(int gendeth, int ifiber, int idet, int iphdet, CalVision::DualCrysCalorimeterHit* &ahcalhit) {
@@ -62,8 +66,10 @@ void calibrateFiberHcal(int gendeth, int ifiber, int idet, int iphdet, CalVision
         case 1:
             if (ifiber == 1) { //scintillating fibers
                  meanscinHcal+=ahcalhit->nscintillator;
+                // std::cout << "meanscinHcal = " << meanscinHcal << std::endl;
             } else if (ifiber == 2) { //quartz fibers
                  meancerHcal+=ahcalhit->ncerenkov;
+                 //std::cout << "meancerHcal = " << meancerHcal << std::endl;
             } break;
         case 2: 
             if(iphdet==1) {  // take light that hits photodetectors
@@ -79,18 +85,23 @@ void calibrateFiberHcal(int gendeth, int ifiber, int idet, int iphdet, CalVision
             std::cout << "Wrong choice for gendeth" << std::endl;
             break;
     }
+   // std::cout << "final value of meanscinHcal = " << meanscinHcal << std::endl;
+    //std::cout << "final value of meancerHcal = " << meancerHcal << std::endl;
 }
 
 void calibrateSamplingHcalGendethThreeAndFour(int idet, int islice, int gendeth, int ievt, CalVision::DualCrysCalorimeterHit* &ahcalhit) {
+	std::cout << "In this function" << std::endl;
     Contributions zxzz=ahcalhit->truth;
     if(idet==6) {
 	    if( islice==(*mapsampcalslice.find("PS")).second) { // PS
 	      meanscinHcal+=ahcalhit->energyDeposit;
+	     // std::cout << "meanscinHcal sampling:- " << meanscinHcal << std::endl;
 	      if(ievt<SCECOUNT) std::cout<<" meanscinHcal "<<meanscinHcal<<std::endl;
 	    }
 	    if( islice==(*mapsampcalslice.find("Quartz")).second ) {  // quartz
 	      if(gendeth==3) meancerHcal+=ahcalhit->edeprelativistic;
 	      if(gendeth==4) meancerHcal+=ahcalhit->energyDeposit;
+	      //std::cout << "meancerHcal sampling:- " << meancerHcal << std::endl;
 	      if(ievt<SCECOUNT) std::cout<<" meancerHcal "<<meancerHcal<<std::endl;
 	    }
 	    if(( islice==(*mapsampcalslice.find("PS")).second)||( islice==(*mapsampcalslice.find("Quartz")).second)) {
@@ -103,6 +114,8 @@ void calibrateSamplingHcalGendethThreeAndFour(int idet, int islice, int gendeth,
 	      }
 	    }
 	  }
+//std::cout << "The final value of meanscinHcal is :- " << meanscinHcal << std::endl;
+//std::cout << "The final value of meancerHcal is:-" << meancerHcal << std::endl;
 }
 
 void calibrateSamplingHcal(int gendeth, int islice, int idet, CalVision::DualCrysCalorimeterHit* &ahcalhit, int ievt) {
@@ -127,18 +140,21 @@ void calibrateSamplingHcal(int gendeth, int islice, int idet, CalVision::DualCry
 }
 
 void calibrateHcalGendeth(int hcaltype, CalVision::DualCrysCalorimeterHit* &ahcalhit, int gendeth, int ievt) {
+	int idet=0, ix=0, iy=0, ilayer=0;
     switch(hcaltype) {
-        int idet, ix, iy, ilayer;
 	case 0: //fiber Hcal
-            int itube,iair,itype,ifiber,iabs,iphdet,ihole;
+            {
+            int itube=0,iair=0,itype=0,ifiber=0,iabs=0,iphdet=0,ihole=0;
             DecodeFiber(ahcalhit->cellID,idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy);
             calibrateFiberHcal(gendeth, ifiber, idet, iphdet, ahcalhit);
 	    break;
+	    }
         case 1: //sampling Hcal
-            int ibox2,islice;
+       	    { int ibox2=0,islice=0;
 	    DecodeSampling(ahcalhit->cellID,idet,ix,iy,ilayer,ibox2,islice);
             calibrateSamplingHcal(gendeth, islice, idet, ahcalhit, ievt);
 	    break;
+	    }
 	default: 
 	    std::cout << "Wrong type of HCAL" << std::endl;
     }

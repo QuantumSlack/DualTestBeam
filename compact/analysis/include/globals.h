@@ -3,6 +3,7 @@
 #include "../../../include/DualCrysCalorimeterHit.h"
 #include <vector>
 #include "TH1.h"
+#include "/home/atlas/DD4hep/install/include/DDG4/Geant4Particle.h"
 const int tfnx=25;
 const int tfny=25;
 const int tfndepth=2;
@@ -22,7 +23,7 @@ extern int ihitcounts;
 extern int ihitcountc;
 extern float meanscinHcal,meancerHcal;
 extern float meanSHcal,meanCHcal;
-extern float meanscinEcal,meancerEcal,egEcal;
+extern float meanscinEcal,meancerEcal,egEcal, egHcal;
 extern float meaneecaltimecut,meanerelecaltimecut;
 extern float meanSEcal,meanCEcal;
 extern float eesum,eesumcal,eesumem,eesumair,eesumdead,eesumcrystal,eesumPDe,eesumfiber1,eesumfiber2,eesumabs,eesumPDh,eesumedge,eesumedgerel,necertotecal,nescinttotecal,necertothcal,nescinttothcal,eecaltimecut,ehcaltimecut,erelecaltimecut,erelhcaltimecut,eesumairem,eesumdeadem,eesumcrystalem,eesumPDeem,eesumfiber1em,eesumfiber2em,eesumabsem,eesumPDhem;
@@ -30,6 +31,7 @@ extern float meanehcaltimecut,meanerelhcaltimecut;
 typedef std::vector<CalVision::DualCrysCalorimeterHit*> CalHits;
 typedef std::vector<dd4hep::sim::Geant4HitData::MonteCarloContrib> Contributions;
 typedef std::vector<CalVision::DualCrysCalorimeterHit*> CalHits;
+typedef std::vector<dd4hep::sim::Geant4Particle*> GenParts;
 extern std::map<std::string, int> mapsampcalslice;
 extern std::string aname_pd1_s[tfnx][tfny][tfndepth];
 extern std::string aname_pd1_c[tfnx][tfny][tfndepth];
