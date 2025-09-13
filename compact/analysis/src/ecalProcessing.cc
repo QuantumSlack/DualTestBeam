@@ -119,3 +119,113 @@ void calibrateEcal(int ievt, int gendete, CalHits* &ecalhits, TBranch* &b_ecal){
       
   }
 }
+
+void calibrateEcalgetStuffGendeteThreeAndFour(int ae, CalVision::DualCrysCalorimeterHit* &aecalhit, int idet, int type, int gendete, float &nescinttotecal, float &necertotecal) {
+  if (idet == 5){
+    if (type == 2) {
+	    nescinttotecal+=aecalhit->energyDeposit;
+      if(gendete==3) necertotecal+=aecalhit->edeprelativistic;
+	    if(gendete==4) necertotecal+=aecalhit->energyDeposit;
+	    Contributions zxzz=aecalhit->truth;
+	    float hacheck=0.;
+      for(size_t j=0;j<zxzz.size(); j++) {
+	      hacheck+=(zxzz.at(j)).deposit;
+	      if((zxzz.at(j)).time<timecut) {
+		        eecaltimecut+=(zxzz.at(j)).deposit;
+		    if(((aecalhit->contribBeta)[j])>betacut) erelecaltimecut+=(zxzz.at(j)).deposit;
+	        }
+	      //if(fillhists) eecaltime->Fill((zxzz.at(j)).time);
+	    }
+      if(ae>0.001) {
+	      if(hacheck/ae<0.999) {
+		  
+		if(icount777<SCECOUNT3) std::cout<<"missing contribs: ecal check contributions Ncontrib is "<<zxzz.size()<<" hackec is  "<<hacheck<<" ae is "<<ae<<" ratio "<<hacheck/ae<<std::endl;
+		icount777+=1;
+	      }
+    }
+  }
+}
+}
+
+void calibrateEcalgetStuffGendeteFive(float &nescinttotecal, float &necertotecal) {
+  for (int i=0;i<tfnx;i++ ) {
+	  for (int j=0;j<tfny;j++ ) {
+	    for (int k=0;k<tfndepth;k++ ) {
+	      nescinttotecal+=timeframe_true_pd1_s[i][j][k]->Integral();
+	      necertotecal+=timeframe_true_pd1_c[i][j][k]->Integral();
+	      nescinttotecal+=timeframe_true_pd2_s[i][j][k]->Integral();
+	      necertotecal+=timeframe_true_pd2_c[i][j][k]->Integral();
+	    }
+	  }
+	}
+}
+
+void calibrateEcalgetStuffGendeteSix(float &nescinttotecal, float &necertotecal) {
+  for (int i=0;i<tfnx;i++ ) {
+	  for (int j=0;j<tfny;j++ ) {
+	    for (int k=0;k<tfndepth;k++ ) {
+	      nescinttotecal+=int_charge(timeframe_elec_pd1_s[i][j][k],10.,100.);
+	      necertotecal+=int_charge(timeframe_elec_pd1_c[i][j][k],10.,100.);
+	      nescinttotecal+=int_charge(timeframe_elec_pd2_s[i][j][k],10.,100.);
+	      necertotecal+=int_charge(timeframe_elec_pd2_c[i][j][k],10.,100.);
+	    }
+	  }
+	}
+}
+
+void calibrateEcalgetStuffGendete(CalVision::DualCrysCalorimeterHit* &aecalhit, int gendete, float &necertotecal, float &nescinttotecal, float &eecaltimecut, float &erelecaltimecut) {
+      long long int ihitchan=aecalhit->cellID;
+      int idet,ix,iy,islice,ilayer,wc,type;
+      DecodeEcal(ihitchan,idet,ix,iy,islice,ilayer,wc,type);
+      if((ilayer!=0)&&(ilayer!=1)) std::cout<<"danger danger will robinson ilayer not zero"<<std::endl;
+      float ae=aecalhit->energyDeposit;
+      nine+=aecalhit->n_inelastic;
+      if(type==3) {eesumair+=ae;eesumcal+=aecalhit->energyDeposit;eesumem+=aecalhit->edeprelativistic;eesumairem+=aecalhit->edeprelativistic;};
+      if(type==1) {eesumPDe+=ae;eesumcal+=aecalhit->energyDeposit;eesumem+=aecalhit->edeprelativistic;eesumPDeem+=aecalhit->edeprelativistic;};
+      if(type==2) {eesumcrystal+=ae;eesumcal+=aecalhit->energyDeposit;eesumem+=aecalhit->edeprelativistic;eesumcrystalem+=aecalhit->edeprelativistic;};
+      if(type==0||type==4) {eesumdead+=ae;eesumcal+=aecalhit->energyDeposit;eesumem+=aecalhit->edeprelativistic;eesumdeadem+=aecalhit->edeprelativistic;};
+      switch(gendete) {
+        case 1: {
+          if(type==2) {  // crystal
+	          necertotecal+=aecalhit->ncerenkov;
+	          nescinttotecal+=aecalhit->nscintillator;
+	        } break;
+        }
+        case 2: {
+          if( type==1 ) { // either photo detector
+	          necertotecal+=aecalhit->ncerenkov;
+	          nescinttotecal+=aecalhit->nscintillator;
+	        }
+          break;
+        }
+        case 3:
+        case 4:
+          calibrateEcalgetStuffGendeteThreeAndFour(ae, aecalhit,idet, type, gendete, nescinttotecal, necertotecal);
+          break;
+        case 5:
+          nescinttotecal=0;
+          necertotecal=0;
+          calibrateEcalgetStuffGendeteFive(nescinttotecal, necertotecal);
+          break;
+        case 6:
+          nescinttotecal=0;
+          necertotecal=0;
+          calibrateEcalgetStuffGendeteSix(nescinttotecal, necertotecal);
+          break;
+        default:
+        	std::cout<<"invalid choice gendete "<<gendete<<std::endl;
+          break;
+      }
+}
+
+void calibrateEcalgetStuff(int ievt, int gendete, TBranch* &b_ecal, CalHits* &ecalhits, float &necertotecal, float &nescinttotecal, float &eecaltimecut, float &erelecaltimecut) {
+  nbyteecal = b_ecal->GetEntry(ievt);
+      // ecal hits
+    if(ievt<SCECOUNT) std::cout<<std::endl<<" number of ecal hits is "<<ecalhits->size()<<std::endl;
+    eecaltimecut=0.;
+    erelecaltimecut=0.;
+    for(size_t index=0;index<ecalhits->size(); ++index) {
+      CalVision::DualCrysCalorimeterHit* aecalhit =ecalhits->at(index);
+      calibrateEcalgetStuffGendete(aecalhit, gendete, necertotecal, nescinttotecal, eecaltimecut, erelecaltimecut);
+    }
+}
