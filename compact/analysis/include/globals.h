@@ -62,4 +62,5 @@ extern TH1F* timeframe_elec_pd2_c[tfnx][tfny][tfndepth];
 extern float kappaEcal;
 extern float kappaHcal;
 extern  float ContainedFrac;
+void resetglobalsgetStuff();
 #endif
