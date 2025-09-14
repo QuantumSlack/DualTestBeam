@@ -283,23 +283,21 @@ void calibrateHcalgetStuffSamplingAfterForLoop(int ah, int aarel, int islice, fl
 }
 
 void calibrateHcalgetStuffGendeth(CalVision::DualCrysCalorimeterHit* &ahcalhit, int gendeth, int hcaltype, float &nescinttothcal, float &necertothcal, float &ehcaltimecute, float &erelhcaltimecut) {
+  float ah = ahcalhit->energyDeposit;
   ninh+=ahcalhit->n_inelastic;
+  float aarel = ahcalhit->edeprelativistic;
+  eesum+=ah;
   eesumcal+=ahcalhit->energyDeposit;
-  eesumem+=ahcalhit->edeprelativistic;
+  //eesumem+=ahcalhit->edeprelativistic;
   long long int ihitchan=ahcalhit->cellID;
   switch(hcaltype) {
     case 0: { // fiber
-        float ah = ahcalhit->energyDeposit;
-        float aarel = ahcalhit->edeprelativistic;
-        eesum+=ah;
+        
       	int idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy;
 	      DecodeFiber(ihitchan,idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy);
         calibrateHcalgetStuffFiber(ah, ahcalhit, gendeth, idet, ifiber, iphdet, nescinttothcal, necertothcal, ehcaltimecut, erelhcaltimecut);
     }
    case 1: { // sampling
-        float aarel = ahcalhit->edeprelativistic;
-        float ah = ahcalhit->energyDeposit;
-        eesum+=ah;
 	      int idet,ix,iy,ilayer,ibox2,islice;
 	      DecodeSampling(ihitchan,idet,ix,iy,ilayer,ibox2,islice);
         calibrateHcalgetStuffSampling(ah, ahcalhit, gendeth, islice, idet, nescinttothcal, necertothcal, ehcaltimecut, erelhcaltimecut);

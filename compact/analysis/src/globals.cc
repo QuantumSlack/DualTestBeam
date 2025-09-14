@@ -50,3 +50,40 @@ TH1F* timeframe_elec_pd2_c[tfnx][tfny][tfndepth] = {nullptr};
 std::map<std::string, int> mapsampcalslice;
 float kappaEcal(1.),kappaHcal(1.);
 float ContainedFrac(1.);
+void resetglobalsgetStuff() {
+       eesum = 0;
+    eesumcal = 0;
+    eesumem = 0;
+    eesumair = 0;
+    eesumdead = 0;
+    eesumcrystal = 0;
+    eesumPDe = 0;
+    eesumfiber1 = 0;
+    eesumfiber2 = 0;
+    eesumabs = 0;
+    eesumPDh = 0;
+
+    eesumairem = 0;
+    eesumdeadem = 0;
+    eesumcrystalem = 0;
+    eesumPDeem = 0;
+    eesumfiber1em = 0;
+    eesumfiber2em = 0;
+    eesumabsem = 0;
+    eesumPDhem = 0;
+
+    eesumedge = 0;
+    eesumedgerel = 0;
+    necertotecal = 0;
+    nescinttotecal = 0;
+    necertothcal = 0;
+    nescinttothcal = 0;
+
+    eecaltimecut = 0;
+    ehcaltimecut = 0;
+    erelecaltimecut = 0;
+    erelhcaltimecut = 0;
+
+    nine = 0;
+    ninh = 0;
+}

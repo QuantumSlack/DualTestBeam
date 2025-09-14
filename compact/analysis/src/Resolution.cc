@@ -392,7 +392,7 @@ void Resolution(int num_evtsmax, const char* einputfilename, const char* piinput
       
       // float eesum(0.),eesumcal(0.),eesumem(0.),eesumair(0.),eesumdead(0.),eesumcrystal(0.),eesumPDe(0.),eesumfiber1(0.),eesumfiber2(0.),eesumabs(0.),eesumPDh(0.),eesumedge(0.),eesumedgerel(0.),necertotecal(0.),nescinttotecal(0.),necertothcal(0.),nescinttothcal(0.),eecaltimecut(0.),ehcaltimecut(0.),erelecaltimecut(0.),erelhcaltimecut(0.),eesumairem(0.),eesumdeadem(0.),eesumcrystalem(0.),eesumPDeem(0.),eesumfiber1em(0.),eesumfiber2em(0.),eesumabsem(0.),eesumPDhem(0.);
       // int nine(0),ninh(0);
-
+      resetglobalsgetStuff();
       fillfill=1;
       getStuff(mapsampcalslice,  gendete, gendeth, ievt, doecal, dohcal, hcaltype, doedge, b_ecal,b_hcal,b_edge,ecalhits,hcalhits,edgehits, timecut,fillfill,eesum,eesumcal,eesumem,eesumair,eesumdead,eesumcrystal,eesumPDe,eesumfiber1,eesumfiber2,eesumabs,eesumPDh,eesumairem,eesumdeadem,eesumcrystalem,eesumPDeem,eesumfiber1em,eesumfiber2em,eesumabsem,eesumPDhem,eesumedge,eesumedgerel,necertotecal,nescinttotecal,necertothcal,nescinttothcal,eecaltimecut, ehcaltimecut,erelecaltimecut,erelhcaltimecut,nine,ninh);
       //      std::cout<<"starting filltime "<<std::endl;
