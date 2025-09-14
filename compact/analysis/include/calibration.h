@@ -8,7 +8,7 @@
 #include "hcalProcessing.h"
 #include "globals.h"
 
-void gatherDataEcal(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, int type, int idet);
+void gatherDataEcal(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, int type, int idet, float &meanscinEcal, float &meancerEcal);
 
 
 #endif 

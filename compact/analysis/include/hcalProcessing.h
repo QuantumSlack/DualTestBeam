@@ -32,6 +32,14 @@ void calibrateHcalgetStuffFiber(int ah, CalVision::DualCrysCalorimeterHit* &ahca
 
 void calibrateHcalgetStuffGendeth(int ah, CalVision::DualCrysCalorimeterHit* &ahcalhit, int gendeth, int hcaltype, float &nescinttothcal, float &necertothcal, float &ehcaltimecute, float &erelhcaltimecut);
 
-void calibrateHcalgetStuff(int ievt, TBranch* &b_hcal, float &nescinttothcal, float &necertothcal, float &ehcaltimecut, float &erelhcaltimecut, CalHits* &hcalhits, int gendeth, int hcaltype);
+void calibrateHcalgetStuff(int ievt, TBranch* &b_hcal, float &nescinttothcal, float &necertothcal, float &ehcaltimecut, float &erelhcaltimecut, CalHits* &ecalhits, int gendeth, int hcaltype);
+
+void calibrateHcalFillTime(int ievt, int nbytehcal, int gendeth, TBranch* &b_hcal, CalHits* &hcalhits, int hcaltype, TH1F* &hcalpd1scint, TH1F* &hcalpd1cer, TH1F* &hcalpd2scint, TH1F* &hcalpd2cer, TH1F* &ehcaltime);
+
+void calibrateHcalFillTimeFiber(CalVision::DualCrysCalorimeterHit* &ahcalhit, int iphdet, int idet, int ifiber, TH1F* &hcalpd1scint, TH1F* &hcalpd1cer, TH1F* &hcalpd2scint, TH1F* &hcalpd2cer, TH1F* &ehcaltime, int gendeth);
+
+void calibrateHcalFillTimeSampling(int islice, int gendeth, CalVision::DualCrysCalorimeterHit* ahcalhit, TH1F* &ehcaltime);
+
+void calibrateHcalFillTimeGendeth(int gendeth, int hcaltype, CalVision::DualCrysCalorimeterHit* &ahcalhit, TH1F* &hcalpd1scint, TH1F* &hcalpd1cer, TH1F* &hcalpd2scint, TH1F* &hcalpd2cer, TH1F* &ehcaltime);
 
 #endif 
