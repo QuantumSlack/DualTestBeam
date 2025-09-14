@@ -1860,19 +1860,13 @@ void getMeanPhot(map<string, int> mapsampcalslice, int gendete, int gendeth, int
 	      CalHits* &ecalhits, CalHits* &hcalhits,
 		 float &meanscinEcal, float &meanscinHcal, float &meancerEcal, float &meancerHcal,float &timecut, float &eecaltimecut, float &ehcaltimecut, float &erelecaltimecut, float &erelhcaltimecut){
   int nbyteecal, nbytehcal, nbyteedge;
-
-
-    if(ievt<SCECOUNT) std::cout<<"getMean phot ievt is "<<ievt<<std::endl;
-
+  if(ievt<SCECOUNT) std::cout<<"getMean phot ievt is "<<ievt<<std::endl;
   if(doecal) {
-    calibrateEcal(ievt, gendete, ecalhits, b_ecal);
+    calibrateEcal(ievt, gendete, ecalhits, b_ecal, meanscinEcal, meancerEcal);
   }
-
   if(dohcal) {
   calibrateHcal(ievt, gendeth, hcalhits, b_hcal, hcaltype, meanscinHcal, meancerHcal, ehcaltimecut, erelhcaltimecut);
   }
-
-
 }
 
 
@@ -1889,13 +1883,6 @@ void getStuff(map<string, int> mapsampcalslice, int gendete, int gendeth, int ie
 
   if(ievt<SCECOUNT) std::cout<<"getstuff phot ievt is "<<ievt<<std::endl;
 
-  /*
-  std::cout<<"entering getStuff"<<std::endl;
-      std::cout<<"eesum now "<<eesum<<std::endl;
-      std::cout<<"ehcaltimecut is "<<ehcaltimecut<<std::endl;
-      std::cout<<eesumfiber1<<" "<<eesumfiber2<<" "<<eesumabs<<std::endl;
-  */
-
   if(doecal) {
   calibrateEcalgetStuff(ievt, gendete, b_ecal, ecalhits, necertotecal, nescinttotecal, eecaltimecut, erelecaltimecut);
   }
@@ -1905,6 +1892,7 @@ void getStuff(map<string, int> mapsampcalslice, int gendete, int gendeth, int ie
   }
 
   if(doedge) {
+    int nbyteedge;
     nbyteedge = b_edge->GetEntry(ievt);
     if(ievt<SCECOUNT) std::cout<<std::endl<<" number of edge hits is "<<edgehits->size()<<std::endl;
     for(size_t i=0;i<edgehits->size(); ++i) {
@@ -1913,215 +1901,26 @@ void getStuff(map<string, int> mapsampcalslice, int gendete, int gendeth, int ie
       eesum+=ae;
       eesumedge+=ae;
       eesumedgerel=aedgehit->edepepgam;
-
     }  // end loop over escaping hits
   }
-
-
-
 }
 
 
 void FillTime(map<string, int> mapsampcalslice, int gendete, int gendeth, int ievt, bool doecal, bool dohcal, int hcaltype, bool doedge,TBranch* &b_ecal,TBranch* &b_hcal,TBranch*  &b_edge,CalHits* &ecalhits, CalHits* &hcalhits, CalHits* &edgehits, float &timecut,TH1F* eecaltime, TH1F* ehcaltime,TH1F *ecalpd1scint,TH1F *ecalpd1cer,TH1F *ecalpd2scint,TH1F *ecalpd2cer,TH1F *hcalpd1scint,TH1F *hcalpd1cer,TH1F *hcalpd2scint,TH1F *hcalpd2cer){
 
   if(ievt<SCECOUNT) std::cout<<"fillfill ievt is "<<ievt<<std::endl;
-  int nbyteecal, nbytehcal, nbyteedge;
-
+  int nbyteedge;
 
   if(doecal) {
-
-
-    nbyteecal = b_ecal->GetEntry(ievt);
-      // ecal hits
-    if(ievt<SCECOUNT) std::cout<<std::endl<<" number of ecal hits is "<<ecalhits->size()<<std::endl;
-    for(size_t i=0;i<ecalhits->size(); ++i) {
-      CalVision::DualCrysCalorimeterHit* aecalhit =ecalhits->at(i);
-      long long int ihitchan=aecalhit->cellID;
-      int idet,ix,iy,islice,ilayer,wc,type;
-      DecodeEcal(ihitchan,idet,ix,iy,islice,ilayer,wc,type );
-      float ae=aecalhit->energyDeposit;
-      if((ilayer==0)&&(islice==1)) {  // pd on entrance to ecal
-	/*
-	for(int ijk=0;ijk<finenbin;ijk++){
-	  ecalpd1scint->Fill((ijk+0.5)*timebinsize,aecalhit->nscinttime[ijk]);
-	  ecalpd1cer->Fill((ijk+0.5)*timebinsize,aecalhit->ncertime[ijk]);
-	  ecalpd1scintz->Fill((ijk+0.5)*timebinsizez,aecalhit->nscinttimez[ijk]);
-	  ecalpd1cerz->Fill((ijk+0.5)*timebinsizez,aecalhit->ncertimez[ijk]);
-	}
-	*/
-	int iii=(aecalhit->HitScin).size();
-	//std::cout<<" ScinTime pd1 size is "<<iii<<std::endl;
-	for(int jjj=0;jjj<iii;jjj++) {
-	  //std::cout<<"    ScinTime["<<jjj<<"] is "<<(aecalhit->ScinTime)[jjj]<<std::endl;
-	  if(aar.Rndm()<AFILTER(1,(aecalhit->HitScin)[jjj].second)) ecalpd1scint->Fill((aecalhit->HitScin)[jjj].first);
-	  if(ihitcounts<SCECOUNTHITHIT) {
-	    std::cout<<" scin hit time wavelength is "<<(aecalhit->HitScin)[jjj].first<<" "<<(aecalhit->HitScin)[jjj].second<<std::endl;
-	    ihitcounts+=1;
-	  }
-	}
-	iii=(aecalhit->HitCer).size();
-	//std::cout<<" CerTime pd1 size is "<<iii<<std::endl;
-	for(int jjj=0;jjj<iii;jjj++) {
-	  if(aar.Rndm()<AFILTER(2,(aecalhit->HitCer)[jjj].second)) ecalpd1cer->Fill((aecalhit->HitCer)[jjj].first);
-	  if(ihitcountc<SCECOUNTHITHIT) {
-	    std::cout<<" cer hit time wavelength is "<<(aecalhit->HitCer)[jjj].first<<" "<<(aecalhit->HitCer)[jjj].second<<std::endl;
-	    ihitcountc+=1;
-	  }
-	}
-      }
-      if((ilayer==1)&&(islice==4)) {  // pd on exist of ecal
-	/*
-	for(int ijk=0;ijk<finenbin;ijk++){
-	  ecalpd2scint->Fill((ijk+0.5)*timebinsize,aecalhit->nscinttime[ijk]);
-	  ecalpd2cer->Fill((ijk+0.5)*timebinsize,aecalhit->ncertime[ijk]);
-	  ecalpd2scintz->Fill((ijk+0.5)*timebinsizez,aecalhit->nscinttimez[ijk]);
-	  ecalpd2cerz->Fill((ijk+0.5)*timebinsizez,aecalhit->ncertimez[ijk]);
-	}
-	*/
-	int iii=(aecalhit->HitScin).size();
-	//std::cout<<" ScinTime size pd2 is "<<iii<<std::endl;
-	for(int jjj=0;jjj<iii;jjj++) {
-	  //std::cout<<"    ScinTime["<<jjj<<"] is "<<(aecalhit->ScinTime)[jjj]<<std::endl;
-	  if(aar.Rndm()<AFILTER(3,(aecalhit->HitScin)[jjj].second)) ecalpd2scint->Fill((aecalhit->HitScin)[jjj].first);
-	}
-	iii=(aecalhit->HitCer).size();
-	//std::cout<<" CerTime size pd2 is "<<iii<<std::endl;
-	for(int jjj=0;jjj<iii;jjj++) {
-	  if(aar.Rndm()<AFILTER(4,(aecalhit->HitCer)[jjj].second)) ecalpd2cer->Fill((aecalhit->HitCer)[jjj].first);
-	}
-
-      }
-      if(gendete==3||gendete==4){
-	if(idet==5) {
-	  if( type==2 ) {  // crystal
-	    Contributions zxzz=aecalhit->truth;
-	    for(size_t j=0;j<zxzz.size(); j++) {
-	      eecaltime->Fill((zxzz.at(j)).time);
-	    }
-	  }
-	}
-      }
-
-
-    }  // end loop over ecal hits
+    int nbyteecal;
+    calibrateEcalFilltime(ievt, nbyteecal, gendete, b_ecal, ecalhits, necertotecal, nescinttotecal, eecaltimecut, erelecaltimecut, ecalpd1scint, ecalpd1cer, eecaltime);
   }  //end doecal
 
   if(dohcal) {
-    nbytehcal = b_hcal->GetEntry(ievt);
-      // hcal hits
-    if(ievt<SCECOUNT) std::cout<<std::endl<<" number of hcal hits is "<<hcalhits->size()<<std::endl;
-    for(size_t i=0;i<hcalhits->size(); ++i) {
-      //std::cout<<"fillfill hit "<<i<<std::endl;
-      CalVision::DualCrysCalorimeterHit* ahcalhit =hcalhits->at(i);
-      float ah=ahcalhit->energyDeposit;
-      float aarel = ahcalhit->edeprelativistic;
-      long long int ihitchan=ahcalhit->cellID;
-      if(hcaltype==0) { // fiber
-	int idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy;
-	DecodeFiber(ihitchan,idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy);
-	
-	if(iphdet==1) {  // pd on scintillating fibers
-	  /*
-	  for(int ijk=0;ijk<finenbin;ijk++){
-	    hcalpd1scint->Fill((ijk+0.5)*timebinsize,ahcalhit->nscinttime[ijk]);
-	    hcalpd1cer->Fill((ijk+0.5)*timebinsize,ahcalhit->ncertime[ijk]);
-	    hcalpd1scintz->Fill((ijk+0.5)*timebinsizez,ahcalhit->nscinttimez[ijk]);
-	    hcalpd1cerz->Fill((ijk+0.5)*timebinsizez,ahcalhit->ncertimez[ijk]);
-	  }
-	  */
-	  int iii=(ahcalhit->HitScin).size();
-	  std::cout<<"pd1 ScinTime size pd1 is "<<iii<<std::endl;
-	  for(int jjj=0;jjj<iii;jjj++) {
-	    //std::cout<<"    ScinTime["<<jjj<<"] is "<<(ahcalhit->ScinTime)[jjj]<<std::endl;
-	    if(aar.Rndm()<AFILTER(0,(ahcalhit->HitScin)[jjj].second)) hcalpd1scint->Fill((ahcalhit->HitScin)[jjj].first);
-	  }
-	  iii=(ahcalhit->HitCer).size();
-	  std::cout<<"pd1 CerTime size pd1 is "<<iii<<std::endl;
-	  for(int jjj=0;jjj<iii;jjj++) {
-	    std::cout<<" hit first is "<<(ahcalhit->HitCer)[jjj].first<<std::endl;
-	    std::cout<<" hit second is "<<(ahcalhit->HitCer)[jjj].second<<std::endl;
-	    //hcalpd1cer->Fill((ahcalhit->HitCer)[jjj].first);
-	      std::cout<<"filled histogram"<<std::endl;
-	    if(aar.Rndm()<AFILTER(0,(ahcalhit->HitCer)[jjj].second)) hcalpd1cer->Fill((ahcalhit->HitCer)[jjj].first);
-	    	      std::cout<<"filled histogram 2"<<std::endl;
-	  }
-
-	}
-	if(iphdet==2) {  // pd on cherenkov fibers
-	  /*
-	  for(int ijk=0;ijk<finenbin;ijk++){
-	    hcalpd2scint->Fill((ijk+0.5)*timebinsize,ahcalhit->nscinttime[ijk]);
-	    hcalpd2cer->Fill((ijk+0.5)*timebinsize,ahcalhit->ncertime[ijk]);
-	    hcalpd2scintz->Fill((ijk+0.5)*timebinsizez,ahcalhit->nscinttimez[ijk]);
-	    hcalpd2cerz->Fill((ijk+0.5)*timebinsizez,ahcalhit->ncertimez[ijk]);
-	  }
-	  */
-
-	  int iii=(ahcalhit->HitScin).size();
-	  std::cout<<"pd2 ScinTime size pd2 is "<<iii<<std::endl;
-	  for(int jjj=0;jjj<iii;jjj++) {
-	    //std::cout<<"    ScinTime["<<jjj<<"] is "<<(ahcalhit->ScinTime)[jjj]<<std::endl;
-	    if(aar.Rndm()<AFILTER(0,(ahcalhit->HitScin)[jjj].second)) hcalpd2scint->Fill((ahcalhit->HitScin)[jjj].first);
-	  }
-	  iii=(ahcalhit->HitCer).size();
-	  std::cout<<"pd2 CerTime size pd2 is "<<iii<<std::endl;
-	  for(int jjj=0;jjj<iii;jjj++) {
-	    //hcalpd2cer->Fill((ahcalhit->HitCer)[jjj].first);
-	    if(aar.Rndm()<AFILTER(0,(ahcalhit->HitCer)[jjj].second)) hcalpd2cer->Fill((ahcalhit->HitCer)[jjj].first);
-	  }
-
-	}
-	if(gendeth==3||gendeth==4) {
-	  if(idet==6) {
-	    if((ifiber==1)||(ifiber==2) ) {
-      // check contribs
-	      Contributions zxzz=ahcalhit->truth;
-	      for(size_t j=0;j<zxzz.size(); j++) {
-		ehcaltime->Fill((zxzz.at(j)).time);
-	      }
-	    }
-	  }
-	}
-
-      }  //end hcaltype==0
-      else {  // sampling
-	int idet,ix,iy,ilayer,ibox2,islice;
-	DecodeSampling(ihitchan,idet,ix,iy,ilayer,ibox2,islice);
-	if( (islice==(*mapsampcalslice.find("PD1")).second)||(islice==(*mapsampcalslice.find("PD2")).second)) {  // pd on scint?
-	  /*
-	  for(int ijk=0;ijk<finenbin;ijk++){
-	    hcalpd1scint->Fill((ijk+0.5)*timebinsize,ahcalhit->nscinttime[ijk]);
-	    hcalpd1cer->Fill((ijk+0.5)*timebinsize,ahcalhit->ncertime[ijk]);
-	    hcalpd1scintz->Fill((ijk+0.5)*timebinsizez,ahcalhit->nscinttimez[ijk]);
-	    hcalpd1cerz->Fill((ijk+0.5)*timebinsizez,ahcalhit->ncertimez[ijk]);
-	  }
-	  */
-	}
-	if( (islice==(*mapsampcalslice.find("PD3")).second)||(islice==(*mapsampcalslice.find("PD4")).second)) {  // pd on quartz?
-	  /*
-	  for(int ijk=0;ijk<finenbin;ijk++){
-	    hcalpd2scint->Fill((ijk+0.5)*timebinsize,ahcalhit->nscinttime[ijk]);
-	    hcalpd2cer->Fill((ijk+0.5)*timebinsize,ahcalhit->ncertime[ijk]);
-	    hcalpd2scintz->Fill((ijk+0.5)*timebinsizez,ahcalhit->nscinttimez[ijk]);
-	    hcalpd2cerz->Fill((ijk+0.5)*timebinsizez,ahcalhit->ncertimez[ijk]);
-	  }
-	  */
-	}
-	if(gendeth==3||gendeth==4) {
-	  if((islice==(*mapsampcalslice.find("PS")).second)||(islice==(*mapsampcalslice.find("Quartz")).second) ){
-      // check contribs
-	    Contributions zxzz=ahcalhit->truth;
-	    for(size_t j=0;j<zxzz.size(); j++) {
-	      ehcaltime->Fill((zxzz.at(j)).time);
-	    }
-	  }
-	}
-      }  // end sampling
-
-    }  // end loop over hcal hits
-    std::cout<<" done with fillfill loop"<<std::endl;
+    int nbytehcal;
+    calibrateHcalFillTime(ievt, nbytehcal, gendeth, b_hcal, hcalhits, hcaltype, hcalpd1scint, hcalpd1cer, hcalpd2scint, hcalpd2cer, ehcaltime);
   }  //end dohcal
-
+      std::cout<<" done with fillfill loop"<<std::endl;
   return;
 
 }

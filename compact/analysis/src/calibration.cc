@@ -2,7 +2,7 @@
 #include "../include/ecalProcessing.h"
 
 
-void gatherDataEcal(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, int type, int idet) {
+void gatherDataEcal(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, int type, int idet, float &meanscinEcal, float &meancerEcal) {
     switch(gendete) {
         case 1: // use photons as generated in optical material
             if (type == 2) {  // crystal
@@ -16,8 +16,8 @@ void gatherDataEcal(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, i
 	        } break;
         case 3: 
         case 4: calibrateEcalGendeteThreeAndFour(gendete, idet, type, aecalhit); break;
-        case 5: calibrateEcalGendeteFive(); break;
-        case 6: calibrateEcalGendeteSix(); break;
+        case 5: calibrateEcalGendeteFive(meanscinEcal, meancerEcal); break;
+        case 6: calibrateEcalGendeteSix(meanscinEcal, meancerEcal); break;
         default:
             std::cout<<"invalid value gendete"<<std::endl;       
     }

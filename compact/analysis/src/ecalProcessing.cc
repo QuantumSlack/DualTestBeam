@@ -48,7 +48,7 @@ void calibrateEcalGendeteThreeAndFour(int gendete, int idet, int type, CalVision
     }
 }
 
-void calibrateEcalGendeteFive() {
+void calibrateEcalGendeteFive(float &meanscinEcal, float &meancerEcal) {
     for (int i=0;i<tfnx;i++ ) {
 	  for (int j=0;j<tfny;j++ ) {
 	    for (int k=0;k<tfndepth;k++ ) {
@@ -61,7 +61,7 @@ void calibrateEcalGendeteFive() {
     }
 }
 
-void calibrateEcalGendeteSix() {
+void calibrateEcalGendeteSix(float &meanscinEcal, float &meancerEcal) {
     for (int i=0;i<tfnx;i++ ) {
 	  for (int j=0;j<tfny;j++ ) {
 	    for (int k=0;k<tfndepth;k++ ) {
@@ -74,7 +74,7 @@ void calibrateEcalGendeteSix() {
 	}
 }
 
-void calibrateEcalGendete(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, int ievt, TBranch* &b_ecal) {
+void calibrateEcalGendete(int gendete, CalVision::DualCrysCalorimeterHit* &aecalhit, int ievt, TBranch* &b_ecal, float &meanscinEcal, float &meancerEcal) {
 	  long long int ihitchan=aecalhit->cellID;
 	  int idet,ix,iy,islice,ilayer,wc,type;
     DecodeEcal(ihitchan,idet,ix,iy,islice,ilayer,wc,type );
@@ -99,7 +99,7 @@ void calibrateEcalGendete(int gendete, CalVision::DualCrysCalorimeterHit* &aecal
     }
 }
 
-void calibrateEcal(int ievt, int gendete, CalHits* &ecalhits, TBranch* &b_ecal){
+void calibrateEcal(int ievt, int gendete, CalHits* &ecalhits, TBranch* &b_ecal, float &meanscinEcal, float &meancerEcal){
   switch(gendete) {
     case 1:
     case 2:
@@ -109,11 +109,11 @@ void calibrateEcal(int ievt, int gendete, CalHits* &ecalhits, TBranch* &b_ecal){
       if(ievt<SCECOUNT) std::cout<<std::endl<<" number of ecal hits is "<<ecalhits->size()<<std::endl;
       for (int i = 0; i < ecalhits->size(); i++) {
         CalVision::DualCrysCalorimeterHit* aecalhit = ecalhits->at(i);
-        calibrateEcalGendete(gendete, aecalhit, ievt, b_ecal);
+        calibrateEcalGendete(gendete, aecalhit, ievt, b_ecal, meanscinEcal, meancerEcal);
       }
       break;
-    case 5: calibrateEcalGendeteFive(); break;
-    case 6: calibrateEcalGendeteSix(); break;
+    case 5: calibrateEcalGendeteFive(meanscinEcal,meancerEcal); break;
+    case 6: calibrateEcalGendeteSix(meanscinEcal,meancerEcal); break;
     default: std::cout << "invalid value gendete"<<std::endl;
           break;
       
@@ -219,7 +219,8 @@ void calibrateEcalgetStuffGendete(CalVision::DualCrysCalorimeterHit* &aecalhit, 
 }
 
 void calibrateEcalgetStuff(int ievt, int gendete, TBranch* &b_ecal, CalHits* &ecalhits, float &necertotecal, float &nescinttotecal, float &eecaltimecut, float &erelecaltimecut) {
-  nbyteecal = b_ecal->GetEntry(ievt);
+  int nbyteecal;
+    nbyteecal = b_ecal->GetEntry(ievt);
       // ecal hits
     if(ievt<SCECOUNT) std::cout<<std::endl<<" number of ecal hits is "<<ecalhits->size()<<std::endl;
     eecaltimecut=0.;
@@ -228,4 +229,85 @@ void calibrateEcalgetStuff(int ievt, int gendete, TBranch* &b_ecal, CalHits* &ec
       CalVision::DualCrysCalorimeterHit* aecalhit =ecalhits->at(index);
       calibrateEcalgetStuffGendete(aecalhit, gendete, necertotecal, nescinttotecal, eecaltimecut, erelecaltimecut);
     }
+}
+
+void calibrateEcalFillTimeGendeteLayerZero(CalVision::DualCrysCalorimeterHit* &aecalhit, int iiiScint, int iiiCer, TH1F* &ecalpd1scint, TH1F* ecalpd1cer, int islice) {
+  if (islice == 1) {
+    for(int jjj=0;jjj<iiiScint;jjj++) {
+	  //std::cout<<"    ScinTime["<<jjj<<"] is "<<(aecalhit->ScinTime)[jjj]<<std::endl;
+	  if(aar.Rndm()<AFILTER(1,(aecalhit->HitScin)[jjj].second)) ecalpd1scint->Fill((aecalhit->HitScin)[jjj].first);
+	  if(ihitcounts<SCECOUNTHITHIT) {
+	    std::cout<<" scin hit time wavelength is "<<(aecalhit->HitScin)[jjj].first<<" "<<(aecalhit->HitScin)[jjj].second<<std::endl;
+	    ihitcounts+=1;
+	  }
+	}
+  for(int jjj=0;jjj<iiiCer;jjj++) {
+	  if(aar.Rndm()<AFILTER(2,(aecalhit->HitCer)[jjj].second)) ecalpd1cer->Fill((aecalhit->HitCer)[jjj].first);
+	  if(ihitcountc<SCECOUNTHITHIT) {
+	    std::cout<<" cer hit time wavelength is "<<(aecalhit->HitCer)[jjj].first<<" "<<(aecalhit->HitCer)[jjj].second<<std::endl;
+	    ihitcountc+=1;
+	  }
+	}
+  }
+}
+
+void calibrateEcalFillTimeGendeteLayerOne(CalVision::DualCrysCalorimeterHit* &aecalhit, int iiiScint, int iiiCer, TH1F* ecalpd2scint, TH1F* ecalpd2cer, int islice){
+  if (islice == 4){
+	//std::cout<<" ScinTime size pd2 is "<<iii<<std::endl;
+	for(int jjj=0;jjj<iiiScint;jjj++) {
+	  //std::cout<<"    ScinTime["<<jjj<<"] is "<<(aecalhit->ScinTime)[jjj]<<std::endl;
+	  if(aar.Rndm()<AFILTER(3,(aecalhit->HitScin)[jjj].second)) ecalpd2scint->Fill((aecalhit->HitScin)[jjj].first);
+	}
+	//std::cout<<" CerTime size pd2 is "<<iii<<std::endl;
+	for(int jjj=0;jjj<iiiCer;jjj++) {
+	  if(aar.Rndm()<AFILTER(4,(aecalhit->HitCer)[jjj].second)) ecalpd2cer->Fill((aecalhit->HitCer)[jjj].first);
+	}
+}
+}
+
+void calibrateEcalFillTimeGendete(CalVision::DualCrysCalorimeterHit* &aecalhit, int gendete, float &necertotecal, float &nescinttotecal, float &eecaltimecut, float &erelecaltimecut, TH1F* ecalpd1scint, TH1F* ecalpd1cer, TH1F* eecaltime) {
+      long long int ihitchan=aecalhit->cellID;
+      int idet,ix,iy,islice,ilayer,wc,type;
+      DecodeEcal(ihitchan,idet,ix,iy,islice,ilayer,wc,type);
+      float ae=aecalhit->energyDeposit;
+      switch(ilayer) {
+        case 0:{
+          int iiiScint=(aecalhit->HitScin).size();
+          int iiiCer = (aecalhit->HitCer).size();
+          calibrateEcalFillTimeGendeteLayerZero(aecalhit, iiiScint, iiiCer, ecalpd1scint, ecalpd1cer, islice);
+          break;
+        } 
+        case 1:{
+          int iiiScint=(aecalhit->HitScin).size();
+          int iiiCer=(aecalhit->HitCer).size();
+          calibrateEcalFillTimeGendeteLayerOne(aecalhit, iiiScint, iiiCer, ecalpd1scint, ecalpd1cer, islice);
+          break;
+        }
+        default: break;
+      }
+      switch(gendete) {
+        case 3:
+        case 4:
+             { if(idet==5) {
+	              if( type==2 ) {  // crystal
+	                Contributions zxzz=aecalhit->truth;
+	                for(size_t j=0;j<zxzz.size(); j++) {
+	                    eecaltime->Fill((zxzz.at(j)).time);
+	                  }
+	                }
+	              }
+                break;
+              }
+        default: break;
+            }
+          
+}
+
+void calibrateEcalFilltime(int ievt, int nbyteecal, int gendete, TBranch* &b_ecal, CalHits* &ecalhits, float &necertotecal, float &nescinttotecal, float &eecaltimecut, float &erelecaltimecut, TH1F *ecalpd1scint, TH1F* ecalpd1cer, TH1F* eecaltime) {
+  nbyteecal = b_ecal->GetEntry(ievt);
+  if(ievt<SCECOUNT) std::cout<<std::endl<<" number of ecal hits is "<<ecalhits->size()<<std::endl;
+  for(size_t index=0;index<ecalhits->size(); ++index) {
+      CalVision::DualCrysCalorimeterHit* aecalhit =ecalhits->at(index);
+      calibrateEcalFillTimeGendete(aecalhit, gendete, necertotecal, nescinttotecal, eecaltimecut, erelecaltimecut, ecalpd1scint, ecalpd1cer, eecaltime);
+  }
 }
