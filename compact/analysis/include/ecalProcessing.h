@@ -18,4 +18,8 @@ void calibrateEcalgetStuffGendeteSix(float &nescinttotecal, float &necertotecal)
 void calibrateEcalgetStuffGendeteFive(float &nescinttotecal, float &necertotecal);
 void calibrateEcalgetStuffGendete(CalVision::DualCrysCalorimeterHit* &aecalhit, int gendete, float &necertotecal, float &nescinttotecal, float &eecaltimecut, float &erelecaltimecut);
 void calibrateEcalgetStuff(int ievt, int gendete, TBranch* &b_ecal, CalHits* &ecalhits, float &necertotecal, float &nescinttotecal, float &eecaltimecut, float &erelecaltimecut);
+
+void calibrateEcalFillTimeGendete(CalVision::DualCrysCalorimeterHit* &aecalhit, long long int ihitchan, TH1F* &ecalpd1scint, TH1F* &ecalpd1cer, TH1F* &ecalpd2scint, TH1F* &ecalpd2cer, int gendete, TH1F* &eecaltime);
+
+void calibrateEcalFillTime(int ievt, int nbyteecal, TBranch* &b_ecal, CalHits* &ecalhits, TH1F* &ecalpd1scint, TH1F* &ecalpd1cer, TH1F* &ecalpd2scint, TH1F* &ecalpd2cer, TH1F* &eecaltime, int gendete);
 #endif 
