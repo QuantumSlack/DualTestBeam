@@ -229,3 +229,68 @@ void calibrateEcalgetStuff(int ievt, int gendete, TBranch* &b_ecal, CalHits* &ec
       calibrateEcalgetStuffGendete(aecalhit, gendete, necertotecal, nescinttotecal, eecaltimecut, erelecaltimecut);
     }
 }
+
+void calibrateEcalFillTimeGendete(CalVision::DualCrysCalorimeterHit* &aecalhit, long long int ihitchan, TH1F* &ecalpd1scint, TH1F* &ecalpd1cer, TH1F* &ecalpd2scint, TH1F* &ecalpd2cer, int gendete, TH1F* &eecaltime) {
+  int idet, ix, iy, islice, ilayer, wc, type;
+  DecodeEcal(ihitchan, idet, ix, iy, islice, ilayer, wc, type);
+  float ae = aecalhit->energyDeposit;
+  if ( (ilayer == 0) && (islice == 1) ) {
+    int iii = (aecalhit->HitScin).size();
+    for (int jjj = 0; jjj < iii; jjj++) {
+      if (aar.Rndm() < AFILTER(1, (aecalhit->HitScin)[jjj].second)) {
+        ecalpd1scint->Fill((aecalhit->HitScin)[jjj].first);
+      }
+      if (ihitcounts < SCECOUNTHITHIT) {
+        std::cout << "scin hit time wavelength is " << (aecalhit->HitScin)[jjj].first << " " << ((aecalhit->HitScin)[jjj].second) << std::endl;
+        ihitcounts+=1;
+      }
+    }
+    iii = (aecalhit->HitCer).size();
+    for (int jjj = 0; jjj < iii; jjj++) {
+      if (aar.Rndm() < AFILTER(2, (aecalhit->HitCer)[jjj].second)) {
+        ecalpd1cer->Fill((aecalhit->HitCer)[jjj].first);
+      }
+      if (ihitcountc < SCECOUNTHITHIT) {
+        std::cout << "cer hit time wavelength is " << (aecalhit->HitCer)[jjj].first << " " << (aecalhit->HitCer)[jjj].second << std::endl;
+        ihitcountc+=1;
+      }
+    }
+  }
+  if ( (ilayer == 1) && (islice == 4) ) {
+    int iii = (aecalhit->HitScin).size();
+    for(int jjj = 0; jjj < iii; jjj++) {
+      if (aar.Rndm() < AFILTER(3, (aecalhit->HitScin)[jjj].second)) {
+        ecalpd2scint->Fill((aecalhit->HitScin)[jjj].first);
+      }
+    }
+    iii = (aecalhit->HitCer).size();
+    for(int jjj = 0; jjj < iii; jjj++) {
+      if (aar.Rndm() < AFILTER(4, (aecalhit->HitCer)[jjj].second)) {
+        ecalpd2cer->Fill((aecalhit->HitCer)[jjj].first);
+      }
+    }
+  }
+   if ( (gendete == 3) || (gendete == 4) ) {
+    if (idet == 5) {
+      if (type == 2) {
+        Contributions zxzz = aecalhit->truth;
+        for(size_t j = 0; j < zxzz.size(); j++) {
+          eecaltime->Fill((zxzz.at(j)).time);
+        }
+      }
+    }
+   }
+}
+
+
+void calibrateEcalFillTime(int ievt, int nbyteecal, TBranch* &b_ecal, CalHits* &ecalhits, TH1F* &ecalpd1scint, TH1F* &ecalpd1cer, TH1F* &ecalpd2scint, TH1F* &ecalpd2cer, TH1F* &eecaltime, int gendete) {
+  nbyteecal = b_ecal->GetEntry(ievt);
+  if(ievt < SCECOUNT) {
+    std::cout << std::endl << "number of ecal hits is " << ecalhits->size() << std::endl;
+  }
+  for (size_t index = 0; index < ecalhits->size(); index++) {
+    CalVision::DualCrysCalorimeterHit* aecalhit = ecalhits->at(index);
+    long long int ihitchan = aecalhit->cellID;
+    calibrateEcalFillTimeGendete(aecalhit, ihitchan, ecalpd1scint, ecalpd1cer, ecalpd2scint, ecalpd2cer, gendete, eecaltime);
+  }
+}

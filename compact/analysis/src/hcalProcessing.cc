@@ -282,7 +282,7 @@ void calibrateHcalgetStuffSamplingAfterForLoop(int ah, int aarel, int islice, fl
 	      if(  (islice==(*mapsampcalslice.find("PD1")).second) || (islice==(*mapsampcalslice.find("PD2")).second) ||  (islice==(*mapsampcalslice.find("PD3")).second) || (islice==(*mapsampcalslice.find("PD4")).second)) {eesumPDh+=ah;eesumPDhem+=aarel;};
 }
 
-void calibrateHcalgetStuffGendeth(CalVision::DualCrysCalorimeterHit* &ahcalhit, int gendeth, int hcaltype, float &nescinttothcal, float &necertothcal, float &ehcaltimecute, float &erelhcaltimecut) {
+void calibrateHcalgetStuffGendeth(CalVision::DualCrysCalorimeterHit* &ahcalhit, int gendeth, int hcaltype, float &nescinttothcal, float &necertothcal, float &ehcaltimecute, float &erelhcaltimecut, float& eesum, float& eesumcal, float& eesumem, float& eesumfiber1, float& eesumfiber2, float& eesumabs, float& eesumPDh, float& eesumfiber1em, float& eesumfiber2em, float& eesumabsem, float& eesumPDhem) {
   ninh+=ahcalhit->n_inelastic;
   eesumcal+=ahcalhit->energyDeposit;
   eesumem+=ahcalhit->edeprelativistic;
@@ -295,6 +295,20 @@ void calibrateHcalgetStuffGendeth(CalVision::DualCrysCalorimeterHit* &ahcalhit, 
       	int idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy;
 	      DecodeFiber(ihitchan,idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy);
         calibrateHcalgetStuffFiber(ah, ahcalhit, gendeth, idet, ifiber, iphdet, nescinttothcal, necertothcal, ehcaltimecut, erelhcaltimecut);
+        if (ifiber == 1) {
+          eesumfiber1+=ah;
+          eesumfiber1em+=aarel;
+        } if (ifiber == 2) {
+          eesumfiber2+=ah;
+          eesumfiber2em+=aarel;
+        } if(iabs == 1) {
+          eesumabs+=ah;
+          eesumabsem+=aarel;
+        } if(iphdet > 1) {
+          eesumPDh+=ah;
+          eesumPDhem+=aarel;
+        }
+        break;
     }
    case 1: { // sampling
         float aarel = ahcalhit->edeprelativistic;
@@ -304,17 +318,116 @@ void calibrateHcalgetStuffGendeth(CalVision::DualCrysCalorimeterHit* &ahcalhit, 
 	      DecodeSampling(ihitchan,idet,ix,iy,ilayer,ibox2,islice);
         calibrateHcalgetStuffSampling(ah, ahcalhit, gendeth, islice, idet, nescinttothcal, necertothcal, ehcaltimecut, erelhcaltimecut);
         calibrateHcalgetStuffSamplingAfterForLoop(ah, aarel, islice, eesumfiber1, eesumfiber1em, eesumfiber2, eesumfiber2em, eesumPDhem, eesumabs, eesumabsem);
+        break;
    }
+   default: break;
   }
 }
 
-void calibrateHcalgetStuff(int ievt, TBranch* &b_hcal, float &nescinttothcal, float &necertothcal, float &ehcaltimecut, float &erelhcaltimecut, CalHits* &hcalhits, int gendeth, int hcaltype) {
+void calibrateHcalgetStuff(int ievt, TBranch* &b_hcal, float &nescinttothcal, float &necertothcal, float &ehcaltimecut, float &erelhcaltimecut, CalHits* &hcalhits, int gendeth, int hcaltype, int& ninh, float& eesum, float& eesumcal, float& eesumem, float& eesumfiber1, float& eesumfiber2, float& eesumabs, float& eesumPDh, float& eesumfiber1em, float& eesumfiber2em, float& eesumabsem, float& eesumPDhem) {
   nbytehcal = b_hcal->GetEntry(ievt);
   if(ievt<SCECOUNT) std::cout<<std::endl<<" number of hcal hits is "<<hcalhits->size()<<std::endl;
     ehcaltimecut=0.;
     erelhcaltimecut=0.;
+    eesum=0.;
     for(size_t index = 0; index < hcalhits->size(); ++index) {
       CalVision::DualCrysCalorimeterHit* ahcalhit = hcalhits->at(index);
-      calibrateHcalgetStuffGendeth(ahcalhit, gendeth, hcaltype, nescinttothcal, necertothcal, ehcaltimecut, erelhcaltimecut);
+      calibrateHcalgetStuffGendeth(ahcalhit, gendeth, hcaltype, nescinttothcal, necertothcal, ehcaltimecut, erelhcaltimecut, eesum, eesumcal, eesumem, eesumfiber1, eesumfiber1em, eesumabs, eesumPDh, eesumfiber1em, eesumfiber2em, eesumabsem, eesumPDhem);
     }
+}
+void calibrateHcalFillTimeGendethFiber(CalVision::DualCrysCalorimeterHit* &ahcalhit, int iphdet, int gendeth, int idet, TH1F* &ehcaltime, TH1F* &hcalpd1scint, TH1F* &hcalpd1cer, TH1F* &hcalpd2cer, int ifiber) {
+  switch(iphdet) {
+    case 1: {
+      int iii = (ahcalhit->HitScin).size();
+      std::cout << "pd1 ScintTime size pd1 is " << iii << std::endl;
+      for (int jjj = 0; jjj < iii; jjj++) {
+        if(aar.Rndm() < AFILTER(0, (ahcalhit->HitScin)[jjj].second)) {
+          hcalpd1scint->Fill((ahcalhit->HitScin)[jjj].first);
+        }
+      }
+      iii = (ahcalhit->HitCer).size();
+      std::cout << "pd1 CerTime size pd1 is " << iii << std::endl;
+      for(int jjj = 0; jjj < iii; jjj++) {
+        std::cout << "hit first is " << (ahcalhit->HitCer)[jjj].first << std::endl;
+        std::cout << "hit second is " << (ahcalhit->HitCer)[jjj].second << std::endl;
+        std::cout << "filled histogram " << std::endl;
+        if (aar.Rndm() < AFILTER(0, (ahcalhit->HitCer)[jjj].second)) {
+          hcalpd1cer->Fill((ahcalhit->HitCer)[jjj].first);
+        }
+        std::cout << "filled histogram 2 " <<std::endl;
+      }
+    }
+      break;
+    case 2: {
+      int iii = (ahcalhit->HitScin).size();
+      std::cout << "pd2 ScintTime size pd2 is " << iii << std::endl;
+      for (int jjj = 0; jjj < iii; jjj++) {
+        if(aar.Rndm() < AFILTER(0, (ahcalhit->HitScin)[jjj].second)) {
+          hcalpd2cer->Fill((ahcalhit->HitCer)[jjj].first);
+        }
+
+      }
+    }
+      break;
+    default: 
+      break;
+  }
+
+  if (gendeth == 3 || gendeth == 4) {
+    if (idet == 6) {
+      if ((ifiber ==1) || (ifiber == 2)) {
+        Contributions zxzz = ahcalhit->truth;
+        for (size_t j = 0; j < zxzz.size(); j++) {
+          ehcaltime->Fill((zxzz.at(j)).time);
+        }
+      }
+    }
+  }
+
+}
+
+void calibrateHcalFillTimeGendethSampling(int islice, CalVision::DualCrysCalorimeterHit* &ahcalhit, map<string, int> mapsampcalslice, int gendeth, TH1F* &ehcaltime) {
+  if(gendeth == 3 || gendeth == 4) {
+    if ((islice == (*mapsampcalslice.find("PS")).second) || (islice == (*mapsampcalslice.find("Quartz")).second)) {
+      Contributions zxzz = ahcalhit->truth;
+      for (size_t j = 0; j < zxzz.size(); j++) {
+        ehcaltime->Fill((zxzz.at(j)).time);
+      }
+    }
+  }
+}
+
+void calibrateHcalFillTimeGendeth(CalVision::DualCrysCalorimeterHit* &ahcalhit, TH1F* &hcalpd1cer, TH1F* &hcalpd1scint, int hcaltype, int gendeth, long long int ihitchan, map<string, int> &mapsampcalslice, TH1F* &hcalpd2cer, TH1F* &ehcaltime){
+  switch(hcaltype) {
+    case 0:
+      {
+	  int idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy;
+    DecodeFiber(ihitchan,idet,ilayer,itube,iair,itype,ifiber,iabs,iphdet,ihole,ix,iy);
+    calibrateHcalFillTimeGendethFiber(ahcalhit, iphdet, gendeth, idet, ehcaltime, hcalpd1scint, hcalpd1cer, hcalpd2cer, ifiber);
+      }
+      break;
+    case 1: {
+    	int idet,ix,iy,ilayer,ibox2,islice;
+      DecodeSampling(ihitchan,idet,ix,iy,ilayer,ibox2,islice);
+      calibrateHcalFillTimeGendethSampling(islice, ahcalhit, mapsampcalslice, gendeth, ehcaltime);
+    }
+      break;
+    default: 
+      break;
+  }
+}
+
+void calibrateHcalFillTime(int ievt, TBranch* &b_hcal, CalHits* &hcalhits, int hcaltype, int gendeth, int nbytehcal, TH1F* ehcaltime, TH1F* hcalpd1scint, TH1F* hcalpd1cer, TH1F* hcalpd2scint, TH1F* hcalpd2cer, map<string, int> &mapsampcalslice) {
+  nbytehcal = b_hcal->GetEntry(ievt);
+  if(ievt < SCECOUNT) {
+    std::cout << std::endl << "number of hcal hits is " 
+    << hcalhits->size() << std::endl;
+  }
+  for(size_t index = 0; index < hcalhits->size(); index++) {
+    CalVision::DualCrysCalorimeterHit* ahcalhit = hcalhits->at(index);
+    float ah = ahcalhit->energyDeposit;
+    float aarel = ahcalhit->edeprelativistic;
+    long long int ihitchan = ahcalhit->cellID;
+    calibrateHcalFillTimeGendeth(ahcalhit, hcalpd1cer, hcalpd1scint, hcaltype, gendeth, ihitchan, mapsampcalslice, hcalpd2cer, ehcaltime);
+  }
 }
