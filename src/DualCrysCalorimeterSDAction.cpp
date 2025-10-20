@@ -18,10 +18,13 @@
 #include <CLHEP/Units/PhysicalConstants.h>
 #include "DualCrysCalorimeterHit.h"
 #include "DDG4/EventParameters.h"
-#include "DDG4/Geant4SensDetAction.inl"
+// #include "DDG4/Geant4SensDetAction.inl"
 #include "DDG4/Factories.h"
 #include "DD4hep/InstanceCount.h"
 #include "DDG4/Geant4Random.h"
+#include "DDG4/Geant4ParticleHandler.h"
+#include "DDG4/Geant4Particle.h"
+#include "DDG4/Geant4Mapping.h"
 #include <G4Event.hh>
 using namespace std;
 
@@ -45,7 +48,6 @@ namespace CalVision {
   int SCECOUNT=0;
   int SCECOUNT2=0;
   int OLDEVENTNUMBER=-1;
-
 
   
   class DualCrysCalorimeterSD {
@@ -136,7 +138,6 @@ namespace dd4hep {
       //if(SCEPRINT) std::cout<<"scecount is "<<SCECOUNT<<" print is "<<SCEPRINT<<std::endl;
 
 
-
       G4StepPoint *thePrePoint = step->GetPreStepPoint();
       G4StepPoint *thePostPoint = step->GetPostStepPoint();
       //      const G4ThreeVector &thePrePosition = thePrePoint->GetPosition();
@@ -217,7 +218,6 @@ namespace dd4hep {
       G4Track * track =  step->GetTrack();
       std::string amedia = ((track->GetMaterial())->GetName());
       //      if(SCEPRINT) std::cout<<"track name is "<< (track->GetDefinition())->GetParticleName()<<std::endl;
-
       float avearrival=(pretime+posttime)/2.;
       int jbin=-1;
       float tbinsize=(hit->timemax-hit->timemin)/hit->nfinebin;
@@ -278,7 +278,9 @@ namespace dd4hep {
 	      //	      SCEPRINT=1;
 	      if(phstep>1) {  // don't count photons created in kill media
 		hit->ncerenkov+=1;
-		(hit->HitCer).push_back(std::make_pair(avearrival,wavelength));
+		int parentID = track->GetParentID();
+		int pdg = track->GetDefinition()->GetPDGEncoding();
+		(hit->HitCer).emplace_back(avearrival,wavelength, parentID, pdg);
                 //if(ibin>-1&&ibin<hit->nfinebin) ((hit->ncerwave).at(ibin))+=1;
                 //if(jbin>-1&&jbin<hit->nfinebin) ((hit->ncertime).at(jbin))+=1;
 		//if(jbinz>-1&&jbinz<hit->nfinebin) ((hit->ncertimez).at(jbinz))+=1;
@@ -327,7 +329,9 @@ namespace dd4hep {
 	      //std::cout<<"killing photon"<<std::endl;
 	      if(phstep>1) {
 		hit->nscintillator+=1;
-		(hit->HitScin).push_back(std::make_pair(avearrival,wavelength));
+		int parentID = track->GetParentID();
+		int pdg = track->GetDefinition()->GetPDGEncoding();
+		(hit->HitScin).emplace_back(avearrival,wavelength, parentID, pdg);
 		//if((ibin>-1)&&(ibin<hit->nfinebin)) ((hit->nscintwave).at(ibin))+=1;
                 //if(jbin>-1&&jbin<hit->nfinebin) ((hit->nscinttime).at(jbin))+=1;
 		//if(jbinz>-1&&jbinz<hit->nfinebin) ((hit->nscinttimez).at(jbinz))+=1;

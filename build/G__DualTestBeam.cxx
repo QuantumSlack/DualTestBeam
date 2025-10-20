@@ -108,7 +108,7 @@ namespace CalVision {
       inline ::ROOT::TGenericClassInfo *GenerateInitInstance()
       {
          static ::ROOT::TGenericClassInfo 
-            instance("CalVision", 0 /*version*/, "", 130,
+            instance("CalVision", 0 /*version*/, "", 131,
                      ::ROOT::Internal::DefineBehavior((void*)nullptr,(void*)nullptr),
                      &CalVision_Dictionary, 0);
          return &instance;
@@ -141,7 +141,7 @@ namespace ROOT {
       ::CalVision::DualCrysCalorimeterHit *ptr = nullptr;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::CalVision::DualCrysCalorimeterHit));
       static ::ROOT::TGenericClassInfo 
-         instance("CalVision::DualCrysCalorimeterHit", "", 157,
+         instance("CalVision::DualCrysCalorimeterHit", "", 158,
                   typeid(::CalVision::DualCrysCalorimeterHit), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &CalVisioncLcLDualCrysCalorimeterHit_Dictionary, isa_proxy, 4,
                   sizeof(::CalVision::DualCrysCalorimeterHit) );
@@ -191,71 +191,6 @@ namespace ROOT {
       (static_cast<current_t*>(p))->~current_t();
    }
 } // end of namespace ROOT for class ::CalVision::DualCrysCalorimeterHit
-
-namespace ROOT {
-   static TClass *vectorlEpairlEfloatcOfloatgRsPgR_Dictionary();
-   static void vectorlEpairlEfloatcOfloatgRsPgR_TClassManip(TClass*);
-   static void *new_vectorlEpairlEfloatcOfloatgRsPgR(void *p = nullptr);
-   static void *newArray_vectorlEpairlEfloatcOfloatgRsPgR(Long_t size, void *p);
-   static void delete_vectorlEpairlEfloatcOfloatgRsPgR(void *p);
-   static void deleteArray_vectorlEpairlEfloatcOfloatgRsPgR(void *p);
-   static void destruct_vectorlEpairlEfloatcOfloatgRsPgR(void *p);
-
-   // Function generating the singleton type initializer
-   static TGenericClassInfo *GenerateInitInstanceLocal(const vector<pair<float,float> >*)
-   {
-      vector<pair<float,float> > *ptr = nullptr;
-      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(vector<pair<float,float> >));
-      static ::ROOT::TGenericClassInfo 
-         instance("vector<pair<float,float> >", -2, "vector", 389,
-                  typeid(vector<pair<float,float> >), ::ROOT::Internal::DefineBehavior(ptr, ptr),
-                  &vectorlEpairlEfloatcOfloatgRsPgR_Dictionary, isa_proxy, 0,
-                  sizeof(vector<pair<float,float> >) );
-      instance.SetNew(&new_vectorlEpairlEfloatcOfloatgRsPgR);
-      instance.SetNewArray(&newArray_vectorlEpairlEfloatcOfloatgRsPgR);
-      instance.SetDelete(&delete_vectorlEpairlEfloatcOfloatgRsPgR);
-      instance.SetDeleteArray(&deleteArray_vectorlEpairlEfloatcOfloatgRsPgR);
-      instance.SetDestructor(&destruct_vectorlEpairlEfloatcOfloatgRsPgR);
-      instance.AdoptCollectionProxyInfo(TCollectionProxyInfo::Generate(TCollectionProxyInfo::Pushback< vector<pair<float,float> > >()));
-
-      instance.AdoptAlternate(::ROOT::AddClassAlternate("vector<pair<float,float> >","std::__1::vector<std::__1::pair<float, float>, std::__1::allocator<std::__1::pair<float, float>>>"));
-      return &instance;
-   }
-   // Static variable to force the class initialization
-   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal(static_cast<const vector<pair<float,float> >*>(nullptr)); R__UseDummy(_R__UNIQUE_DICT_(Init));
-
-   // Dictionary for non-ClassDef classes
-   static TClass *vectorlEpairlEfloatcOfloatgRsPgR_Dictionary() {
-      TClass* theClass =::ROOT::GenerateInitInstanceLocal(static_cast<const vector<pair<float,float> >*>(nullptr))->GetClass();
-      vectorlEpairlEfloatcOfloatgRsPgR_TClassManip(theClass);
-   return theClass;
-   }
-
-   static void vectorlEpairlEfloatcOfloatgRsPgR_TClassManip(TClass* ){
-   }
-
-} // end of namespace ROOT
-
-namespace ROOT {
-   // Wrappers around operator new
-   static void *new_vectorlEpairlEfloatcOfloatgRsPgR(void *p) {
-      return  p ? ::new(static_cast<::ROOT::Internal::TOperatorNewHelper*>(p)) vector<pair<float,float> > : new vector<pair<float,float> >;
-   }
-   static void *newArray_vectorlEpairlEfloatcOfloatgRsPgR(Long_t nElements, void *p) {
-      return p ? ::new(static_cast<::ROOT::Internal::TOperatorNewHelper*>(p)) vector<pair<float,float> >[nElements] : new vector<pair<float,float> >[nElements];
-   }
-   // Wrapper around operator delete
-   static void delete_vectorlEpairlEfloatcOfloatgRsPgR(void *p) {
-      delete (static_cast<vector<pair<float,float> >*>(p));
-   }
-   static void deleteArray_vectorlEpairlEfloatcOfloatgRsPgR(void *p) {
-      delete [] (static_cast<vector<pair<float,float> >*>(p));
-   }
-   static void destruct_vectorlEpairlEfloatcOfloatgRsPgR(void *p) {
-      typedef vector<pair<float,float> > current_t;
-      (static_cast<current_t*>(p))->~current_t();
-   }
-} // end of namespace ROOT for class vector<pair<float,float> >
 
 namespace ROOT {
    static TClass *vectorlEfloatgR_Dictionary();
@@ -323,6 +258,71 @@ namespace ROOT {
 } // end of namespace ROOT for class vector<float>
 
 namespace ROOT {
+   static TClass *vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR_Dictionary();
+   static void vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR_TClassManip(TClass*);
+   static void *new_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(void *p = nullptr);
+   static void *newArray_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(Long_t size, void *p);
+   static void delete_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(void *p);
+   static void deleteArray_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(void *p);
+   static void destruct_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(void *p);
+
+   // Function generating the singleton type initializer
+   static TGenericClassInfo *GenerateInitInstanceLocal(const vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>*)
+   {
+      vector<CalVision::DualCrysCalorimeterHit::PhotonInfo> *ptr = nullptr;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>));
+      static ::ROOT::TGenericClassInfo 
+         instance("vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>", -2, "vector", 389,
+                  typeid(vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR_Dictionary, isa_proxy, 0,
+                  sizeof(vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>) );
+      instance.SetNew(&new_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR);
+      instance.SetNewArray(&newArray_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR);
+      instance.SetDelete(&delete_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR);
+      instance.SetDeleteArray(&deleteArray_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR);
+      instance.SetDestructor(&destruct_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR);
+      instance.AdoptCollectionProxyInfo(TCollectionProxyInfo::Generate(TCollectionProxyInfo::Pushback< vector<CalVision::DualCrysCalorimeterHit::PhotonInfo> >()));
+
+      instance.AdoptAlternate(::ROOT::AddClassAlternate("vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>","std::__1::vector<CalVision::DualCrysCalorimeterHit::PhotonInfo, std::__1::allocator<CalVision::DualCrysCalorimeterHit::PhotonInfo>>"));
+      return &instance;
+   }
+   // Static variable to force the class initialization
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal(static_cast<const vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>*>(nullptr)); R__UseDummy(_R__UNIQUE_DICT_(Init));
+
+   // Dictionary for non-ClassDef classes
+   static TClass *vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal(static_cast<const vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>*>(nullptr))->GetClass();
+      vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR_TClassManip(theClass);
+   return theClass;
+   }
+
+   static void vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR_TClassManip(TClass* ){
+   }
+
+} // end of namespace ROOT
+
+namespace ROOT {
+   // Wrappers around operator new
+   static void *new_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(void *p) {
+      return  p ? ::new(static_cast<::ROOT::Internal::TOperatorNewHelper*>(p)) vector<CalVision::DualCrysCalorimeterHit::PhotonInfo> : new vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>;
+   }
+   static void *newArray_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(Long_t nElements, void *p) {
+      return p ? ::new(static_cast<::ROOT::Internal::TOperatorNewHelper*>(p)) vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>[nElements] : new vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>[nElements];
+   }
+   // Wrapper around operator delete
+   static void delete_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(void *p) {
+      delete (static_cast<vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>*>(p));
+   }
+   static void deleteArray_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(void *p) {
+      delete [] (static_cast<vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>*>(p));
+   }
+   static void destruct_vectorlECalVisioncLcLDualCrysCalorimeterHitcLcLPhotonInfogR(void *p) {
+      typedef vector<CalVision::DualCrysCalorimeterHit::PhotonInfo> current_t;
+      (static_cast<current_t*>(p))->~current_t();
+   }
+} // end of namespace ROOT for class vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>
+
+namespace ROOT {
    // Registration Schema evolution read functions
    int RecordReadRules_G__DualTestBeam() {
       return 0;
@@ -350,7 +350,7 @@ nullptr
 "/opt/homebrew/Cellar/qt/6.9.1/lib/QtGui.framework",
 "/opt/homebrew/Cellar/qt/6.9.1/lib/QtWidgets.framework/Headers",
 "/opt/homebrew/Cellar/qt/6.9.1/lib/QtWidgets.framework",
-"/opt/homebrew/Cellar/root/6.36.00/include/root",
+"/opt/homebrew/Cellar/root/6.36.04/include/root",
 "/Users/shiva/DualTestBeam/build/",
 nullptr
     };
@@ -371,8 +371,8 @@ namespace CalVision{class DualCrysCalorimeterHit;}
 #ifndef DD4HEP_USE_GEANT4_UNITS
   #define DD4HEP_USE_GEANT4_UNITS 1
 #endif
-#ifndef DD4HEP_USE_TINYXML
-  #define DD4HEP_USE_TINYXML 1
+#ifndef DD4HEP_USE_XERCESC
+  #define DD4HEP_USE_XERCESC 1
 #endif
 #ifndef ROOT_SUPPORT_CLAD
   #define ROOT_SUPPORT_CLAD 1
@@ -486,6 +486,7 @@ namespace CalVision{class DualCrysCalorimeterHit;}
 /// Framework include files
 #include "DDG4/Geant4Data.h"
 #include "G4OpticalPhoton.hh"
+#include "DDG4/Geant4SensDetAction.inl"
 #include "G4VProcess.hh"
 
 
@@ -536,6 +537,15 @@ namespace CalVision {
     float timemin=0;
     float timemax=400;
     float timemaxz=40;
+
+    struct PhotonInfo {
+      float time;
+      float wavelength;
+      int parentID;
+      int parent_pdg;
+      PhotonInfo() : time(0), wavelength(0), parentID(-1), parent_pdg(0) {}
+      PhotonInfo(float t, float w, int p, int pd) : time(t), wavelength(w), parentID(p), parent_pdg(pd) {}
+    };
     //    std::array<int,finenbin>  ncerwave;
     // std::array<int,finenbin> nscintwave;
     //std::array<int,finenbin>  ncertime;
@@ -551,9 +561,9 @@ namespace CalVision {
     //int ncoarsebin=coarsenbin;
     // std::array<std::array<int,coarsenbin>,coarsenbin> cerhitpos;
     //std::array<std::array<int,coarsenbin>,coarsenbin> scinthitpos;
-
-    std::vector<std::pair<float, float>> HitCer;
-    std::vector<std::pair<float, float>> HitScin;
+    // typedef dd4hep::sim::Geant4HitData::Contribution HitContribution;
+    std::vector<PhotonInfo> HitCer;
+    std::vector<PhotonInfo> HitScin;
     //    std::vector<float> CerTime;
     //std::vector<float> ScinTime;
 
@@ -627,6 +637,9 @@ namespace CalVision {
 #pragma link C++ namespace CalVision;
 #pragma link C++ class     CalVision::DualCrysCalorimeterHit+;
 #pragma link C++ class     CalVision::DualCrysCalorimeterDump;
+#pragma link C++ class     CalVision::PhotonInfo+;
+#pragma link C++ class     std::vector<CalVision::PhotonInfo>+;
+
 #endif
 
 #endif // EXAMPLES_DDDualCrys_SRC_DualCrysCalorimeterHIT_H

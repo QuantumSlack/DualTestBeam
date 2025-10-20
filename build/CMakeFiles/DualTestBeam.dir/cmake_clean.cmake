@@ -22,7 +22,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/DualTestBeam.dir/src/SCEGeant4Output2ROOT.cpp.o"
   "CMakeFiles/DualTestBeam.dir/src/SCEGeant4Output2ROOT.cpp.o.d"
   "G__DualTestBeam.cxx"
-  "fixed_create_G__DualTestBeam_ReleaseCXX.sh"
+  "fixed_create_G__DualTestBeam_RelWithDebInfoCXX.sh"
   "lib/G__DualTestBeam_rdict.pcm"
   "lib/libDualTestBeam.dylib"
   "lib/libDualTestBeam.pdb"

@@ -759,6 +759,12 @@ CMakeFiles/DualTestBeam.dir/src/DRUpstream_geo.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg \
   /Users/shiva/DD4hep/install/include/XML/config.h \
   /Users/shiva/DD4hep/install/include/Parsers/config.h \
+  /opt/homebrew/include/xercesc/util/Xerces_autoconf_config.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/inttypes.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/inttypes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/inttypes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_inttypes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_inttypes.h \
   /Users/shiva/DD4hep/install/include/XML/UnicodeValues.h \
   /Users/shiva/DD4hep/install/include/XML/XMLDimension.h \
   /Users/shiva/DD4hep/install/include/Parsers/detail/Dimension.h \

@@ -16,6 +16,7 @@
 /// Framework include files
 #include "DDG4/Geant4Data.h"
 #include "G4OpticalPhoton.hh"
+#include "DDG4/Geant4SensDetAction.inl"
 #include "G4VProcess.hh"
 
 
@@ -66,6 +67,15 @@ namespace CalVision {
     float timemin=0;
     float timemax=400;
     float timemaxz=40;
+
+    struct PhotonInfo {
+      float time;
+      float wavelength;
+      int parentID;
+      int parent_pdg;
+      PhotonInfo() : time(0), wavelength(0), parentID(-1), parent_pdg(0) {}
+      PhotonInfo(float t, float w, int p, int pd) : time(t), wavelength(w), parentID(p), parent_pdg(pd) {}
+    };
     //    std::array<int,finenbin>  ncerwave;
     // std::array<int,finenbin> nscintwave;
     //std::array<int,finenbin>  ncertime;
@@ -81,9 +91,9 @@ namespace CalVision {
     //int ncoarsebin=coarsenbin;
     // std::array<std::array<int,coarsenbin>,coarsenbin> cerhitpos;
     //std::array<std::array<int,coarsenbin>,coarsenbin> scinthitpos;
-
-    std::vector<std::pair<float, float>> HitCer;
-    std::vector<std::pair<float, float>> HitScin;
+    // typedef dd4hep::sim::Geant4HitData::Contribution HitContribution;
+    std::vector<PhotonInfo> HitCer;
+    std::vector<PhotonInfo> HitScin;
     //    std::vector<float> CerTime;
     //std::vector<float> ScinTime;
 
@@ -157,6 +167,9 @@ namespace CalVision {
 #pragma link C++ namespace CalVision;
 #pragma link C++ class     CalVision::DualCrysCalorimeterHit+;
 #pragma link C++ class     CalVision::DualCrysCalorimeterDump;
+#pragma link C++ class     CalVision::PhotonInfo+;
+#pragma link C++ class     std::vector<CalVision::PhotonInfo>+;
+
 #endif
 
 #endif // EXAMPLES_DDDualCrys_SRC_DualCrysCalorimeterHIT_H

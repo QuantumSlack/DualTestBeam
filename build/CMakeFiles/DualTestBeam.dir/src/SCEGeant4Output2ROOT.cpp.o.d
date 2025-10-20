@@ -1066,6 +1066,116 @@ CMakeFiles/DualTestBeam.dir/src/SCEGeant4Output2ROOT.cpp.o: \
   /opt/homebrew/include/CLHEP/Units/defs.h \
   /opt/homebrew/include/CLHEP/Units/SystemOfUnits.h \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ParticleDefinition.icc \
+  /Users/shiva/DD4hep/install/include/DDG4/Geant4SensDetAction.inl \
+  /Users/shiva/DD4hep/install/include/DDG4/Geant4SensDetAction.h \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ThreeVector.hh \
+  /opt/homebrew/include/CLHEP/Vector/ThreeVector.h \
+  /opt/homebrew/include/CLHEP/Vector/defs.h \
+  /opt/homebrew/include/CLHEP/Vector/ThreeVector.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VTouchable.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TouchableHistory.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationHistory.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/geomdefs.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/geomwdefs.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4AffineTransform.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4RotationMatrix.hh \
+  /opt/homebrew/include/CLHEP/Vector/Rotation.h \
+  /opt/homebrew/include/CLHEP/Vector/RotationInterfaces.h \
+  /opt/homebrew/include/CLHEP/Vector/LorentzVector.h \
+  /opt/homebrew/include/CLHEP/Vector/LorentzVector.icc \
+  /opt/homebrew/include/CLHEP/Vector/ZMxpv.h \
+  /opt/homebrew/include/CLHEP/Vector/AxisAngle.h \
+  /opt/homebrew/include/CLHEP/Vector/AxisAngle.icc \
+  /opt/homebrew/include/CLHEP/Vector/RotationInterfaces.icc \
+  /opt/homebrew/include/CLHEP/Vector/RotationX.h \
+  /opt/homebrew/include/CLHEP/Vector/RotationX.icc \
+  /opt/homebrew/include/CLHEP/Vector/RotationY.h \
+  /opt/homebrew/include/CLHEP/Vector/RotationY.icc \
+  /opt/homebrew/include/CLHEP/Vector/RotationZ.h \
+  /opt/homebrew/include/CLHEP/Vector/RotationZ.icc \
+  /opt/homebrew/include/CLHEP/Vector/Rotation.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Transform3D.hh \
+  /opt/homebrew/include/CLHEP/Geometry/Transform3D.h \
+  /opt/homebrew/include/CLHEP/Geometry/defs.h \
+  /opt/homebrew/include/CLHEP/Geometry/Transform3D.icc \
+  /opt/homebrew/include/CLHEP/Geometry/Point3D.h \
+  /opt/homebrew/include/CLHEP/Geometry/BasicVector3D.h \
+  /opt/homebrew/include/CLHEP/Geometry/Vector3D.h \
+  /opt/homebrew/include/CLHEP/Geometry/Normal3D.h \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4AffineTransform.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VPhysicalVolume.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4GeomSplitter.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VPhysicalVolume.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationLevel.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationLevelRep.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Allocator.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4AllocatorPool.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationLevelRep.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationLevel.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationHistoryPool.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationHistory.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4LogicalVolume.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Region.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Region.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4LogicalVolume.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TouchableHistory.icc \
+  /Users/shiva/DD4hep/install/include/DD4hep/detail/ObjectsInterna.h \
+  /Users/shiva/DD4hep/install/include/DDG4/Geant4ReadoutVolumeFilter.h \
+  /Users/shiva/DD4hep/install/include/DDG4/Geant4TouchableHandler.h \
+  /Users/shiva/DD4hep/install/include/DDG4/Geant4StepHandler.h \
+  /Users/shiva/DD4hep/install/include/DDG4/Geant4HitHandler.h \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4EmSaturation.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Step.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4StepPoint.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4SteppingControl.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4StepStatus.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TouchableHandle.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ReferenceCountedHandle.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Material.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Element.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ElementTable.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ElementVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4IonisParamElm.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Isotope.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4IsotopeVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4IonisParamMat.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DensityEffectCalculator.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4MaterialPropertiesTable.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4MaterialPropertiesIndex.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4MaterialPropertyVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsFreeVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Log.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsVectorType.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsVector.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4MaterialTable.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4SandiaTable.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4OrderedTable.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DataVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DataVector.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4StepPoint.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TrackVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Step.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Track.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/trkdefs.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DynamicParticle.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ElectronOccupancy.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4LorentzVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ParticleMomentum.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DynamicParticle.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TrackStatus.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VUserTrackInformation.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsModelCatalog.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Track.icc \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Version.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VSensitiveDetector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4CollectionNameVector.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4HCofThisEvent.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VReadOutGeometry.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4SensitiveVolumeList.hh \
+  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VSDFilter.hh \
+  /Users/shiva/DD4hep/install/include/DDG4/Geant4VolumeManager.h \
+  /Users/shiva/DD4hep/install/include/DDG4/Geant4Primitives.h \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VProcess.hh \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/Randomize.hh \
   /opt/homebrew/include/CLHEP/Random/Randomize.h \
@@ -1130,101 +1240,8 @@ CMakeFiles/DualTestBeam.dir/src/SCEGeant4Output2ROOT.cpp.o: \
   /opt/homebrew/include/CLHEP/Random/RandStudentT.h \
   /opt/homebrew/include/CLHEP/Random/RandStudentT.icc \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsTable.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsVector.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Log.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsVectorType.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsVector.icc \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsTable.icc \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VParticleChange.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TrackStatus.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4SteppingControl.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Step.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ThreeVector.hh \
-  /opt/homebrew/include/CLHEP/Vector/ThreeVector.h \
-  /opt/homebrew/include/CLHEP/Vector/defs.h \
-  /opt/homebrew/include/CLHEP/Vector/ThreeVector.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VPhysicalVolume.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/geomdefs.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4RotationMatrix.hh \
-  /opt/homebrew/include/CLHEP/Vector/Rotation.h \
-  /opt/homebrew/include/CLHEP/Vector/RotationInterfaces.h \
-  /opt/homebrew/include/CLHEP/Vector/LorentzVector.h \
-  /opt/homebrew/include/CLHEP/Vector/LorentzVector.icc \
-  /opt/homebrew/include/CLHEP/Vector/ZMxpv.h \
-  /opt/homebrew/include/CLHEP/Vector/AxisAngle.h \
-  /opt/homebrew/include/CLHEP/Vector/AxisAngle.icc \
-  /opt/homebrew/include/CLHEP/Vector/RotationInterfaces.icc \
-  /opt/homebrew/include/CLHEP/Vector/RotationX.h \
-  /opt/homebrew/include/CLHEP/Vector/RotationX.icc \
-  /opt/homebrew/include/CLHEP/Vector/RotationY.h \
-  /opt/homebrew/include/CLHEP/Vector/RotationY.icc \
-  /opt/homebrew/include/CLHEP/Vector/RotationZ.h \
-  /opt/homebrew/include/CLHEP/Vector/RotationZ.icc \
-  /opt/homebrew/include/CLHEP/Vector/Rotation.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4GeomSplitter.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/geomwdefs.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VPhysicalVolume.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4StepPoint.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Allocator.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4AllocatorPool.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4StepStatus.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TouchableHandle.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VTouchable.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TouchableHistory.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationHistory.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4AffineTransform.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Transform3D.hh \
-  /opt/homebrew/include/CLHEP/Geometry/Transform3D.h \
-  /opt/homebrew/include/CLHEP/Geometry/defs.h \
-  /opt/homebrew/include/CLHEP/Geometry/Transform3D.icc \
-  /opt/homebrew/include/CLHEP/Geometry/Point3D.h \
-  /opt/homebrew/include/CLHEP/Geometry/BasicVector3D.h \
-  /opt/homebrew/include/CLHEP/Geometry/Vector3D.h \
-  /opt/homebrew/include/CLHEP/Geometry/Normal3D.h \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4AffineTransform.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationLevel.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationLevelRep.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationLevelRep.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationLevel.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationHistoryPool.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4NavigationHistory.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4LogicalVolume.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Region.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Region.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4LogicalVolume.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TouchableHistory.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ReferenceCountedHandle.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Material.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Element.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ElementTable.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ElementVector.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4IonisParamElm.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Isotope.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4IsotopeVector.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4IonisParamMat.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DensityEffectCalculator.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4MaterialPropertiesTable.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4MaterialPropertiesIndex.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4MaterialPropertyVector.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsFreeVector.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4MaterialTable.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4SandiaTable.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4OrderedTable.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DataVector.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DataVector.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4StepPoint.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4TrackVector.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Step.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Track.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/trkdefs.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DynamicParticle.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ElectronOccupancy.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4LorentzVector.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ParticleMomentum.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4DynamicParticle.icc \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VUserTrackInformation.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4PhysicsModelCatalog.hh \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4Track.icc \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4VParticleChange.icc \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ForceCondition.hh \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4GPILSelection.hh \
@@ -1232,7 +1249,6 @@ CMakeFiles/DualTestBeam.dir/src/SCEGeant4Output2ROOT.cpp.o: \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ParticleChange.icc \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ProcessType.hh \
   /Users/shiva/DD4hep/install/include/DDG4/Geant4Particle.h \
-  /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4HCofThisEvent.hh \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ParticleTable.hh \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ParticleTableIterator.hh \
   /Users/shiva/geant4-v11.3.2-install/include/Geant4/G4ParticleTable.icc \

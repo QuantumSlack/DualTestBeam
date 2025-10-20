@@ -27,7 +27,7 @@ CMAKE_ADDR2LINE:FILEPATH=/opt/homebrew/opt/binutils/bin/addr2line
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //One of: None Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_BUILD_TYPE:STRING=RelWithDebInfo
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -133,7 +133,7 @@ CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //install prefix path  - overwrite with -D CMAKE_INSTALL_PREFIX
 // = ...
-CMAKE_INSTALL_PREFIX:PATH=/Users/shiva/DualTestBeam
+CMAKE_INSTALL_PREFIX:PATH=/Users/shiva/DualTestBeam/install
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -194,6 +194,9 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 CMAKE_OSX_SYSROOT:STRING=
 
 //Value Computed by CMake
+CMAKE_PROJECT_COMPAT_VERSION:STATIC=
+
+//Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
 
 //Value Computed by CMake
@@ -201,6 +204,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=DualTestBeam
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -235,23 +253,23 @@ CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
 //If set, runtime paths are not added when using shared libraries.
 CMAKE_SKIP_RPATH:BOOL=NO
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during all build types.
 CMAKE_STATIC_LINKER_FLAGS:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during DEBUG builds.
 CMAKE_STATIC_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during MINSIZEREL builds.
 CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during RELEASE builds.
 CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
@@ -304,7 +322,7 @@ FREETYPE_LIBRARY_DEBUG:FILEPATH=FREETYPE_LIBRARY_DEBUG-NOTFOUND
 FREETYPE_LIBRARY_RELEASE:FILEPATH=/opt/homebrew/lib/libfreetype.dylib
 
 //Path to a file.
-Fontconfig_INCLUDE_DIR:PATH=/opt/homebrew/Cellar/fontconfig/2.16.0/include
+Fontconfig_INCLUDE_DIR:PATH=/opt/homebrew/Cellar/fontconfig/2.17.1/include
 
 //Path to a library.
 Fontconfig_LIBRARY:FILEPATH=/opt/homebrew/lib/libfontconfig.dylib
@@ -437,64 +455,64 @@ Qt6Widgets_DIR:PATH=/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6Widgets
 Qt6_DIR:PATH=/opt/homebrew/Cellar/qt/6.9.1/lib/cmake/Qt6
 
 //Path to a library.
-ROOT_Core_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libCore.so
+ROOT_Core_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libCore.so
 
 //The directory containing a CMake configuration file for ROOT.
 ROOT_DIR:PATH=/opt/homebrew/share/root/cmake
 
 //Path to a library.
-ROOT_Gpad_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libGpad.so
+ROOT_Gpad_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libGpad.so
 
 //Path to a library.
-ROOT_Graf3d_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libGraf3d.so
+ROOT_Graf3d_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libGraf3d.so
 
 //Path to a library.
-ROOT_Graf_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libGraf.so
+ROOT_Graf_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libGraf.so
 
 //Path to a library.
-ROOT_Hist_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libHist.so
+ROOT_Hist_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libHist.so
 
 //Path to a library.
-ROOT_Imt_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libImt.so
+ROOT_Imt_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libImt.so
 
 //Path to a library.
-ROOT_MathCore_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libMathCore.so
+ROOT_MathCore_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libMathCore.so
 
 //Path to a library.
-ROOT_Matrix_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libMatrix.so
+ROOT_Matrix_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libMatrix.so
 
 //Path to a library.
-ROOT_MultiProc_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libMultiProc.so
+ROOT_MultiProc_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libMultiProc.so
 
 //Path to a library.
-ROOT_Net_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libNet.so
+ROOT_Net_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libNet.so
 
 //Path to a library.
-ROOT_Physics_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libPhysics.so
+ROOT_Physics_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libPhysics.so
 
 //Path to a library.
-ROOT_Postscript_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libPostscript.so
+ROOT_Postscript_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libPostscript.so
 
 //Path to a library.
-ROOT_RIO_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libRIO.so
+ROOT_RIO_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libRIO.so
 
 //Path to a library.
-ROOT_ROOTDataFrame_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libROOTDataFrame.so
+ROOT_ROOTDataFrame_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libROOTDataFrame.so
 
 //Path to a library.
-ROOT_ROOTVecOps_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libROOTVecOps.so
+ROOT_ROOTVecOps_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libROOTVecOps.so
 
 //Path to a library.
-ROOT_Rint_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libRint.so
+ROOT_Rint_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libRint.so
 
 //Path to a library.
-ROOT_Thread_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libThread.so
+ROOT_Thread_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libThread.so
 
 //Path to a library.
-ROOT_TreePlayer_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libTreePlayer.so
+ROOT_TreePlayer_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libTreePlayer.so
 
 //Path to a library.
-ROOT_Tree_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libTree.so
+ROOT_Tree_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libTree.so
 
 //Path to a program.
 ROOT_genmap_CMD:FILEPATH=ROOT_genmap_CMD-NOTFOUND
@@ -536,10 +554,10 @@ ROOT_rootmv_CMD:FILEPATH=/opt/homebrew/bin/rootmv
 ROOT_rootrm_CMD:FILEPATH=/opt/homebrew/bin/rootrm
 
 //Path to a file.
-VDT_INCLUDE_DIR:PATH=/opt/homebrew/Cellar/root/6.36.00/include/root
+VDT_INCLUDE_DIR:PATH=/opt/homebrew/Cellar/root/6.36.04/include/root
 
 //Path to a library.
-VDT_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.00/lib/root/libvdt.dylib
+VDT_LIBRARY:FILEPATH=/opt/homebrew/Cellar/root/6.36.04/lib/root/libvdt.dylib
 
 //Path to a program.
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-NOTFOUND
@@ -1001,10 +1019,7 @@ boost_headers_DIR:PATH=/opt/homebrew/lib/cmake/boost_headers-1.88.0
 pkgcfg_lib_PC_EXPAT_expat:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libexpat.tbd
 
 //Path to a library.
-pkgcfg_lib_PKG_FONTCONFIG_fontconfig:FILEPATH=/opt/homebrew/Cellar/fontconfig/2.16.0/lib/libfontconfig.dylib
-
-//Path to a library.
-pkgcfg_lib_PKG_FONTCONFIG_freetype:FILEPATH=/opt/homebrew/opt/freetype/lib/libfreetype.dylib
+pkgcfg_lib_PKG_FONTCONFIG_fontconfig:FILEPATH=/opt/homebrew/Cellar/fontconfig/2.17.1/lib/libfontconfig.dylib
 
 
 ########################
@@ -1017,16 +1032,14 @@ Boost_DIR-ADVANCED:INTERNAL=1
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
-//MODIFIED property for variable: CMAKE_BUILD_TYPE
-CMAKE_BUILD_TYPE-MODIFIED:INTERNAL=ON
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/Users/shiva/DualTestBeam/build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=0
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=1
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -1126,6 +1139,8 @@ CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
 CMAKE_INSTALL_NAME_TOOL-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
 CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: CMAKE_INSTALL_PREFIX
+CMAKE_INSTALL_PREFIX-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
 CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
@@ -1241,11 +1256,11 @@ FIND_PACKAGE_MESSAGE_DETAILS_Geant4:INTERNAL=[/Users/shiva/geant4-v11.3.2-instal
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework][/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework][ ][v()]
 //Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/opt/homebrew/Frameworks/Python.framework/Versions/3.13/include/python3.13][/Library/Frameworks/Python.framework/Versions/3.13/lib/libpython3.13.dylib][found components: Development Development.Module Development.Embed ][v3.13.5(3.13.5)]
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/opt/homebrew/Frameworks/Python.framework/Versions/3.13/include/python3.13][/Library/Frameworks/Python.framework/Versions/3.13/lib/libpython3.13.dylib][found components: Development Development.Module Development.Embed ][v3.13.7(3.13.7)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding Vdt
-FIND_PACKAGE_MESSAGE_DETAILS_Vdt:INTERNAL=[/opt/homebrew/Cellar/root/6.36.00/include/root][/opt/homebrew/Cellar/root/6.36.00/lib/root/libvdt.dylib][v0.4()]
+FIND_PACKAGE_MESSAGE_DETAILS_Vdt:INTERNAL=[/opt/homebrew/Cellar/root/6.36.04/include/root][/opt/homebrew/Cellar/root/6.36.04/lib/root/libvdt.dylib][v0.4()]
 //Details about finding WrapAtomic
 FIND_PACKAGE_MESSAGE_DETAILS_WrapAtomic:INTERNAL=[1][v()]
 //Details about finding WrapOpenGL
@@ -1255,7 +1270,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_X11:INTERNAL=[/opt/homebrew/include][/opt/homebrew/
 //Details about finding XQuartzGL
 FIND_PACKAGE_MESSAGE_DETAILS_XQuartzGL:INTERNAL=[/usr/X11R6/include][/usr/X11R6/lib/libGL.dylib][v()]
 //Details about finding XercesC
-FIND_PACKAGE_MESSAGE_DETAILS_XercesC:INTERNAL=[/opt/homebrew/lib/libxerces-c.dylib][/opt/homebrew/include][3.3.0][v3.3.0(3.3.0)]
+FIND_PACKAGE_MESSAGE_DETAILS_XercesC:INTERNAL=[/opt/homebrew/lib/libxerces-c.dylib][/opt/homebrew/include][3.3.0][v3.3.0()]
 //Details about finding ZLIB
 FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd][/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include][ ][v1.2.12(1.2.12)]
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
@@ -1319,37 +1334,37 @@ PC_EXPAT_expat_VERSION:INTERNAL=
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-PKG_FONTCONFIG_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/fontconfig/2.16.0/include;-I/opt/homebrew/opt/freetype/include/freetype2;-I/opt/homebrew/opt/libpng/include/libpng16;-I/opt/homebrew/opt/zlib/include
+PKG_FONTCONFIG_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/fontconfig/2.17.1/include;-I/opt/homebrew/opt/freetype/include/freetype2;-I/opt/homebrew/opt/libpng/include/libpng16;-I/opt/homebrew/opt/zlib/include
 PKG_FONTCONFIG_CFLAGS_I:INTERNAL=
 PKG_FONTCONFIG_CFLAGS_OTHER:INTERNAL=
 PKG_FONTCONFIG_FOUND:INTERNAL=1
-PKG_FONTCONFIG_INCLUDEDIR:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.16.0/include
-PKG_FONTCONFIG_INCLUDE_DIRS:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.16.0/include;/opt/homebrew/opt/freetype/include/freetype2;/opt/homebrew/opt/libpng/include/libpng16;/opt/homebrew/opt/zlib/include
-PKG_FONTCONFIG_LDFLAGS:INTERNAL=-L/opt/homebrew/Cellar/fontconfig/2.16.0/lib;-lfontconfig;-L/opt/homebrew/opt/freetype/lib;-lfreetype
+PKG_FONTCONFIG_INCLUDEDIR:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.17.1/include
+PKG_FONTCONFIG_INCLUDE_DIRS:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.17.1/include;/opt/homebrew/opt/freetype/include/freetype2;/opt/homebrew/opt/libpng/include/libpng16;/opt/homebrew/opt/zlib/include
+PKG_FONTCONFIG_LDFLAGS:INTERNAL=-L/opt/homebrew/Cellar/fontconfig/2.17.1/lib;-lfontconfig
 PKG_FONTCONFIG_LDFLAGS_OTHER:INTERNAL=
-PKG_FONTCONFIG_LIBDIR:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.16.0/lib
-PKG_FONTCONFIG_LIBRARIES:INTERNAL=fontconfig;freetype
-PKG_FONTCONFIG_LIBRARY_DIRS:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.16.0/lib;/opt/homebrew/opt/freetype/lib
+PKG_FONTCONFIG_LIBDIR:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.17.1/lib
+PKG_FONTCONFIG_LIBRARIES:INTERNAL=fontconfig
+PKG_FONTCONFIG_LIBRARY_DIRS:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.17.1/lib
 PKG_FONTCONFIG_LIBS:INTERNAL=
 PKG_FONTCONFIG_LIBS_L:INTERNAL=
 PKG_FONTCONFIG_LIBS_OTHER:INTERNAL=
 PKG_FONTCONFIG_LIBS_PATHS:INTERNAL=
 PKG_FONTCONFIG_MODULE_NAME:INTERNAL=fontconfig
-PKG_FONTCONFIG_PREFIX:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.16.0
-PKG_FONTCONFIG_STATIC_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/fontconfig/2.16.0/include;-I/opt/homebrew/opt/freetype/include/freetype2;-I/opt/homebrew/opt/libpng/include/libpng16;-I/opt/homebrew/opt/zlib/include;-DXML_STATIC
+PKG_FONTCONFIG_PREFIX:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.17.1
+PKG_FONTCONFIG_STATIC_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/fontconfig/2.17.1/include;-I/opt/homebrew/opt/freetype/include/freetype2;-I/opt/homebrew/opt/libpng/include/libpng16;-I/opt/homebrew/opt/zlib/include;-DXML_STATIC
 PKG_FONTCONFIG_STATIC_CFLAGS_I:INTERNAL=
 PKG_FONTCONFIG_STATIC_CFLAGS_OTHER:INTERNAL=-DXML_STATIC
-PKG_FONTCONFIG_STATIC_INCLUDE_DIRS:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.16.0/include;/opt/homebrew/opt/freetype/include/freetype2;/opt/homebrew/opt/libpng/include/libpng16;/opt/homebrew/opt/zlib/include
-PKG_FONTCONFIG_STATIC_LDFLAGS:INTERNAL=-L/opt/homebrew/Cellar/fontconfig/2.16.0/lib;-lfontconfig;-L/opt/homebrew/opt/freetype/lib;-lfreetype;-lbz2;-L/opt/homebrew/opt/libpng/lib;-lpng16;-L/opt/homebrew/opt/zlib/lib;-lz;-L/usr/lib;-lexpat
+PKG_FONTCONFIG_STATIC_INCLUDE_DIRS:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.17.1/include;/opt/homebrew/opt/freetype/include/freetype2;/opt/homebrew/opt/libpng/include/libpng16;/opt/homebrew/opt/zlib/include
+PKG_FONTCONFIG_STATIC_LDFLAGS:INTERNAL=-L/opt/homebrew/Cellar/fontconfig/2.17.1/lib;-lfontconfig;-lintl;-lm;-L/opt/homebrew/opt/freetype/lib;-lfreetype;-L/usr/lib;-lbz2;-L/opt/homebrew/opt/libpng/lib;-lpng16;-L/opt/homebrew/opt/zlib/lib;-lz;-lexpat
 PKG_FONTCONFIG_STATIC_LDFLAGS_OTHER:INTERNAL=
 PKG_FONTCONFIG_STATIC_LIBDIR:INTERNAL=
-PKG_FONTCONFIG_STATIC_LIBRARIES:INTERNAL=fontconfig;freetype;bz2;png16;z;expat
-PKG_FONTCONFIG_STATIC_LIBRARY_DIRS:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.16.0/lib;/opt/homebrew/opt/freetype/lib;/opt/homebrew/opt/libpng/lib;/opt/homebrew/opt/zlib/lib;/usr/lib
+PKG_FONTCONFIG_STATIC_LIBRARIES:INTERNAL=fontconfig;intl;m;freetype;bz2;png16;z;expat
+PKG_FONTCONFIG_STATIC_LIBRARY_DIRS:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.17.1/lib;/opt/homebrew/opt/freetype/lib;/usr/lib;/opt/homebrew/opt/libpng/lib;/opt/homebrew/opt/zlib/lib
 PKG_FONTCONFIG_STATIC_LIBS:INTERNAL=
 PKG_FONTCONFIG_STATIC_LIBS_L:INTERNAL=
 PKG_FONTCONFIG_STATIC_LIBS_OTHER:INTERNAL=
 PKG_FONTCONFIG_STATIC_LIBS_PATHS:INTERNAL=
-PKG_FONTCONFIG_VERSION:INTERNAL=2.16.0
+PKG_FONTCONFIG_VERSION:INTERNAL=2.17.1
 PKG_FONTCONFIG_fontconfig_INCLUDEDIR:INTERNAL=
 PKG_FONTCONFIG_fontconfig_LIBDIR:INTERNAL=
 PKG_FONTCONFIG_fontconfig_PREFIX:INTERNAL=
@@ -2575,7 +2590,7 @@ ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
 ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/Users/shiva/DualTestBeam
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/Users/shiva/DualTestBeam/install
 //Path to a program.
 _Python_CONFIG:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13-config
 //Compiler reason failure
@@ -2605,7 +2620,5 @@ boost_headers_DIR-ADVANCED:INTERNAL=1
 pkgcfg_lib_PC_EXPAT_expat-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PKG_FONTCONFIG_fontconfig
 pkgcfg_lib_PKG_FONTCONFIG_fontconfig-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_PKG_FONTCONFIG_freetype
-pkgcfg_lib_PKG_FONTCONFIG_freetype-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.16.0/lib
+prefix_result:INTERNAL=/opt/homebrew/Cellar/fontconfig/2.17.1/lib
 

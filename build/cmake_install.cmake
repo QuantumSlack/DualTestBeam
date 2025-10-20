@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/Users/shiva/DualTestBeam")
+  set(CMAKE_INSTALL_PREFIX "/Users/shiva/DualTestBeam/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -87,14 +87,14 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/Users/shiva/DualTestBeam/examples/DualTestBeam/data;/Users/shiva/DualTestBeam/examples/DualTestBeam/eve;/Users/shiva/DualTestBeam/examples/DualTestBeam/scripts")
+   "/Users/shiva/DualTestBeam/install/examples/DualTestBeam/data;/Users/shiva/DualTestBeam/install/examples/DualTestBeam/eve;/Users/shiva/DualTestBeam/install/examples/DualTestBeam/scripts")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/Users/shiva/DualTestBeam/examples/DualTestBeam" TYPE DIRECTORY FILES
+  file(INSTALL DESTINATION "/Users/shiva/DualTestBeam/install/examples/DualTestBeam" TYPE DIRECTORY FILES
     "/Users/shiva/DualTestBeam/data"
     "/Users/shiva/DualTestBeam/eve"
     "/Users/shiva/DualTestBeam/scripts"
