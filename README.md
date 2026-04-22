@@ -71,5 +71,7 @@ Then do typical GEANT4 visualization commands such as:
 /vis/viewer/set/viewpointThetaPhi 70 20
 exit
 ```
-# QuantumSlack
+### ROOT file Structure
+<img width="272" height="365" alt="Screenshot 2026-04-22 at 8 37 37 AM" src="https://github.com/user-attachments/assets/ea12b76e-2486-4d02-998b-cedb3b63fd60" />
+
 # DualTestBeam
