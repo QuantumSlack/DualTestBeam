@@ -73,6 +73,7 @@ exit
 ```
 ### ROOT file Structure
 <img width="272" height="365" alt="Screenshot 2026-04-22 at 8 37 37 AM" src="https://github.com/user-attachments/assets/ea12b76e-2486-4d02-998b-cedb3b63fd60" />
+
 -  out_FSCEPonly_e-10gev_.root:- File name
 -   EVENT;1:- Branch which contains information about energy deposits, timings etc.
 -   DRFNoSegment:- Branch which contains information about particles inside the detector. This name is unique for each geometry being simulated. For FSCEPonly, it's DRFNoSegment, for other geometries, it would be different.
