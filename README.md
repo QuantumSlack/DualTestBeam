@@ -74,12 +74,12 @@ exit
 ### ROOT file Structure
 <img width="272" height="365" alt="Screenshot 2026-04-22 at 8 37 37 AM" src="https://github.com/user-attachments/assets/ea12b76e-2486-4d02-998b-cedb3b63fd60" />
 
--  out_FSCEPonly_e-10gev_.root:- File name
--   EVENT;1:- Branch which contains information about energy deposits, timings etc.
--   DRFNoSegment:- Branch which contains information about particles inside the detector. This name is unique for each geometry being simulated. For FSCEPonly, it's DRFNoSegment, for other geometries, it would be different.
-- EdgeDetNoSegment:- Branch which contains the same information as the previous branch, but when particles are detected in the edge detector instead of detector's interior.
-- MCParticles (Monte-Carlo Particles):- This branch contains information about trackID, parents, daughters, pdgID, spin, genstatus etc. for each particle produced in the simulation irrespective of where they are.
-- Remaining parameters are dials which are specified in SCEPCALsteering.py file.
+1. **`out_FSCEPonly_e-10gev_.root`** — File name
+2. **`EVENT;1`** — Branch which contains information about energy deposits, timings, etc.
+3. **`DRFNoSegment`** — Branch which contains information about particles inside the detector. This name is unique for each geometry being simulated. For FSCEPonly, it's DRFNoSegment; for other geometries it would be different.
+4. **`EdgeDetNoSegment`** — Branch which contains the same information as the previous branch, but when particles are detected in the edge detector instead of the detector's interior.
+5. **`MCParticles` (Monte-Carlo Particles)** — Contains information about trackID, parents, daughters, pdgID, spin, genstatus, etc. for each particle produced in the simulation irrespective of where they are.
+6. **Remaining parameters** — Dials which are specified in `SCEPCALsteering.py`.
 
 ### Important terms 
 <img width="1012" height="313" alt="Screenshot 2026-04-22 at 8 58 42 AM" src="https://github.com/user-attachments/assets/a504d1d7-9473-4423-92f2-7290c938f770" />
