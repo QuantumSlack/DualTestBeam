@@ -83,7 +83,6 @@ exit
 
 ### Important terms 
 <img width="1012" height="313" alt="Screenshot 2026-04-22 at 8 58 42 AM" src="https://github.com/user-attachments/assets/a504d1d7-9473-4423-92f2-7290c938f770" />
-
  1. When an beam particle hits the detector, then it's defined as an **`event`**. One event can produce many subsequent hits in the detector.
  2. For each event, each particle in the simulation has a unique **`trackID`** which defines the trajectory of the particle in the detector. In this illustration, an incident particle produces three unique tracks with trackID's $t_{1}$, $t_{2}$, $t_{3}$. **`Note:- The trackIDs reset for each event. So, when analyzing data, event-0 and event-1 can have the same set of trackIDs.`**
  3. Each trackID corresponds to a particle which is propoagating in the detector. So, for each trackID, there is a **`pdgID`** (Particle Data Group ID) which is unique for each type of particle. More information about it over here:- https://www.phy.bnl.gov/twister/bee/particles/
