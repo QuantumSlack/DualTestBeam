@@ -67,7 +67,7 @@ The above instance is from a JDL file which is running a simulation event for a 
 6. **request_memory=500GB**:- Specifies the memory requirement for your job. Can leave this out if your job is small.
 7. **Queue**:- Last command of the file. Used to specify the instances of the job. If the command says `Queue 10`, then it submits 10 instances of the same job on the cluster.
 
-More information about Condor Cluster over [here](https://htcondor.readthedocs.io/en/24.x/users-manual/index.html)
+More information about Condor Cluster over [here](https://htcondor.readthedocs.io/en/24.x/users-manual/index.html). CERN documentation over [here](https://batchdocs.web.cern.ch/local/submit.html).
 
 ## If you are not on alma9-like OS, but can use singularity
 ```
