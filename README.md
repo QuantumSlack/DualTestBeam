@@ -13,7 +13,10 @@ This version of Dd4hep + DualTestBeam is not in-date with the recent changes wit
 2. Next go to `DD4hep/examples/` directory and clone DualTestBeam repository.
 3. Go to `CMakeLists.txt` in the examples directory, go to line 45 and add `DualTestBeam` at the end. After this, the line should look something like this:-
 `SET(DD4HEP_EXAMPLES "AlignDet CLICSiD ClientTests Conditions DDCMS DDCodex DDDigi DDG4 DDG4_MySensDet LHeD OpticalSurfaces RICH Persistency DDCAD SimpleDetector DualTestBeam"`
-4. 
+4. Next go to `DD4hep/`
+5. `mkdir build install && cd build.`. This will take you into `DD4hep/build` directory.
+6. Next `ccmake ../`. After this, a prompt will occur with various fields. Following settings is necessary for initial setup.
+   ``CMAKE_INSTALL_PREFIX = full path of your install directory``
 
 ## Tracks and Propagation of Particles 
 <img width="922" height="294" alt="Screenshot 2026-04-22 at 9 17 36 AM" src="https://github.com/user-attachments/assets/87e471fe-a0b7-462f-ba37-a4daa1d27406" />
