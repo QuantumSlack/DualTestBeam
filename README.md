@@ -17,10 +17,12 @@ This version of Dd4hep + DualTestBeam is not in-date with the recent changes wit
 4. Next go to `DD4hep/`
 5. `mkdir build install && cd build.`. This will take you into `DD4hep/build` directory.
 6. Next `ccmake ../`. After this, a prompt will occur with various fields. Following settings is necessary for initial setup.
-   ``CMAKE_INSTALL_PREFIX = full path of your install directory
+   ```
+   CMAKE_INSTALL_PREFIX = full path of your install directory
      DD4HEP_BUILD_EXAMPLES            ON  
      DD4HEP_USE_GEANT4                ON                                                                                                           
-     DD4HEP_USE_GEANT4_UNITS          ON  `` 
+     DD4HEP_USE_GEANT4_UNITS          ON
+    ``` 
 7. After this, ``make -j4 && make install``. This will make and install the DD4hep packages.
 8. After installation ``source ../install/bin/thisdd4hep.sh``. This is crucial as this command sets important paths for executing commands like `ddsim`.
 ### Setup for DualTestBeam ###
