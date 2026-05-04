@@ -33,7 +33,7 @@ This version of Dd4hep + DualTestBeam is not in-date with the recent changes wit
 4. After installation ``source ../install/bin/thisDualTestBeam.sh``.
 5. Setup is complete. If you modify something within headers/source code in DualTestBeam, you need to repeat the process of setting up DualTestBeam. There is no need to setup DD4hep everytime. 
 
-**Note:- Each time you log off and log in (exit the terminal and then open terminal again), you need to source these two files before you can begin working with packages themselves.**
+**Note:- Each time you log off and log in (exit the terminal and then open terminal again), you need to source these two files (thisdd4hep.sh and thisDualTestBeam.sh) before you can begin working with packages.**
 
 ## Tracks and Propagation of Particles 
 <img width="922" height="294" alt="Screenshot 2026-04-22 at 9 17 36 AM" src="https://github.com/user-attachments/assets/87e471fe-a0b7-462f-ba37-a4daa1d27406" />
