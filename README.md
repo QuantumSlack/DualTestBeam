@@ -1,3 +1,5 @@
+This version of Dd4hep + DualTestBeam is not in-date with the recent changes with DualTestBeam repository. For more information, contact Sarah Eno from University of Maryland. 
+
 ## Table of Contents
 - [Tracks and Propagation of Particles](#tracks-and-propagation-of-particles)
 - [Creating ROOT file](#creating-root-file)
