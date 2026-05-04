@@ -107,4 +107,5 @@ In `compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py
 9. `gunParticle`:- Specifies which particle is being fired, pions, photons, electrons, protons etc.
 10. `-N 1`:- Defines the number of events. In this case, number of events is 1.
 11. `>& ...`:- Specifies the location of log files which is useful for debugging if simulation fails.
-12. 
+
+
