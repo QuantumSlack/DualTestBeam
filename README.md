@@ -88,5 +88,23 @@ exit
  2. For each event, each particle in the simulation has a unique **`trackID`** which defines the trajectory of the particle in the detector. In this illustration, an incident particle produces three unique tracks with trackID's $t_{1}$, $t_{2}$, $t_{3}$. **`Note:- The trackIDs reset for each event. So, when analyzing data, event-0 and event-1 can have the same set of trackIDs.`**
  3. Each trackID corresponds to a particle which is propagating in the detector. So, for each trackID, there is a **`pdgID`** (Particle Data Group ID) which is unique for each type of particle. More information about it over here:- https://www.phy.bnl.gov/twister/bee/particles/ In this case, the track $t_{1}$ has a particle with pdgID $p_{1}$.
  4. Within each track, the particle can deposit energies multiple times. Each energy deposit in this track is called a **contribution**. Each contribution will have the same trackID, pdgID. However it will have different position (x,y,z) in the detector.
+ 5. In thw above picture, the red points on track $t_{1}$ represent these contributions. In ROOT file, these contribution will be recorded seperately even thought they will have the same trackID and pdgID. It's important to keep this in mind when doing analysis.
+    
+### Creating ROOT file
 
-# DualTestBeam
+In `compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py`. These python files take  arguments and produce the `.sh` files which can be executed to simulate events. A DD4hep command called `ddsim` will be used to simulate particle events. An example of using this command is as follows:-
+
+`ddsim --compactFile=/Users/shiva/DD4hep/examples/DualTestBeam/compact/DRFSCEPonly.xml --runType=batch -G --steeringFile /Users/shiva/DD4hep/examples/DualTestBeam/compact/SCEPCALsteering.py --outputFile=/Users/shiva/DD4hep/examples/DualTestBeam/compact/output/FSCEPonly/out_FSCEPonly_pi-10gev_$process_id.root --part.userParticleHandler= -G --gun.position="0.,-7*mm,-1*mm" --gun.direction "0. 0.05 0.99875" --gun.energy "10*GeV" --gun.particle="pi-" -N 1 >& /Users/shiva/DD4hep/examples/DualTestBeam/compact/output/FSCEPonly/Log_FSCEPonly_pi-10gev_$process_id.log`
+
+1. `ddsim`:- DD4hep command used for simulation
+2. `--compactFile`:- Tells the location of your `xml` file which contains your detector geometry parameters. This file will be used to construct the detector based on material and size specifications. Each geometry will have a different `xml` file.
+3. `--runType`:- Specifies the type of simulation you want to do. If you specified `vis`, then it will open an event simulator and show all the interactions. `batch` value allows the simulation to record the entries in a ROOT file.
+4. `--steeringFile`:- Uses a python file which specifies additional settings related to simulation like particle gun, physics engine, input files, output files etc.
+5. `--outputFile`:- Specifies the location and name of your file which will be generated after the simulation is finished. This location will contain all the ROOT files which will be produced as a result of `ddsim` command.
+6. `--gunPosition`:- Specifies the position of gun from which particles will be shot towards detector.
+7. `--gunDirection`:- Specifies the direction in which the particle will be fired. This is important because certain directions don't lead to any interactions in detector.
+8. `gunEnergy`:- Specifies the energy of the particle which is being shot at the detector from the gun.
+9. `gunParticle`:- Specifies which particle is being fired, pions, photons, electrons, protons etc.
+10. `-N 1`:- Defines the number of events. In this case, number of events is 1.
+11. `>& ...`:- Specifies the location of log files which is useful for debugging if simulation fails.
+12. 
