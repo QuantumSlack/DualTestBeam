@@ -87,6 +87,6 @@ exit
  1. When an beam particle hits the detector, then it's defined as an **`event`**. One event can produce many subsequent hits in the detector.
  2. For each event, each particle in the simulation has a unique **`trackID`** which defines the trajectory of the particle in the detector. In this illustration, an incident particle produces three unique tracks with trackID's $t_{1}$, $t_{2}$, $t_{3}$. **`Note:- The trackIDs reset for each event. So, when analyzing data, event-0 and event-1 can have the same set of trackIDs.`**
  3. Each trackID corresponds to a particle which is propagating in the detector. So, for each trackID, there is a **`pdgID`** (Particle Data Group ID) which is unique for each type of particle. More information about it over here:- https://www.phy.bnl.gov/twister/bee/particles/ In this case, the track $t_{1}$ has a particle with pdgID $p_{1}$.
- 4. Within each track, the particle can deposit energies multiple times. Each energy deposit in this track is called a ** contribution **.
+ 4. Within each track, the particle can deposit energies multiple times. Each energy deposit in this track is called a **contribution**. Each contribution will have the same trackID, pdgID. However it will have different position (x,y,z) in the detector.
 
 # DualTestBeam
