@@ -1,9 +1,9 @@
-### Table of Contents 
-[1] Tracks and Propagation of Particles 
-[2] Creating ROOT file
-[3] ROOT File Structure
+## Table of Contents 
+[1] #Tracks and Propagation of Particles 
+[2] #Creating ROOT file
+[3] #ROOT File Structure
 
-### Tracks and Propagation of Particles 
+## Tracks and Propagation of Particles 
 <img width="922" height="294" alt="Screenshot 2026-04-22 at 9 17 36 AM" src="https://github.com/user-attachments/assets/87e471fe-a0b7-462f-ba37-a4daa1d27406" />
 
  1. When an beam particle hits the detector, then it's defined as an **`event`**. One event can produce many subsequent hits in the detector.
@@ -12,7 +12,7 @@
  4. Within each track, the particle can deposit energies multiple times. Each energy deposit in this track is called a **contribution**. Each contribution will have the same trackID, pdgID. However it will have different position (x,y,z) in the detector.
  5. In thw above picture, the red points on track $t_{1}$ represent these contributions. In ROOT file, these contribution will be recorded seperately even thought they will have the same trackID and pdgID. It's important to keep this in mind when doing analysis.
     
-### Creating ROOT file
+## Creating ROOT file
 
 In `compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py`. These python files take  arguments and produce the `.sh` files which can be executed to simulate events. A DD4hep command called `ddsim` will be used to simulate particle events. An example of using this command is as follows:-
 
@@ -30,7 +30,7 @@ In `compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py
 10. `-N 1`:- Defines the number of events. In this case, number of events is 1.
 11. `>& ...`:- Specifies the location of log files which is useful for debugging if simulation fails.
 
-### ROOT File Structure
+## ROOT File Structure
 <img width="272" height="365" alt="Screenshot 2026-04-22 at 8 37 37 AM" src="https://github.com/user-attachments/assets/ea12b76e-2486-4d02-998b-cedb3b63fd60" />
 
 1. **`out_FSCEPonly_e-10gev_.root`** — File name
