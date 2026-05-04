@@ -1,7 +1,7 @@
-## Table of Contents 
-[1] #Tracks and Propagation of Particles 
-[2] #Creating ROOT file
-[3] #ROOT File Structure
+## Table of Contents
+- [Tracks and Propagation of Particles](#tracks-and-propagation-of-particles)
+- [Creating ROOT file](#creating-root-file)
+- [ROOT File Structure](#root-file-structure)
 
 ## Tracks and Propagation of Particles 
 <img width="922" height="294" alt="Screenshot 2026-04-22 at 9 17 36 AM" src="https://github.com/user-attachments/assets/87e471fe-a0b7-462f-ba37-a4daa1d27406" />
