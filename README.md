@@ -4,6 +4,7 @@ This version of Dd4hep + DualTestBeam is not in-date with the recent changes wit
 - [Tracks and Propagation of Particles](#tracks-and-propagation-of-particles)
 - [Creating ROOT file](#creating-root-file)
 - [ROOT File Structure](#root-file-structure)
+- [JDL Files](#jdl-files)
 
 ## Tracks and Propagation of Particles 
 <img width="922" height="294" alt="Screenshot 2026-04-22 at 9 17 36 AM" src="https://github.com/user-attachments/assets/87e471fe-a0b7-462f-ba37-a4daa1d27406" />
@@ -42,7 +43,29 @@ In `compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py
 5. **`MCParticles` (Monte-Carlo Particles)** — Contains information about trackID, parents, daughters, pdgID, spin, genstatus, etc. for each particle produced in the simulation irrespective of where they are.
 6. **Remaining parameters** — Dials which are specified in `SCEPCALsteering.py`.
 
-This is a simulation of a dual readout crystal calorimeter. 
+## JDL Files
+Typically, when you run simulation with many events (> 100), it takes a lot of time for the ROOT file to be produced (from few hours to days depending on number of events). So, to work-around this, it's good to know Job Description Language (JDL) files. 
+
+Note:- These files are typically run on clusters which have many systems and large memory (like Condor Cluster at CERN).
+
+`Executable = condor-executable-FSCEPonly_e-10gev.sh
+Output = condor-executable-FSCEPonly_e-$(cluster)_$(process).stdout
+Error = condor-executable-FSCEPonly_e-$(cluster)_$(process).stderr
+Log = condor-executable-FSCEPonly_e-$(cluster)_$(process).condor
++JobFlavour= "tomorrow"
+request_memory=500GB
+Queue`
+
+The above instance is from a JDL file which is running a simulation event for a geometry sepcified for DRFSCEPonly.xml file with 10 GeV pion beams. 
+1. **Executable**:- This argument takes the name of your `.sh` file which will be executed on the cluster. It's good to specify the entire path for this so that the system which runs the job can easily access your files.
+2. **Output**:- Specifies the name of file which will store the output of the job on stdout. Good to specify the entire path.
+3. **Error**:- Specifies the name of file which will store the error encountered in running the job. Good to specify the entire path.
+4. **Log**:- Specifies the name of file which will store the status of the submitted job. Good to specify the entire path.
+5. **+JobFlavour="tommorrow"**:- If your event size is large, it can take days to complete the job and during that period, your job can be interrupted by the system. In order to avoid this, you can specify a `JobFlavour` which will specify the expected duration of job. 
+6. **request_memory=500GB**:- Specifies the memory requirement for your job. Can leave this out if your job is small.
+7. **Queue**:- Last command of the file. Used to specify the instances of the job. If the command says `Queue 10`, then it submits 10 instances of the same job on the cluster.
+
+More information about Condor Cluster over [here](https://htcondor.readthedocs.io/en/24.x/users-manual/index.html)
 
 ## If you are not on alma9-like OS, but can use singularity
 ```
