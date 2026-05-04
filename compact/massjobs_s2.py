@@ -2,7 +2,12 @@ from array import *
 import argparse
 
 
-# python massjobs_s2.py -g1 DualTestBeam -g2 FSCEPonly -doecal 1 -dohcal 1 -hcaltype 0 -doedge 1 -gendete 3 -gendeth 3 -dodual 0 -NNN 2 -dotwocalcor 1 -c /data/users/eno/CalVision/dd4hep/stuff4stuff/DualTestBeam/compact/jobs/ -w /data/users/eno/CalVision/dd4hep/stuff4stuff/DualTestBeam/compact/output/  -s /data/users/eno/CalVision/dd4hep/stuff4stuff/DualTestBeam/compact/jobs/
+# python massjobs_s2.py
+# -g1 DualTestBeam -g2 FSCEPonly
+# -doecal 1 -dohcal 1 -hcaltype 0 -doedge 1 -gendete 3 -gendeth 3 -dodual 0 -NNN 2 -dotwocalcor 1
+# -c /data/users/eno/CalVision/dd4hep/stuff4stuff/DualTestBeam/compact/jobs/
+# -w /data/users/eno/CalVision/dd4hep/stuff4stuff/DualTestBeam/compact/output/
+# -s /data/users/eno/CalVision/dd4hep/stuff4stuff/DualTestBeam/compact/jobs/
 
 argParser = argparse.ArgumentParser()
 argParser.add_argument("-w", "--write", help="where to write")
@@ -42,7 +47,7 @@ print("script area is %s" % scriptarea )
 #energies=[10,15,20,25,30,35,40,45,50]
 nenergy=1
 energies=[20]
-name="s2-condor-executable-"+str(args.geometry1)+"_"+str(args.geometry2)+'_g'+str(args.gendet)+"-"
+name="s2-condor-executable-"+str(args.geometry1)+"_"+str(args.geometry2)+'_g'+str(args.gendete)+"-"+str(args.gendeth)+"-"
 
 # create the .sh files 
 i=0
@@ -59,10 +64,7 @@ while (i<nenergy):
     shfile.write('echo "ran setup"'+'\n')
     shfile.write('source  /data/users/eno/CalVision/dd4hep/DD4hep/install/bin/thisdd4hep.sh'+'\n')
     shfile.write('echo "ran thisdd4hep"'+'\n')
-    if args.hcaltype=='0':
-       shfile.write('root -b -l -q \'Resolution.C('+str(args.NNN)+',"./output/out_'+args.geometry1+"_"+str(energies[i])+'GeV_e-.root","./output/out_'+str(args.geometry1)+"_"+str(energies[i])+'GeV_pi-.root","./output/out_'+str(args.geometry2)+"_"+str(energies[i])+'GeV_e-.root","./output/out_'+str(args.geometry2)+"_"+str(energies[i])+'GeV_pi-.root",'+str(energies[i])+','+str(args.doecal)+','+str(args.dohcal)+','+str(args.hcaltype)+','+str(args.doedge)+',0,0,0.,'+str(args.gendete)+','+str(args.gendeth)+',"./output/hists_'+str(energies[i])+'GeV_'+str(args.geometry1)+'_ge'+str(args.gendete)+'_gh'+str(args.gendeth)+'.root","DRCNoSegment","DRFNoSegment",0,0,'+str(args.dodual)+','+str(args.dotwocalcor)+')\' >& ./Figures/s2_'+str(energies[i])+'GeV'+'_'+str(args.geometry1)+'_'+str(args.geometry2)+'_ge'+str(args.gendete)+'_gh'+str(args.gendeth)+'.log \n' );
-    if args.hcaltype=='1':
-       shfile.write('root -b -l -q \'Resolution.C('+str(args.NNN)+',"./output/out_'+args.geometry1+"_"+str(energies[i])+'GeV_e-.root","./output/out_'+str(args.geometry1)+"_"+str(energies[i])+'GeV_pi-.root","./output/out_'+str(args.geometry2)+"_"+str(energies[i])+'GeV_e-.root","./output/out_'+str(args.geometry2)+"_"+str(energies[i])+'GeV_pi-.root",'+str(energies[i])+','+str(args.doecal)+','+str(args.dohcal)+','+str(args.hcaltype)+','+str(args.doedge)+',0,0,0.,'+str(args.gendete)+','+str(args.gendeth)+',"./output/hists_'+str(energies[i])+'GeV_'+str(args.geometry1)+'_ge'+str(args.gendete)+'_gh'+str(args.gendeth)+'.root","DRCNoSegment","DRSNoSegment",0,0,'+str(args.dodual)+','+str(args.dotwocalcor)+')\' >& ./Figures/s2_'+str(energies[i])+'GeV'+'_'+str(args.geometry1)+'_'+str(args.geometry2)+'_ge'+str(args.gendete)+'_gh'+str(args.gendeth)+'.log \n' );
+    shfile.write('root -b -l -q \'Resolution.C('+str(args.NNN)+',"./output/out_'+args.geometry1+"_"+str(energies[i])+'GeV_e-.root","./output/out_'+str(args.geometry1)+"_"+str(energies[i])+'GeV_pi-.root","./output/out_'+str(args.geometry2)+"_"+str(energies[i])+'GeV_e-.root","./output/out_'+str(args.geometry2)+"_"+str(energies[i])+'GeV_pi-.root",'+str(energies[i])+','+str(args.doecal)+','+str(args.dohcal)+','+str(args.hcaltype)+','+str(args.doedge)+',0,0,0.,'+str(args.gendete)+','+str(args.gendeth)+',"./output/hists_'+str(energies[i])+'GeV_'+str(args.geometry1)+'_ge'+str(args.gendete)+'_gh'+str(args.gendeth)+'.root",0,'+str(args.dodual)+','+str(args.dotwocalcor)+')\' >& ./Figures/s2_'+str(energies[i])+'GeV'+'_'+str(args.geometry1)+'_'+str(args.geometry2)+'_ge'+str(args.gendete)+'_gh'+str(args.gendeth)+'.log \n' );
     shfile.write('exitcode=$?'+'\n')
     shfile.write('echo ""'+'\n')
     shfile.write('END_TIME=`/bin/date`'+'\n')

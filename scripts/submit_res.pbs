@@ -1,0 +1,15 @@
+#!/bin/bash 
+#PBS -l nodes=1:ppn=1
+#PBS -m ea
+#PBS -kdoe
+
+cd $PBS_O_WORKDIR 
+pwd 
+# should be in pbs_log_res
+
+echo ${diri} ${dirf} ${filename} ${energy} ${jobname}
+
+mkdir -p ${jobname}
+cd ${jobname}
+
+singularity exec -B /cvmfs:/cvmfs -B /cms/data:/cms/data docker://gitlab-registry.cern.ch/sft/docker/alma9-core:latest bash res.sh ${diri} ${dirf} ${filename} ${energy}

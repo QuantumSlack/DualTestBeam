@@ -1,121 +1,20 @@
-This version of Dd4hep + DualTestBeam is not in-date with the recent changes with the latest DualTestBeam repository. For more information, contact Sarah Eno from University of Maryland. 
+This is a simulation of a dual readout crystal calorimeter (currently the code is work in progress).
+See https://iopscience.iop.org/article/10.1088/1748-0221/15/11/P11005 for the concept.
 
-## Table of Contents 
-- [Setup](#setup)
-- [Creating ROOT file](#creating-root-file)
-- [ROOT File Structure](#root-file-structure)
-- [JDL Files](#jdl-files)
-- [Tracks and Propagation of Particles](#tracks-and-propagation-of-particles)
-- [Extra comments](#extra-comments)
-
-## Setup
-### Setup for DD4hep
-1. Clone the DD4hep repository from [here](https://github.com/AIDASoft/DD4hep)
-2. Next go to `DD4hep/examples/` directory and clone DualTestBeam repository.
-3. Go to `CMakeLists.txt` in the examples directory, go to line 45 and add `DualTestBeam` at the end. After this, the line should look something like this:-
-`SET(DD4HEP_EXAMPLES "AlignDet CLICSiD ClientTests Conditions DDCMS DDCodex DDDigi DDG4 DDG4_MySensDet LHeD OpticalSurfaces RICH Persistency DDCAD SimpleDetector DualTestBeam"`
-4. Next go to `DD4hep/`
-5. `mkdir build install && cd build.`. This will take you into `DD4hep/build` directory.
-6. Next `ccmake ../`. After this, a prompt will occur with various fields. Following settings is necessary for initial setup.
-   ```
-     CMAKE_INSTALL_PREFIX = full path of your install directory
-     DD4HEP_BUILD_EXAMPLES            ON  
-     DD4HEP_USE_GEANT4                ON                                                                                                           
-     DD4HEP_USE_GEANT4_UNITS          ON
-    ``` 
-7. After this, ``make -j4 && make install``. This will make and install the DD4hep packages.
-8. After installation ``source ../install/bin/thisdd4hep.sh``. This is crucial as this command sets important paths for executing commands like `ddsim`.
-### Setup for DualTestBeam ###
-1. Go to `DD4hep/examples/DualTestBeam/` and `mkdir build install && cd build.`
-2. Next `ccmake ../`. After this, a prompt will occur with various fields. Following settings is necessary for initial setup.
-   ``CMAKE_INSTALL_PREFIX = full path of your install directory``
-3. After this, ``make -j4 && make install``.
-4. After installation ``source ../install/bin/thisDualTestBeam.sh``.
-5. Setup is complete. If you modify something within headers/source code in DualTestBeam, you need to repeat the process of setting up DualTestBeam. There is no need to setup DD4hep everytime. 
-
-**Note:- Each time you log off and log in (exit the terminal and then open terminal again), you need to source these two files (thisdd4hep.sh and thisDualTestBeam.sh) before you can begin working with packages.**
-
-## Tracks and Propagation of Particles 
-<img width="922" height="294" alt="Screenshot 2026-04-22 at 9 17 36 AM" src="https://github.com/user-attachments/assets/87e471fe-a0b7-462f-ba37-a4daa1d27406" />
-
- 1. When an beam particle hits the detector, then it's defined as an **`event`**. One event can produce many subsequent hits in the detector.
- 2. For each event, each particle in the simulation has a unique **`trackID`** which defines the trajectory of the particle in the detector. In this illustration, an incident particle produces three unique tracks with trackID's $t_{1}$, $t_{2}$, $t_{3}$. **`Note:- The trackIDs reset for each event. So, when analyzing data, event-0 and event-1 can have the same set of trackIDs.`**
- 3. Each trackID corresponds to a particle which is propagating in the detector. So, for each trackID, there is a **`pdgID`** (Particle Data Group ID) which is unique for each type of particle. More information about it over here:- https://www.phy.bnl.gov/twister/bee/particles/ In this case, the track $t_{1}$ has a particle with pdgID $p_{1}$.
- 4. Within each track, the particle can deposit energies multiple times. Each energy deposit in this track is called a **contribution**. Each contribution will have the same trackID, pdgID. However it will have different position (x,y,z) in the detector.
- 5. In thw above picture, the red points on track $t_{1}$ represent these contributions. In ROOT file, these contribution will be recorded seperately even thought they will have the same trackID and pdgID. It's important to keep this in mind when doing analysis.
-    
-## Creating ROOT file
-
-In `DD4hep/examples/DualTestBeam/compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py`. These python files take arguments and produce the `.sh` files which can be executed to simulate events. Before using these files, execute `mkdir jobs output` inside the directory `DD4hep/examples/DualTestBeam/compact` where `jobs` will contain all the executables and `output` will contain all the ROOT files related to simulation. A DD4hep command called `ddsim` will be used to simulate particle events. An example of using this command is as follows:-
-
-```
-ddsim --compactFile=/Users/shiva/DD4hep/examples/DualTestBeam/compact/DRFSCEPonly.xml --runType=batch -G --steeringFile /Users/shiva/DD4hep/examples/DualTestBeam/compact/SCEPCALsteering.py --outputFile=/Users/shiva/DD4hep/examples/DualTestBeam/compact/output/FSCEPonly/out_FSCEPonly_pi-10gev_$process_id.root --part.userParticleHandler= -G --gun.position="0.,-7*mm,-1*mm" --gun.direction "0. 0.05 0.99875" --gun.energy "10*GeV" --gun.particle="pi-" -N 1 >& /Users/shiva/DD4hep/examples/DualTestBeam/compact/output/FSCEPonly/Log_FSCEPonly_pi-10gev_$process_id.log
-```
-
-1. `ddsim`:- DD4hep command used for simulation
-2. `--compactFile`:- Tells the location of your `xml` file which contains your detector geometry parameters. This file will be used to construct the detector based on material and size specifications. Each geometry will have a different `xml` file.
-3. `--runType`:- Specifies the type of simulation you want to do. If you specified `vis`, then it will open an event simulator and show all the interactions. `batch` value allows the simulation to record the entries in a ROOT file.
-4. `--steeringFile`:- Uses a python file which specifies additional settings related to simulation like particle gun, physics engine, input files, output files etc.
-5. `--outputFile`:- Specifies the location and name of your file which will be generated after the simulation is finished. This location will contain all the ROOT files which will be produced as a result of `ddsim` command.
-6. `--gunPosition`:- Specifies the position of gun from which particles will be shot towards detector.
-7. `--gunDirection`:- Specifies the direction in which the particle will be fired. This is important because certain directions don't lead to any interactions in detector.
-8. `gunEnergy`:- Specifies the energy of the particle which is being shot at the detector from the gun.
-9. `gunParticle`:- Specifies which particle is being fired, pions, photons, electrons, protons etc.
-10. `-N 1`:- Defines the number of events. In this case, number of events is 1.
-11. `>& ...`:- Specifies the location of log files which is useful for debugging if simulation fails.
-
-## ROOT File Structure
-<img width="272" height="365" alt="Screenshot 2026-04-22 at 8 37 37 AM" src="https://github.com/user-attachments/assets/ea12b76e-2486-4d02-998b-cedb3b63fd60" />
-
-1. **`out_FSCEPonly_e-10gev_.root`** — File name
-2. **`EVENT;1`** — Branch which contains information about energy deposits, timings, etc.
-3. **`DRFNoSegment`** — Branch which contains information about particles inside the detector. This name is unique for each geometry being simulated. For FSCEPonly, it's DRFNoSegment; for other geometries it would be different.
-4. **`EdgeDetNoSegment`** — Branch which contains the same information as the previous branch, but when particles are detected in the edge detector instead of the detector's interior.
-5. **`MCParticles` (Monte-Carlo Particles)** — Contains information about trackID, parents, daughters, pdgID, spin, genstatus, etc. for each particle produced in the simulation irrespective of where they are.
-6. **Remaining parameters** — Dials which are specified in `SCEPCALsteering.py`.
-
-## JDL Files
-Typically, when you run simulation with many events (> 100), it takes a lot of time for the ROOT file to be produced (from few hours to days depending on number of events). So, to work-around this, it's good to know Job Description Language (JDL) files. 
-
-Note:- These files are typically run on clusters which have many systems and large memory (like Condor Cluster at CERN).
-
-```
-Executable = condor-executable-FSCEPonly_e-10gev.sh
-Output = condor-executable-FSCEPonly_e-$(cluster)_$(process).stdout
-Error = condor-executable-FSCEPonly_e-$(cluster)_$(process).stderr
-Log = condor-executable-FSCEPonly_e-$(cluster)_$(process).condor
-+JobFlavour= "tomorrow"
-request_memory=500GB
-Queue
-```
-
-The above instance is from a JDL file which is running a simulation event for a geometry sepcified for DRFSCEPonly.xml file with 10 GeV pion beams. 
-1. **Executable**:- This argument takes the name of your `.sh` file which will be executed on the cluster. It's good to specify the entire path for this so that the system which runs the job can easily access your files.
-2. **Output**:- Specifies the name of file which will store the output of the job on stdout. Good to specify the entire path.
-3. **Error**:- Specifies the name of file which will store the error encountered in running the job. Good to specify the entire path.
-4. **Log**:- Specifies the name of file which will store the status of the submitted job. Good to specify the entire path.
-5. **+JobFlavour="tommorrow"**:- If your event size is large, it can take days to complete the job and during that period, your job can be interrupted by the system. In order to avoid this, you can specify a `JobFlavour` which will specify the expected duration of job. 
-6. **request_memory=500GB**:- Specifies the memory requirement for your job. Can leave this out if your job is small.
-7. **Queue**:- Last command of the file. Used to specify the instances of the job. If the command says `Queue 10`, then it submits 10 instances of the same job on the cluster.
-
-More information about Condor Cluster over [here](https://htcondor.readthedocs.io/en/24.x/users-manual/index.html). CERN documentation over [here](https://batchdocs.web.cern.ch/local/submit.html).
-
-
-## Extra Comments
 ## If you are not on alma9-like OS, but can use singularity
-```
+```bash
 singularity run -B /cvmfs:/cvmfs -B /data:/data docker://gitlab-registry.cern.ch/sft/docker/alma9-core:latest
-# at Baylor
-# singularity run -B /cvmfs:/cvmfs -B /cms/data:/cms/data docker://gitlab-registry.cern.ch/sft/docker/alma9-core:latest
+# At Baylor:
+singularity run -B /cvmfs:/cvmfs -B /cms/data:/cms/data docker://gitlab-registry.cern.ch/sft/docker/alma9-core:latest
 ```
 
 ## All times:
-```
+```bash
 source /cvmfs/sft.cern.ch/lcg/views/LCG_107/x86_64-el9-gcc14-opt/setup.sh
 ```
 
 ## First time only:
-```
+```bash
 # setup directory
 mkdir stuff4stuff
 cd stuff4stuff
@@ -128,20 +27,13 @@ cd DualTestBeam
 mkdir build
 mkdir install
 cd build
-
-cmake -DDD4HEP_USE_GEANT4=ON -DBoost_NO_BOOST_CMAKE=ON -DDD4HEP_USE_LCIO=ON  -DROOT_DIR=$ROOTSYS -D CMAKE_BUILD_TYPE=Release  -DCMAKE_INSTALL_PREFIX=../install ..
-
-# maybe at Baylor?
 cmake -DDD4HEP_USE_GEANT4=ON -DBoost_NO_BOOST_CMAKE=ON -DDD4HEP_USE_LCIO=ON -DROOT_DIR=$ROOTSYS -D CMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../install -D DD4HEP_USE_EDM4HEP=ON ..
-
-
-
 make -j4
 make install
 ```
 
 ## All times
-```
+```bash
 cd to stuff4stuff/DualTestBeam
 source ./install/bin/thisDualTestBeam.sh
 cd compact
@@ -155,6 +47,7 @@ For Baylor users, see [massjobs_pbsarray.py](https://gitlab.cern.ch/calvisionsim
 
 or see examples in CI (continuous integration) yaml file for running `ddsim` and `Resolution.C` in
 [.gitlab-ci.yml](https://gitlab.cern.ch/calvisionsimulation/DualTestBeam/-/blob/master/.gitlab-ci.yml)
+We test `CRConly.xml`, `DRBigEcal2.xml`, `DRDualTestBeam.xml`, `DRFSCEPonly.xml`, `DRFSCEPSAonly.xml`, `DRSampOnly.xml` in CI tests.
 
 ## running interactively
 Change `--runType=batc` above to `--runType=vis`.
@@ -169,6 +62,5 @@ Then do typical GEANT4 visualization commands such as:
 /vis/viewer/refresh
 /vis/viewer/zoomTo 10
 /vis/viewer/pan -100 200 cm
-/vis/viewer/set/viewpointThetaPhi 70 20
 exit
 ```

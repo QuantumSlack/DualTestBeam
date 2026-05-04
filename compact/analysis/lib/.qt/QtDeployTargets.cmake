@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_DualTestBeam_lib_FILE /Users/shiva/DD4hep/examples/DualTestBeam/compact/analysis/lib/libDualTestBeam_lib.dylib)
-set(__QT_DEPLOY_TARGET_DualTestBeam_lib_TYPE SHARED_LIBRARY)

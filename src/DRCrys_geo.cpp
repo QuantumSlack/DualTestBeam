@@ -54,8 +54,12 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
   xml_comp_t fX_honey(  fX_struct.child( _Unicode(honey) ) );
   double honeythick = fX_honey.thickness()/2.;
   std::cout<<"honeycomb half thickness is "<<honeythick<<std::endl;
+  xml_comp_t fX_honey2(  fX_struct.child( _Unicode(honey2) ) );
+
+
 
   // calculate size of entire detector and create envelop
+
   Layering      layering (e);
   double detectorhthickness=0.;
   double detectorhwidth=0.;
@@ -64,22 +68,24 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
     std::cout<<"DRCrys layer "<<l_num<<std::endl;
     xml_comp_t x_layer = li;
     xml_comp_t x_dim = x_layer.child(_U(dimensions));
-    int Ncount = x_dim.repeat();
-    double hwidth   = x_dim.width()/2.;
-    double agap=x_dim.gap()/2.;
-    int repeat = x_layer.repeat();
+    int Ncount = x_dim.repeat(); std::cout<<"Ncount is "<<Ncount<<std::endl;
+    double hwidth   = x_dim.width()/2.;  std::cout<<"width is "<<x_dim.width()<<std::endl;
+    double agap=x_dim.gap()/2.;  std::cout<<"agap is "<<x_dim.gap()<<std::endl;
+    int repeat = x_layer.repeat();  std::cout<<"repeat is "<<x_layer.repeat()<<std::endl;
     double hthickness=repeat*layering.layer(l_num)->thickness()/2.;
-    double hnwidth = (2*Ncount+1)*(hwidth+agap);
+    std::cout<<"hthickness is "<<hthickness<<std::endl;
+    double hnwidth = (2*Ncount+1)*(hwidth+2*agap);
+    std::cout<<"hnwidth is "<<hnwidth<<std::endl;
     detectorhthickness+=hthickness+agap;
+    std::cout<<"detectorhthickness is "<<detectorhthickness<<std::endl;
     if(hnwidth+agap>detectorhwidth) detectorhwidth=hnwidth+agap;
-    std::cout<<" ncount hwidth repeat hthickness "<<Ncount<<" "<<hnwidth<<" "<<repeat<<" "<<hthickness<<std::endl;
-    l_num++;
+    std::cout<<" ncount hwidth detectorhwidth repeat hthickness "<<Ncount<<" "<<hnwidth<<" "<<detectorhwidth<<" "<<repeat<<" "<<hthickness<<std::endl;
+    l_num+=repeat;
   }
 
-  double frac_tol2=tol/l_num;
 
   DetElement    sdet      (det_name, det_id);
-  Box           env_box   (detectorhwidth+tol, detectorhwidth+tol, detectorhthickness+tol);
+  Box           env_box   (detectorhwidth+2*tol, detectorhwidth+2*tol, detectorhthickness+2*tol);
   Volume        envelopeVol  (det_name, env_box, air);
   envelopeVol.setAttributes(description, x_det.regionStr(), x_det.limitsStr(), x_det.visStr());
 
@@ -105,7 +111,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
   std::cout<<" starting to build layers "<<std::endl;
   int opt_num=0;
   l_num = 0;
-  double z_bottoml=0.;
+  double z_bottoml=-(detectorhthickness+tol);
   for(xml_coll_t li(x_det,_U(layer)); li; ++li)  {
     std::cout<<"DRCrys layer "<<l_num<<std::endl;
     xml_comp_t x_layer = li;
@@ -116,11 +122,13 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
     double agap=x_dim.gap()/2.;
     int repeat = x_layer.repeat();  // how many times slice pattern repeats in layer
     double hthickness=repeat*layering.layer(l_num)->thickness()/2.;
-    std::cout<<" ncount hwidth repeat hthickness "<<Ncount<<" "<<hwidth<<" "<<repeat<<" "<<hthickness<<std::endl;
-    if(l_num<1) z_bottoml= -hthickness;
-
+    double hthickpr=hthickness/repeat;
+    std::cout<<" ncount hwidth repeat hthickness hthickpr "<<Ncount<<" "<<hwidth<<" "<<repeat<<" "<<hthickness<<" "<<hthickpr<<std::endl;
+    //    if(l_num<1) z_bottoml= -hthickness;
+    double z_midl=-hthickness;
+    
     // make a layer box volume and a tower volume
-    dd4hep::Box LayerBox(detectorhwidth,detectorhwidth,hthickness);
+    dd4hep::Box LayerBox(detectorhwidth+tol,detectorhwidth+tol,hthickness+tol);
     string lbox_name = _toString(l_num,"layerbox%d");
     dd4hep::Volume LayerBoxVol(lbox_name, LayerBox, air);
     LayerBoxVol.setAttributes(description,x_layer.regionStr(),x_layer.limitsStr(),x_layer.visStr());
@@ -160,12 +168,22 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
       std::cout<<"danger danger will robinson volume overlap with honeycomb "<<honeythick<<" "<<hwidth<<std::endl;
     }
     dd4hep::Box abox1   (hwidth+agap-0.1*honeythick,hwidth+agap-0.1*honeythick,hthickness);
-    dd4hep::Box abox2   (hwidth+agap-0.6*honeythick,hwidth+agap-0.6*honeythick,hthickness);
-    dd4hep::Solid tmps = dd4hep::SubtractionSolid(abox1,abox2,b_pos);
-    Volume  honeycomb  (det_name,tmps,description.material(fX_honey.materialStr()));
+    //dd4hep::Box abox2   (hwidth+agap-0.6*honeythick,hwidth+agap-0.6*honeythick,hthickness);
+    //dd4hep::Solid tmps = dd4hep::SubtractionSolid(abox1,abox2,b_pos);
+    //Volume  honeycomb  (det_name,tmps,description.material(fX_honey.materialStr()));
+    Volume  honeycomb  (det_name,abox1,description.material(fX_honey.materialStr()));
     honeycomb.setAttributes(description, fX_honey.regionStr(), fX_honey.limitsStr(), fX_honey.visStr());
     PlacedVolume honeycomb_phv = towerVol.placeVolume(honeycomb,b_pos);
     honeycomb_phv.addPhysVolID("wc", 0);
+
+        dd4hep::Box abox2   (hwidth+agap-0.3*honeythick,hwidth+agap-0.3*honeythick,hthickness);
+    //dd4hep::Box abox2   (hwidth+agap-0.6*honeythick,hwidth+agap-0.6*honeythick,hthickness);
+    //dd4hep::Solid tmps = dd4hep::SubtractionSolid(abox1,abox2,b_pos);
+    //Volume  honeycomb  (det_name,tmps,description.material(fX_honey.materialStr()));
+    Volume  honeycomb2  (det_name,abox2,description.material(fX_honey2.materialStr()));
+    honeycomb2.setAttributes(description, fX_honey2.regionStr(), fX_honey2.limitsStr(), fX_honey2.visStr());
+    PlacedVolume honeycomb2_phv = towerVol.placeVolume(honeycomb2,b_pos);
+    honeycomb2_phv.addPhysVolID("wc", 1);
 
     // Loop over number of repeats for this layer.
 
@@ -175,9 +193,9 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
       double l_hzthick = layering.layer(l_num)->thickness()/2.;  // Layer's thickness.
       std::cout<<"  half  thickness is "<<l_hzthick<<std::endl;
       dd4hep::Box l_box(hwidth,hwidth,l_hzthick);
-      dd4hep::Volume     l_vol(l_name,l_box,air);
+      dd4hep::Volume     sh_vol(l_name,l_box,air);
       std::cout<<" layer visstr is "<<x_layer.visStr()<<std::endl;
-      l_vol.setAttributes(description,x_layer.regionStr(),x_layer.limitsStr(),x_layer.visStr());
+      sh_vol.setAttributes(description,x_layer.regionStr(),x_layer.limitsStr(),x_layer.visStr());
 
 
       // Loop over the sublayers or slices for this layer.
@@ -200,7 +218,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 	double z_mids2 = z_bottoms2+s_hzthick;
 	Position   s_pos(0.,0.,z_mids2);      // Position of the layer.
 	std::cout<<" placed at "<<z_mids2<<std::endl;
-	PlacedVolume slice_phv = l_vol.placeVolume(s_vol,s_pos);
+	PlacedVolume slice_phv = sh_vol.placeVolume(s_vol,s_pos);
 	slice_phv.addPhysVolID("slice", s_num);
 	// Increment Z position of slice.
 	z_bottoms2 += 2.*s_hzthick;
@@ -210,23 +228,26 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 
       // place the layer into the tower
       // Set region, limitset, and vis of layer.
-      double z_midl=0.;
+      //double z_midl=0.;
+      z_midl+=l_hzthick;
       Position   l_pos(0.,0.,z_midl);      // Position of the layer.
       std::cout<<" placed at z of "<<z_midl<<std::endl;
-      PlacedVolume layer_phv = towerVol.placeVolume(l_vol,l_pos);
-      layer_phv.addPhysVolID("wc", j+1);
+      PlacedVolume sh_phv = towerVol.placeVolume(sh_vol,l_pos);
+      sh_phv.addPhysVolID("wc", j+2);
       string tt_name = _toString(opt_num,"HallCrys%d");
       // removed 18 aug 25
-      //BorderSurface haha = BorderSurface(description,sdet, tt_name, cryS, layer_phv,env_phv);
+      //BorderSurface haha = BorderSurface(description,sdet, tt_name, cryS, sh_phv,env_phv);
       //haha.isValid();
+      z_midl+=l_hzthick;
       opt_num++;
 
     }  //end of repeat for this layer
 
     //place towers into a row
-    double dx = 2*(Ncount + Ncount+1)/2e0 * (hwidth+agap) + tol;
-    double dy = hwidth + agap+ tol;
-    double dz = hthickness + tol;
+    //double dx = 2*(Ncount + Ncount+1)/2e0 * (hwidth+agap) + tol;
+    double dx = detectorhwidth;
+    double dy = hwidth + agap;
+    double dz = hthickness;
     Box    tube_row_box(dx, dy, dz);
     Volume tube_row_vol("layer", tube_row_box, air);
     tube_row_vol.setVisAttributes(description, x_det.visStr());
@@ -237,10 +258,9 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 	 << " dz: " << tube_row_box.z() << endl;
     tube_row_vol.setVisAttributes(description, "layerVis");
 
-    double frac_tol=tol/(2*Ncount+1);
 
     for (int ijk1=-Ncount; ijk1<Ncount+1; ijk1++) {
-      double mod_x_off = (ijk1)*2*(hwidth+2*frac_tol+2*agap);
+      double mod_x_off = (ijk1)*2*(hwidth+agap);
       std::cout<<"placing crystal at ("<<mod_x_off<<")"<<std::endl;
       trafo= Transform3D(RotationZYX(0.,0.,0.),Position(mod_x_off,0.,0.));
       pv = tube_row_vol.placeVolume(towerVol,trafo);
@@ -248,7 +268,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
       int interface = towernum+(2*Ncount+1)*l_num;
       pv.addPhysVolID("ix",towernum);
       std::cout<<"placing tower "<<towernum<<std::endl;
-	//string tt_name = _toString(interface,"HallCrys%d");
+      string tt_name = _toString(interface,"HallCrys%d");
 	//BorderSurface haha = BorderSurface(description,sdet, tt_name, cryS, pv,env_phv);
 	//haha.isValid();
     }  //end of placing towers in layer envelope
@@ -256,20 +276,20 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 
     //place the rows into the layer box
     for (int ijk2=-Ncount; ijk2<Ncount+1; ijk2++) {
-      double mod_y_off = (ijk2)*2*(hwidth+2*frac_tol+2*agap);
+      double mod_y_off = (ijk2)*2*(hwidth+agap);
 	std::cout<<"placing crystal at ("<<mod_y_off<<")"<<std::endl;
 	trafo= Transform3D(RotationZYX(0.,0.,0.),Position(0.,mod_y_off,0.));
 	pv = LayerBoxVol.placeVolume(tube_row_vol,trafo);
-	int towernum = Ncount + ijk2 + 1;
-	pv.addPhysVolID("iy",towernum);
-	std::cout<<"placing tower "<<towernum<<std::endl;
+	int rownum = Ncount + ijk2 + 1;
+	pv.addPhysVolID("iy",rownum);
+	std::cout<<"placing row "<<rownum<<std::endl;
 	//BorderSurface haha = BorderSurface(description,sdet, tt_name, cryS, pv,env_phv);
 	//haha.isValid();
     }  //end of placing towers in layer envelope
 
     // place layerbox in envelope
 
-    trafo=Transform3D(RotationZYX(0.,0.,0.),Position(0.,0.,z_bottoml+hthickness+0.5*frac_tol2));
+    trafo=Transform3D(RotationZYX(0.,0.,0.),Position(0.,0.,z_bottoml+hthickness+tol));
     pv = envelopeVol.placeVolume(LayerBoxVol,trafo);
     pv.addPhysVolID("layer",l_num);
     DetElement de_layer(_toString(l_num, "layer_%d"), det_id);
@@ -281,8 +301,8 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
          << endl;
 
     // Increment to next layer Z position.
-    z_bottoml=z_bottoml+2.*hthickness+4*frac_tol2;
-    ++l_num;
+    z_bottoml=z_bottoml+2.*hthickness+2*tol;
+    l_num+=repeat;
   }  //end of loop over layers
 
   std::cout<<"exiting DRCrys creator"<<std::endl;

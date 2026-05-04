@@ -1,1 +1,15 @@
-dummy
+# Scripts Help
+---
+- **Checking Files**: The check files are there to help you check and see if any fatal errors occurred in the creation of a file from running either `ddsim` or `Resolution.C`. They also display the final number of total events to make sure everything was processed.
+    - `check.C`: The ROOT script file for checking individual files. This can be used by itself, or in conjunction with...
+    - `check.sh`: A shell file that automates the checking of whole directories of files. This presumes all of the created files have similar naming schemes.
+- **`hadd.sh`**: A shell script to combine a set of ROOT files under a similar naming scheme. This is primarily for if you run several repetitions in your `ddsim` events.
+- **Initial ROOT Plot Analysis**: These scripts are primarily for initial analysis of your results after running `Resolution.C`. This pulls some of the final ROOT plots and makes them into nicely formated files for you to use (because sometimes the TBrowser is slow :) )
+    - `makepdf.C`: This file takes as input a directory where you want your files analyzed. It then creates from an array of plot names a pdf of the ROOT plots. This assumes a common naming scheme, and loops over varaibles that are changed between the file names.
+    - `overlay_pdf.C`: This creates a pdf iterating over your whole set of files that have been processed with `Resolution.C`. It combines a specific histogram of your choosing into overlay plots. You can determine what feature, displayed in your filename, you want to have in common among histograms being combined. As an exmaple, in the current version of this file, it is iterating over simulations varying in energy, incident angle, and translated position across the crystal face and combining histograms that all have the same energy and incident angle.
+    - `overlay.C`: Similar to `overlay_pdf.C`, but this version is more for creating a single overlay plot.
+- **`Resolution.C` Job Submission**: These scripts are all about submitting jobs to run `Resolution.C`. Formerly, I was running them all sequentially in one terminal, but the following scripts should help you submit them as jobs and help automate the process.
+    - `submit_res.sh`: A shell script file to automate the submission of jobs to PBS running `Resolution.C` on files with a specific naming convention.
+    - `submit_res.pbs`: The PBS manager file used in submitting `Resolution.C` jobs to PBS.
+    - `res.sh`: Once the container has been launched, this script takes over. It runs the initial setup scripts and then proceeds to run `Resolution.C` on all of the necessary files following the file naming scheme.
+    - `res_container.sh`: This script is here if you don't want to use the PBS scheme detailed above. This way you can submit an initial and finial directory which, in conjunction with your chosen naming scheme, will process all of the files in the initial directory with `Resolution.C` and place the output files in the final output directory.

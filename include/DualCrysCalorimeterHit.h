@@ -97,8 +97,19 @@ namespace CalVision {
     //    std::vector<float> CerTime;
     //std::vector<float> ScinTime;
 
+    struct TruthInfo {
+      int parent_num;
+      int track_num;
+      int pdg_num;
+      float time_arrival;
+      int eventID;
+      float energy_deposit;
+      TruthInfo() : parent_num(-1), track_num(-1), pdg_num(-1), eventID(0), time_arrival(0.0), energy_deposit(0.0) {}
+      TruthInfo(int parent_val, int track, int pdg, int event, float time, float energy) : parent_num(parent_val), track_num(track), pdg_num(pdg), eventID(event), time_arrival(time), energy_deposit(energy){}
+    };
 
-
+    std::vector<TruthInfo> truthInfo;
+    std::set<int> storedTrackIDs;
     //int ntruthbin=truthnbin;
     //std::array<float,truthnbin> contribBeta;
     //std::array<float,truthnbin> contribCharge;
@@ -165,11 +176,18 @@ namespace CalVision {
 #pragma link C++ namespace dd4hep;
 #pragma link C++ namespace dd4hep::sim;
 #pragma link C++ namespace CalVision;
-#pragma link C++ class     CalVision::DualCrysCalorimeterHit+;
-#pragma link C++ class     CalVision::DualCrysCalorimeterDump;
-#pragma link C++ class     CalVision::PhotonInfo+;
-#pragma link C++ class     std::vector<CalVision::PhotonInfo>+;
+#pragma link C++ class dd4hep::sim::Geant4HitData+;
+#pragma link C++ class dd4hep::sim::Geant4HitData::MonteCarloContrib+;
+#pragma link C++ class std::vector<dd4hep::sim::Geant4HitData::MonteCarloContrib>+;
+#pragma link C++ class dd4hep::sim::Geant4Calorimeter::Hit+;
 
+#pragma link C++ class     CalVision::DualCrysCalorimeterHit+;
+//#pragma link C++ class std::vector<CalVision::DualCrysCalorimeterHit*>+;
+#pragma link C++ class     CalVision::DualCrysCalorimeterDump;
+#pragma link C++ class     CalVision::DualCrysCalorimeterHit::PhotonInfo+;
+#pragma link C++ class     std::vector<CalVision::DualCrysCalorimeterHit::PhotonInfo>+;
+#pragma link C++ class     CalVision::DualCrysCalorimeterHit::TruthInfo+;
+#pragma link C++ class  std::vector<CalVision::DualCrysCalorimeterHit::TruthInfo>+;
 #endif
 
 #endif // EXAMPLES_DDDualCrys_SRC_DualCrysCalorimeterHIT_H

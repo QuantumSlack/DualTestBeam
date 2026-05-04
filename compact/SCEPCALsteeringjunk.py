@@ -77,13 +77,16 @@ SIM.vertexSigma = [0.0, 0.0, 0.0, 0.0]
 SIM.action.calo = "DualCrysCalorimeterSDAction"
 ## parameters for Calvision sensitive action
 SIM.action.calo = ("DualCrysCalorimeterSDAction",
-  {"dialCherC": 0.0000125,
-   "dialScintC": 0.000005,
-   "dialCherO": 0.000125,
-   "dialScintO": 0.00000005,
+  {
+#   "dialCherC": 0.0000125,
+#   "dialScintC": 0.0000125,
+   "dialCherC": 1.,
+   "dialScintC": 1.,
+   "dialCherO": 1.,
+   "dialScintO": 1.,
    "betarel": 0.648,
-   "printlimitSCE": 10,
-   "MAXEVENTSCE": 10,
+   "printlimitSCE": 100,
+   "MAXEVENTSCE": 100,
    # etc.
   })
 
@@ -383,8 +386,8 @@ def exampleUserPlugin(dd4hepSimulation):
      evt_root.enableUI()
      Kernel().eventAction().add(evt_root)
      return None
-SIM.outputConfig.userOutputPlugin = exampleUserPlugin
-SIM.outputConfig.myExtension = '.root'
+#SIM.outputConfig.userOutputPlugin = exampleUserPlugin
+#SIM.outputConfig.myExtension = '.root'
 
 
 ################################################################################
@@ -485,13 +488,13 @@ def setupCerenkovScint(kernel):
      scint.enableUI()
      seq.adopt(scint)
 
-     cerenkov = PhysicsList(kernel, 'Geant4CerenkovPhysics/CerenkovPhys')
-     cerenkov.VerboseLevel = 0
-     cerenkov.MaxNumPhotonsPerStep = 10
-     cerenkov.MaxBetaChangePerStep = 10.0
-     cerenkov.TrackSecondariesFirst = True
-     cerenkov.enableUI()
-     seq.adopt(cerenkov)
+     #cerenkov = PhysicsList(kernel, 'Geant4CerenkovPhysics/CerenkovPhys')
+     #cerenkov.VerboseLevel = 0
+     #cerenkov.MaxNumPhotonsPerStep = 10
+     #cerenkov.MaxBetaChangePerStep = 10.0
+     #cerenkov.TrackSecondariesFirst = True
+     #cerenkov.enableUI()
+     #seq.adopt(cerenkov)
 
      ph = PhysicsList(kernel, 'Geant4OpticalPhotonPhysics/OpticalGammaPhys')
      ph.addParticleConstructor('G4OpticalPhoton')

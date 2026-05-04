@@ -31,9 +31,6 @@ using namespace std;
 
 
 
-
-
-
 namespace CalVision {
 
   G4double fromEvToNm(G4double energy)
@@ -227,12 +224,52 @@ namespace dd4hep {
       float tbinsizez=(hit->timemaxz-hit->timemin)/hit->nfinebin;
       jbinz = (avearrival-hit->timemin)/tbinsizez;
       jbinz = std::min(jbinz,(hit->nfinebin)-1);
+	  
+	  // Debug print BEFORE
+		// std::cout << "DEBUG BEFORE emplace_back:"
+        //   << " parent=" << track->GetParentID()
+        //   << " trackID=" << track->GetTrackID()
+        //   << " pdg_id=" << track->GetDefinition()->GetPDGEncoding()
+        //   << " eventNumber=" << eventNumber
+        //   << " pretime=" << pretime
+        //   << " truthInfo size=" << hit->truthInfo.size()
+        //   << std::endl;
+	  int trackID = track->GetTrackID();
+	//   int trackID = track->GetTrackID();
+	  int parent = track->GetParentID();
+	  int pdg_id = track->GetDefinition()->GetPDGEncoding();
+	  if (track->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition()) {
+		  if (hit->storedTrackIDs.insert(trackID).second) {
+	  (hit->truthInfo).emplace_back(parent, trackID, pdg_id, eventNumber, avearrival, contrib.deposit);
+	  } else {
+		for (auto& ti : hit->truthInfo) {
+        if (ti.track_num == trackID) {
+            ti.energy_deposit += contrib.deposit;
+            break;
+        }
+    }
+	  }
+	}
+	//   } else {
+	// 	for (auto& ti : hit->truthInfo) {
+    //     	if (ti.track_num == trackID) {
+    //         	ti.energy_deposit += contrib.deposit;
+    //         break;
+    //     }
+    // }
+	//   }
+	//   std::cout << "DEBUG AFTER emplace_back:"
+    //       << " truthInfo size=" << hit->truthInfo.size()
+    //       << " last time_arrival=" << hit->truthInfo.back().time_arrival
+    //       << " last eventID=" << hit->truthInfo.back().eventID
+    //       << " last trackID=" << hit->truthInfo.back().track_num
+    //       << std::endl;
+	//   if (hit->storedTrackIDs.insert(trackID).second) {
+	// 	}
 
-
-      if(thePostPoint->GetProcessDefinedStep()->GetProcessName().contains("Inelast")){
+	  if(thePostPoint->GetProcessDefinedStep()->GetProcessName().contains("Inelast")){
 	hit->n_inelastic+=1;
       }
-
       //photons
       if( track->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition() )  {
 	if(SCEPRINT) std::cout<<"     in volume ID "<<cell<<std::endl;
@@ -331,7 +368,8 @@ namespace dd4hep {
 		hit->nscintillator+=1;
 		int parentID = track->GetParentID();
 		int pdg = track->GetDefinition()->GetPDGEncoding();
-		(hit->HitScin).emplace_back(avearrival,wavelength, parentID, pdg);
+		float time_arrival = avearrival;
+		(hit->HitScin).emplace_back(time_arrival,wavelength, parentID, pdg);
 		//if((ibin>-1)&&(ibin<hit->nfinebin)) ((hit->nscintwave).at(ibin))+=1;
                 //if(jbin>-1&&jbin<hit->nfinebin) ((hit->nscinttime).at(jbin))+=1;
 		//if(jbinz>-1&&jbinz<hit->nfinebin) ((hit->nscinttimez).at(jbinz))+=1;
@@ -403,6 +441,15 @@ namespace dd4hep {
 
       }
       else {   // particles other than optical photons
+	// 	int trackID = track->GetTrackID();
+	// // if (hit->storedTrackIDs.insert(trackID).second) { 
+	//   int parent = track->GetParentID();
+	//   int pdg_id = track->GetDefinition()->GetPDGEncoding(); 
+	//   G4ThreeVector pos = track->GetPosition();
+	//   (hit->truthInfo).emplace_back(parent, trackID, pdg_id, eventNumber, pos, avearrival);
+	// }
+	//   if (hit->storedTrackIDs.insert(trackID).second) {
+	// 	}
 	
       //if(SCEPRINT) std::cout<<"NOT optical photon"<<std::endl;
 
@@ -415,8 +462,26 @@ namespace dd4hep {
 	  track->SetTrackStatus(fStopAndKill);
 	} else {
       //add information about each contribution to the hit
-	  hit->truth.emplace_back(contrib);
-
+	//      std::cout << "DEBUG FILL:"
+    //           << " pretime=" << pretime
+    //           << " posttime=" << posttime
+    //           << " avearrival=" << avearrival
+    //           << " trackID=" << track->GetTrackID()
+    //           << " pdg=" << track->GetDefinition()->GetPDGEncoding()
+    //           << " eventNumber=" << eventNumber
+    //           << " parent=" << track->GetParentID()
+    //           << std::endl;
+	//   int parent = track->GetParentID();
+	//   int pdg_id = track->GetDefinition()->GetPDGEncoding();
+	//   int trackID = track->GetTrackID();
+	//   G4ThreeVector pos = track->GetPosition();
+	//   (hit->truthInfo).emplace_back(parent, trackID, pdg_id, eventNumber, pos, avearrival);
+	//     std::cout << "DEBUG STORED:"
+    //           << " time_arrival=" << hit->truthInfo.back().time_arrival
+    //           << " eventID=" << hit->truthInfo.back().eventID
+    //           << " trackID=" << hit->truthInfo.back().track_num
+    //           << std::endl;
+	//   hit->truth.emplace_back(contrib);
 	  hit->energyDeposit += contrib.deposit;
 	  //	  hit->contribBeta.emplace_back(track->GetVelocity()/CLHEP::c_light*10000.);
 	  float aabeta=track->GetVelocity()/CLHEP::c_light;

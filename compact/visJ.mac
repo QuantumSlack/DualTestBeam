@@ -79,7 +79,7 @@
 /vis/modeling/trajectories/drawByParticleID-0/set mu- blue
 /vis/modeling/trajectories/drawByParticleID-0/set mu+ blue
 /vis/modeling/trajectories/drawByParticleID-0/set gamma red
-/vis/modeling/trajectories/drawByParticleID-0/set opticalphoton red
+/vis/modeling/trajectories/drawByParticleID-0/set opticalphoton yellow
 #
 # To superimpose all of the events from a given run:
 /vis/scene/endOfEventAction accumulate 1
@@ -93,7 +93,9 @@
 
 /units/list
 
-
+/vis/viewer/zoom 20
+/vis/viewer/pan 0.6 0
+/vis/viewer/zoom 12
 
 #/tracking/verbose 1
 

@@ -79,19 +79,19 @@ print("sh file closed")
 # create the .jdl files
 for i in energies:
     jdlfile = open(exearea+name+args.particle+str(i)+'gev.jdl',"w")
-    jdlfile.write("universe = vanilla"+'\n')
-    jdlfile.write("Executable ="+exearea+name+args.particle+str(i)+"gev.sh"+'\n')
-    jdlfile.write("should_transfer_files = NO"+'\n')
+ #   jdlfile.write("universe = vanilla"+'\n')
+    jdlfile.write("Executable = "+name+args.particle+str(i)+"gev.sh"+'\n')
+    #jdlfile.write("should_transfer_files = NO"+'\n')
     #jdlfile.write("Requirements = TARGET.FileSystemDomain == \"privnet\""+'\n')
     #jdlfile.write("Requirements = (machine == \"hepcms-namenode.privnet\") || (machine == \"r540-0-20.privnet\") || (machine == \"r720-0-1.privnet\")"+'\n')
-    jdlfile.write("Requirements = (machine == \"r540-0-20.privnet\") || (machine == \"r720-0-1.privnet\")"+'\n')
+#    jdlfile.write("Requirements = (machine == \"r540-0-20.privnet\") || (machine == \"r720-0-1.privnet\")"+'\n')
     #jdlfile.write("Requirements = (machine == \"r720-0-1.privnet\") || (machine == \"hepcms-namenode.privnet\")"+'\n') #alternative req. for hepcms cluster
-    jdlfile.write("Output = "+stdarea+args.particle+"$(cluster)_$(process).stdout"+'\n')
-    jdlfile.write("Error = "+stdarea+args.particle+"$(cluster)_$(process).stderr"+'\n')
-    jdlfile.write("Log = "+stdarea+args.particle+"$(cluster)_$(process).condor"+'\n')
-    jdlfile.write("Arguments = $(process)"+'\n')
-    jdlfile.write("request_memory = 4GB"+'\n')
-    jdlfile.write('Queue 50' + '\n') # run jobs in parallel
+    jdlfile.write("Output = "+name+args.particle+"$(cluster)_$(process).stdout"+'\n')
+    jdlfile.write("Error = "+name+args.particle+"$(cluster)_$(process).stderr"+'\n')
+    jdlfile.write("Log = "+name+args.particle+"$(cluster)_$(process).condor"+'\n')
+    jdlfile.write("+JobFlavour= \"tomorrow\""+'\n')
+    jdlfile.write('request_memory=500GB' + '\n')
+    jdlfile.write('Queue' + '\n') # run jobs in parallel
     jdlfile.close()
 print("jdl file closed")
 

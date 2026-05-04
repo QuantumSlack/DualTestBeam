@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.ipynb": "python",
-        "*.s": "arm",
-        "*.tex": "latex",
-        "Resolution_twocals.C": "cpp",
-        "iostream": "cpp"
-    }
-}
