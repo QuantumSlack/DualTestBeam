@@ -1,11 +1,12 @@
 This version of Dd4hep + DualTestBeam is not in-date with the recent changes with the latest DualTestBeam repository. For more information, contact Sarah Eno from University of Maryland. 
 
-## Table of Contents
+## Table of Contents 
 - [Setup](#setup)
-- [Tracks and Propagation of Particles](#tracks-and-propagation-of-particles)
 - [Creating ROOT file](#creating-root-file)
 - [ROOT File Structure](#root-file-structure)
 - [JDL Files](#jdl-files)
+- [Tracks and Propagation of Particles](#tracks-and-propagation-of-particles)
+- [Extra comments](#extra-comments)
 
 ## Setup
 ### Setup for DD4hep
@@ -16,7 +17,21 @@ This version of Dd4hep + DualTestBeam is not in-date with the recent changes wit
 4. Next go to `DD4hep/`
 5. `mkdir build install && cd build.`. This will take you into `DD4hep/build` directory.
 6. Next `ccmake ../`. After this, a prompt will occur with various fields. Following settings is necessary for initial setup.
+   ``CMAKE_INSTALL_PREFIX = full path of your install directory
+     DD4HEP_BUILD_EXAMPLES            ON  
+     DD4HEP_USE_GEANT4                ON                                                                                                           
+     DD4HEP_USE_GEANT4_UNITS          ON  `` 
+7. After this, ``make -j4 && make install``. This will make and install the DD4hep packages.
+8. After installation ``source ../install/bin/thisdd4hep.sh``. This is crucial as this command sets important paths for executing commands like `ddsim`.
+### Setup for DualTestBeam ###
+1. Go to `DD4hep/examples/DualTestBeam/` and `mkdir build install && cd build.`
+2. Next `ccmake ../`. After this, a prompt will occur with various fields. Following settings is necessary for initial setup.
    ``CMAKE_INSTALL_PREFIX = full path of your install directory``
+3. After this, ``make -j4 && make install``.
+4. After installation ``source ../install/bin/thisDualTestBeam.sh``.
+5. Setup is complete. If you modify something within headers/source code in DualTestBeam, you need to repeat the process of setting up DualTestBeam. There is no need to setup DD4hep everytime. 
+
+**Note:- Each time you log off and log in (exit the terminal and then open terminal again), you need to source these two files before you can begin working with packages themselves.**
 
 ## Tracks and Propagation of Particles 
 <img width="922" height="294" alt="Screenshot 2026-04-22 at 9 17 36 AM" src="https://github.com/user-attachments/assets/87e471fe-a0b7-462f-ba37-a4daa1d27406" />
@@ -29,7 +44,7 @@ This version of Dd4hep + DualTestBeam is not in-date with the recent changes wit
     
 ## Creating ROOT file
 
-In `compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py`. These python files take  arguments and produce the `.sh` files which can be executed to simulate events. A DD4hep command called `ddsim` will be used to simulate particle events. An example of using this command is as follows:-
+In `DD4hep/examples/DualTestBeam/compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py`. These python files take arguments and produce the `.sh` files which can be executed to simulate events. A DD4hep command called `ddsim` will be used to simulate particle events. An example of using this command is as follows:-
 
 `ddsim --compactFile=/Users/shiva/DD4hep/examples/DualTestBeam/compact/DRFSCEPonly.xml --runType=batch -G --steeringFile /Users/shiva/DD4hep/examples/DualTestBeam/compact/SCEPCALsteering.py --outputFile=/Users/shiva/DD4hep/examples/DualTestBeam/compact/output/FSCEPonly/out_FSCEPonly_pi-10gev_$process_id.root --part.userParticleHandler= -G --gun.position="0.,-7*mm,-1*mm" --gun.direction "0. 0.05 0.99875" --gun.energy "10*GeV" --gun.particle="pi-" -N 1 >& /Users/shiva/DD4hep/examples/DualTestBeam/compact/output/FSCEPonly/Log_FSCEPonly_pi-10gev_$process_id.log`
 
@@ -81,6 +96,8 @@ The above instance is from a JDL file which is running a simulation event for a 
 
 More information about Condor Cluster over [here](https://htcondor.readthedocs.io/en/24.x/users-manual/index.html). CERN documentation over [here](https://batchdocs.web.cern.ch/local/submit.html).
 
+
+## Extra Comments
 ## If you are not on alma9-like OS, but can use singularity
 ```
 singularity run -B /cvmfs:/cvmfs -B /data:/data docker://gitlab-registry.cern.ch/sft/docker/alma9-core:latest
