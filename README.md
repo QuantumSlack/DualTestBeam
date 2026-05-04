@@ -48,13 +48,13 @@ Typically, when you run simulation with many events (> 100), it takes a lot of t
 
 Note:- These files are typically run on clusters which have many systems and large memory (like Condor Cluster at CERN).
 
-`Executable = condor-executable-FSCEPonly_e-10gev.sh
+``Executable = condor-executable-FSCEPonly_e-10gev.sh
 Output = condor-executable-FSCEPonly_e-$(cluster)_$(process).stdout
 Error = condor-executable-FSCEPonly_e-$(cluster)_$(process).stderr
 Log = condor-executable-FSCEPonly_e-$(cluster)_$(process).condor
 +JobFlavour= "tomorrow"
 request_memory=500GB
-Queue`
+Queue``
 
 The above instance is from a JDL file which is running a simulation event for a geometry sepcified for DRFSCEPonly.xml file with 10 GeV pion beams. 
 1. **Executable**:- This argument takes the name of your `.sh` file which will be executed on the cluster. It's good to specify the entire path for this so that the system which runs the job can easily access your files.
