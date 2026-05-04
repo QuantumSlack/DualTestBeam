@@ -1,10 +1,19 @@
-This version of Dd4hep + DualTestBeam is not in-date with the recent changes with DualTestBeam repository. For more information, contact Sarah Eno from University of Maryland. 
+This version of Dd4hep + DualTestBeam is not in-date with the recent changes with the latest DualTestBeam repository. For more information, contact Sarah Eno from University of Maryland. 
 
 ## Table of Contents
+- [Setup](#setup)
 - [Tracks and Propagation of Particles](#tracks-and-propagation-of-particles)
 - [Creating ROOT file](#creating-root-file)
 - [ROOT File Structure](#root-file-structure)
 - [JDL Files](#jdl-files)
+
+## Setup
+### Setup for DD4hep
+1. Clone the DD4hep repository from [here](https://github.com/AIDASoft/DD4hep)
+2. Next go to `DD4hep/examples/` directory and clone DualTestBeam repository.
+3. Go to `CMakeLists.txt` in the examples directory, go to line 45 and add `DualTestBeam` at the end. After this, the line should look something like this:-
+`SET(DD4HEP_EXAMPLES "AlignDet CLICSiD ClientTests Conditions DDCMS DDCodex DDDigi DDG4 DDG4_MySensDet LHeD OpticalSurfaces RICH Persistency DDCAD SimpleDetector DualTestBeam"`
+4. 
 
 ## Tracks and Propagation of Particles 
 <img width="922" height="294" alt="Screenshot 2026-04-22 at 9 17 36 AM" src="https://github.com/user-attachments/assets/87e471fe-a0b7-462f-ba37-a4daa1d27406" />
