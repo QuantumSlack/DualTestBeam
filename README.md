@@ -46,7 +46,7 @@ This version of Dd4hep + DualTestBeam is not in-date with the recent changes wit
     
 ## Creating ROOT file
 
-In `DD4hep/examples/DualTestBeam/compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py`. These python files take arguments and produce the `.sh` files which can be executed to simulate events. A DD4hep command called `ddsim` will be used to simulate particle events. An example of using this command is as follows:-
+In `DD4hep/examples/DualTestBeam/compact` directory, there are two files `massjobs.py` and `massjobs_ddsim.py`. These python files take arguments and produce the `.sh` files which can be executed to simulate events. Before using these files, execute `mkdir jobs output` inside the directory `DD4hep/examples/DualTestBeam/compact` where `jobs` will contain all the executables and `output` will contain all the ROOT files related to simulation. A DD4hep command called `ddsim` will be used to simulate particle events. An example of using this command is as follows:-
 
 ```
 ddsim --compactFile=/Users/shiva/DD4hep/examples/DualTestBeam/compact/DRFSCEPonly.xml --runType=batch -G --steeringFile /Users/shiva/DD4hep/examples/DualTestBeam/compact/SCEPCALsteering.py --outputFile=/Users/shiva/DD4hep/examples/DualTestBeam/compact/output/FSCEPonly/out_FSCEPonly_pi-10gev_$process_id.root --part.userParticleHandler= -G --gun.position="0.,-7*mm,-1*mm" --gun.direction "0. 0.05 0.99875" --gun.energy "10*GeV" --gun.particle="pi-" -N 1 >& /Users/shiva/DD4hep/examples/DualTestBeam/compact/output/FSCEPonly/Log_FSCEPonly_pi-10gev_$process_id.log
