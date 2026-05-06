@@ -98,6 +98,7 @@ The above instance is from a JDL file which is running a simulation event for a 
 
 More information about Condor Cluster over [here](https://htcondor.readthedocs.io/en/24.x/users-manual/index.html). CERN documentation over [here](https://batchdocs.web.cern.ch/local/submit.html).
 
+Submitting JDL files to cluster will allow your code run even though you will be logged out of the system. For condor cluster, you can submit the JDL files by typing `condor_submit (name of your JDL file)`.
 
 ## Extra Comments
 ## If you are not on alma9-like OS, but can use singularity
@@ -108,11 +109,17 @@ singularity run -B /cvmfs:/cvmfs -B /data:/data docker://gitlab-registry.cern.ch
 ```
 
 ## All times:
+If you are running your code on lxplus via CERN login service, then you need to do the following source before you can use work with packages/install DD4hep on lxplus. 
 ```
 source /cvmfs/sft.cern.ch/lcg/views/LCG_107/x86_64-el9-gcc14-opt/setup.sh
 ```
+This sourcing will setup all the necessary packages like ROOT, Python etc.
 
 ## First time only:
+The steps are similiar to previously illustrated steps. There are two key differences:
+1. These instructions clone from gitlab version of DualTestBeam which is the official code with latest updates and features. To add new features in your code, you can clone from this repo and then follow the same instructions as before.
+2. There are additional flags included in `cmake` like `-DBoost_NO_BOOST_CMAKE=ON -DDD4HEP_USE_LCIO=ON -D DD4HEP_USE_EDM4HEP=ON`. These packages are important if you are using additional features. For getting started, compiling with Geant4 flags(previously stated) are enough. In order to include these new packages, you can start from step 6 in **Setup** and enable those features when doing `ccmake ../`.
+
 ```
 # setup directory
 mkdir stuff4stuff
@@ -155,7 +162,7 @@ or see examples in CI (continuous integration) yaml file for running `ddsim` and
 [.gitlab-ci.yml](https://gitlab.cern.ch/calvisionsimulation/DualTestBeam/-/blob/master/.gitlab-ci.yml)
 
 ## running interactively
-Change `--runType=batc` above to `--runType=vis`.
+Change `--runType=batc` above to `--runType=vis` (or `--runType=qt` if you have installed Qt on your system)
 Then
 ```
 /control/execute vis.mac
