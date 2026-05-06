@@ -1,5 +1,3 @@
-This version of Dd4hep + DualTestBeam is not in-date with the recent changes with the latest DualTestBeam repository. 
-
 ## Table of Contents 
 - [Setup](#setup)
 - [Creating ROOT file](#creating-root-file)
