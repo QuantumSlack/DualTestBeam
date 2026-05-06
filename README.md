@@ -1,4 +1,4 @@
-This version of Dd4hep + DualTestBeam is not in-date with the recent changes with the latest DualTestBeam repository. For more information, contact Sarah Eno from University of Maryland. 
+This version of Dd4hep + DualTestBeam is not in-date with the recent changes with the latest DualTestBeam repository. 
 
 ## Table of Contents 
 - [Setup](#setup)
